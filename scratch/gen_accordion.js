@@ -8,7 +8,7 @@ const sectionHTML = `
         <div class="max-w-[1400px] mx-auto w-full flex flex-col items-center gap-14 relative z-10">
             
             <!-- Section Header -->
-            <div class="w-full flex flex-col items-center text-center gap-4 reveal-clip">
+            <div class="w-full flex flex-col items-center text-center gap-4">
                 <!-- Pill -->
                 <span class="inline-block bg-[#e8efec] text-[#0f4a47] font-medium px-4 py-1.5 rounded-sm text-[14px]">
                     Property Location
@@ -86,7 +86,6 @@ const sectionHTML = `
                         height="100%" 
                         style="border:0; position: absolute; inset: 0;" 
                         allowfullscreen="" 
-                        loading="lazy" 
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                     
@@ -110,7 +109,7 @@ const sectionHTML = `
 const indexFile = 'index.html';
 let content = fs.readFileSync(indexFile, 'utf-8');
 
-const insertTarget = '    <!-- Search Overlay -->';
+const insertTarget = '    <!-- ============================================ -->\n    <!-- INJECTION POINT -->';
 if (content.includes(insertTarget)) {
     content = content.replace(insertTarget, sectionHTML + '\\n' + insertTarget);
     fs.writeFileSync(indexFile, content);

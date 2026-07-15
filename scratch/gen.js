@@ -95,7 +95,6 @@ properties.forEach((prop, index) => {
                             height="100%" 
                             style="border:0;" 
                             allowfullscreen="" 
-                            loading="lazy" 
                             referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                     </div>
@@ -173,7 +172,7 @@ ${rowsHTML}
 const indexFile = 'index.html';
 let content = fs.readFileSync(indexFile, 'utf-8');
 
-const insertTarget = '    <!-- ============================================ -->\n    <!-- EXPLORE LOCATIONS SECTION -->';
+const insertTarget = '    <!-- ============================================ -->\n    <!-- INJECTION POINT -->';
 if (content.includes(insertTarget)) {
     content = content.replace(insertTarget, sectionHTML + '\\n' + insertTarget);
     fs.writeFileSync(indexFile, content);
