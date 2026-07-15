@@ -2020,11 +2020,16 @@
     <!-- ============================================ -->
 
     <!-- Footer -->
-    <footer class="w-full bg-[#f3f4f0] pt-[0] pb-0 relative z-10">
-        <!-- CTA Banner — pulled up so its center sits at footer top edge -->
-        <div class="w-full px-8 md:px-16 relative z-20" style="margin-top: -90px; margin-bottom: 24px;">
-            <div class="max-w-[1320px] mx-auto">
-<div class="relative w-full rounded-[20px] overflow-hidden flex flex-col md:flex-row items-center justify-between px-12 py-14 gap-8"
+    
+    <!-- Spacer: top half of CTA floats on page bg -->
+    <div style="height: 90px; background: #ffffff;"></div>
+
+    <!-- ============================================ -->
+    <!-- CTA BANNER — straddles page/footer boundary -->
+    <!-- ============================================ -->
+    <div class="w-full px-8 md:px-16" style="position: relative; z-index: 20; margin-bottom: -90px;">
+        <div class="max-w-[1320px] mx-auto">
+            <div class="relative w-full rounded-[20px] overflow-hidden flex flex-col md:flex-row items-center justify-between px-12 py-14 gap-8"
                  style="background: url('assets/images/home/cta-bg2.png') center center / cover no-repeat;">
                 
 
@@ -2052,10 +2057,10 @@
             </div>
             </div>
         </div>
+        </div>
+    </div>
 
-        <div class="max-w-[1320px] mx-auto px-8 md:px-16">
-
-            <!-- Footer Grid -->
+<footer class="w-full bg-[#f3f4f0] pb-0 relative z-10" style="padding-top: 90px;"><!-- Footer Grid -->
             <div class="w-full grid grid-cols-1 md:grid-cols-4 gap-12 pb-16">
 
                 <!-- Col 1: Brand -->
