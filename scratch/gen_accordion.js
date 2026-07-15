@@ -23,7 +23,7 @@ const sectionHTML = `
             <div class="w-full grid grid-cols-12 gap-10 items-stretch">
                 
                 <!-- Left: Accordion List -->
-                <div class="col-span-5 flex flex-col gap-4 w-full">
+                <div class="col-span-4 flex flex-col gap-4 w-full">
                     
                     <!-- Accordion Item 1 (Active by default) -->
                     <div class="accordion-item active bg-[#0f4a47] text-white p-6 rounded-[12px] shadow-sm cursor-pointer transition-colors duration-300">
@@ -79,7 +79,7 @@ const sectionHTML = `
                 </div>
 
                 <!-- Right: Map Embed -->
-                <div class="col-span-7 relative w-full h-full min-h-[480px] rounded-[16px] overflow-hidden group shadow-md border border-gray-100 bg-gray-200">
+                <div class="col-span-8 relative w-full h-full min-h-[580px] rounded-[16px] overflow-hidden group shadow-md border border-gray-100 bg-gray-200">
                     <iframe 
                         src="https://maps.google.com/maps?q=Bay+Area,+CA&t=&z=10&ie=UTF8&iwloc=&output=embed" 
                         width="100%" 
