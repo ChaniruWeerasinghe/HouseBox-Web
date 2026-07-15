@@ -76,7 +76,7 @@ properties.forEach((prop, index) => {
                                 <!-- Agent & Price -->
                                 <div class="flex items-center justify-between">
                                     <div class="flex items-center gap-3">
-                                        <img src="assets/images/home/avatar-${(index % 4) + 1}.webp" alt="Agent" class="w-11 h-11 rounded-full object-cover">
+                                        <img src="assets/images/home/clientdp.webp" alt="Agent" class="w-11 h-11 rounded-full object-cover">
                                         <span class="font-medium text-gray-900 text-[15px]">${prop.agent}</span>
                                     </div>
                                     <div class="bg-[#0f4a47] text-white font-semibold text-[16px] px-5 py-2.5 rounded-[6px]">
