@@ -159,6 +159,27 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // 6. Intersection Observer for Image Reveals
+    const revealElements = document.querySelectorAll('.reveal-clip');
+    if (revealElements.length > 0) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('is-revealed');
+                    }, 150);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            root: null,
+            threshold: 0.1, // Trigger when 10% is visible
+            rootMargin: '0px 0px -50px 0px' 
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+    }
 });
 
 // Logic that applies to the dynamically loaded navbar
