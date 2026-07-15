@@ -10,7 +10,7 @@ const sectionHTML = `
         <!-- Dark Green Overlay -->
         <div class="absolute inset-0 bg-[#063330]/85 z-0 pointer-events-none"></div>
 
-        <div class="max-w-[1400px] mx-auto w-full flex flex-col items-center relative z-10 px-12">
+        <div class="max-w-[1600px] mx-auto w-full flex flex-col items-center relative z-10 px-8">
             
             <!-- Section Header -->
             <div class="w-full flex flex-col items-center text-center gap-4 mb-16">
