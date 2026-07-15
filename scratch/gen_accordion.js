@@ -20,7 +20,7 @@ const sectionHTML = `
             </div>
 
             <!-- Content Grid: Accordion + Map -->
-            <div class="w-full grid grid-cols-12 gap-10 items-stretch reveal-clip" style="transition-delay: 200ms;">
+            <div class="w-full grid grid-cols-12 gap-10 items-stretch">
                 
                 <!-- Left: Accordion List -->
                 <div class="col-span-5 flex flex-col gap-4 w-full">
