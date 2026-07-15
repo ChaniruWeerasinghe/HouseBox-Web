@@ -483,3 +483,45 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3000);
     }
 });
+// -----------------------------------------------------
+// Global Scroll-to-Top Button Logic
+// -----------------------------------------------------
+document.addEventListener('DOMContentLoaded', () => {
+    const scrollBtn = document.getElementById('scroll-to-top');
+    const progressCircle = document.getElementById('scroll-progress-circle');
+    
+    if (scrollBtn && progressCircle) {
+        // Circumference = 2 * PI * r = 2 * 3.14159 * 46 = 289.02
+        const circumference = 289.02;
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight;
+            const winHeight = window.innerHeight;
+            const scrollPercent = scrollTop / (docHeight - winHeight);
+            
+            // Show button after scrolling down 300px
+            if (scrollTop > 300) {
+                scrollBtn.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+                scrollBtn.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+            } else {
+                scrollBtn.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+                scrollBtn.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+            }
+
+            // Update SVG circle stroke dash offset
+            // When scrollPercent = 0, offset = circumference (empty)
+            // When scrollPercent = 1, offset = 0 (full)
+            const drawLength = circumference * scrollPercent;
+            progressCircle.style.strokeDashoffset = circumference - drawLength;
+        });
+
+        // Click to scroll top
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+});
