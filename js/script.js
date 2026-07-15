@@ -180,6 +180,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
         revealElements.forEach(el => revealObserver.observe(el));
     }
+
+    // 7. Intersection Observer for Stats Counters
+    const statCounters = document.querySelectorAll('.stat-counter');
+    if (statCounters.length > 0) {
+        const statObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = parseInt(entry.target.getAttribute('data-target'));
+                    let current = 0;
+                    const duration = 2000; // 2 seconds
+                    const increment = target / (duration / 16); // roughly 60fps
+
+                    const updateCounter = () => {
+                        current += increment;
+                        if (current < target) {
+                            entry.target.innerText = Math.ceil(current);
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            entry.target.innerText = target;
+                        }
+                    };
+                    
+                    updateCounter();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            root: null,
+            threshold: 0.5 // Trigger when stats are halfway visible
+        });
+
+        statCounters.forEach(counter => statObserver.observe(counter));
+    }
 });
 
 // Logic that applies to the dynamically loaded navbar
