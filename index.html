@@ -81,8 +81,9 @@
 <body class="bg-lightbg text-gray-800 font-sans antialiased overflow-x-hidden">
 
     <!-- Navbar Hardcoded for Tailwind CDN Parsing -->
-    <nav class="fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-[1400px] bg-white rounded px-4 md:px-6 py-3 z-[100] shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
-        <div class="w-full flex items-center justify-between lg:grid lg:grid-cols-[1fr_auto_1fr]">
+    <nav class="fixed top-6 left-0 w-full z-[100] flex justify-center pointer-events-none">
+        <div class="w-full max-w-[1320px] px-6 pointer-events-auto">
+            <div class="bg-white rounded px-4 md:px-8 py-3 w-full shadow-[0_4px_30px_rgba(0,0,0,0.08)] flex items-center justify-between lg:grid lg:grid-cols-[1fr_auto_1fr]">
             
             <!-- Left: Logo -->
             <div class="flex justify-start">
@@ -314,6 +315,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 19L19 5M19 5v10M19 5H9"></path>
                     </svg>
                 </a>
+            </div>
             </div>
         </div>
     </nav>
