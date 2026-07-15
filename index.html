@@ -54,15 +54,8 @@
             
             <!-- Left: Logo -->
             <div class="flex justify-start">
-                <a href="index.html" class="flex items-center gap-3 relative z-10">
-                    <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center shrink-0">
-                        <svg class="w-5 h-5 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 22h16"></path>
-                            <path d="M6 22V12h4v10"></path>
-                            <path d="M10 22V6h5v16"></path>
-                            <path d="M15 22v-9h4v9"></path>
-                        </svg>
-                    </div>
+                <a href="index.html" class="flex items-center gap-2 relative z-10">
+                    <img src="assets/images/home/logo.webp" alt="HouseBox" class="h-9 w-auto">
                     <span class="text-[20px] font-extrabold text-black tracking-tight">HOUSEBOX</span>
                 </a>
             </div>
@@ -75,12 +68,16 @@
                         <svg class="w-3.5 h-3.5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
                     </a>
                     
-                    <!-- Mega Menu Dropdown -->
-                    <div class="absolute top-full left-0 w-full bg-white rounded-b shadow-[0_15px_40px_rgba(0,0,0,0.12)] p-6 md:p-8 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 translate-y-2 group-hover:translate-y-0 z-50">
+                    <!-- Mega Menu Dropdown Shell -->
+                    <div class="absolute top-full left-0 w-full z-50 pointer-events-none group-hover:pointer-events-auto">
                         <!-- Invisible bridge to prevent hover loss -->
                         <div class="absolute -top-6 left-0 w-full h-6 bg-transparent"></div>
                         
-                        <div class="grid grid-cols-4 gap-6">
+                        <!-- Animated Expanding Wrapper -->
+                        <div class="w-full bg-white rounded-b shadow-[0_15px_40px_rgba(0,0,0,0.12)] grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows,opacity] duration-500 ease-out opacity-0 group-hover:opacity-100 overflow-hidden">
+                            <div class="overflow-hidden">
+                                <div class="p-6 md:p-8">
+                                    <div class="grid grid-cols-4 gap-6">
                             <!-- Card 1 -->
                             <div class="flex flex-col items-center gap-3 group/card cursor-pointer">
                                 <div class="relative w-full aspect-[5/4] rounded overflow-hidden border border-gray-100 shadow-sm bg-white">
@@ -135,6 +132,9 @@
                                     </div>
                                 </div>
                                 <span class="font-semibold text-gray-800 text-[15px]">Housebox - Homepage 04</span>
+                            </div>
+                            </div>
+                                </div>
                             </div>
                         </div>
                     </div>
