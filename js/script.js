@@ -1,7 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
     
+    // 0. Initialize Lenis Smooth Scrolling
+    const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // standard ease out
+        direction: 'vertical',
+        gestureDirection: 'vertical',
+        smooth: true,
+        mouseMultiplier: 1,
+        smoothTouch: false,
+        touchMultiplier: 2,
+        infinite: false,
+    });
+
+    // Request Animation Frame loop for Lenis
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+    
     // 1. Navbar Logic (now hardcoded in index.html)
-    // initializeNavbarLogic(); // Call if needed
 
     // 2. Search Tabs Logic
     const tabs = document.querySelectorAll('.tab-btn');
