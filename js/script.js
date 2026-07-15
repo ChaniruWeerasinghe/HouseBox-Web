@@ -116,6 +116,49 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }, 4500);
     }
+
+    // 5. Search Overlay Logic
+    const searchBtn = document.getElementById('search-btn');
+    const searchOverlay = document.getElementById('search-overlay');
+    const searchBackdrop = document.getElementById('search-backdrop');
+    const searchBox = document.getElementById('search-box');
+    const searchClose = document.getElementById('search-close');
+    const searchInput = document.getElementById('search-input');
+
+    if (searchBtn && searchOverlay) {
+        function openSearch() {
+            searchOverlay.classList.remove('pointer-events-none');
+            searchOverlay.classList.add('pointer-events-auto');
+            searchBackdrop.classList.remove('opacity-0');
+            searchBackdrop.classList.add('opacity-100');
+            searchBox.classList.remove('-translate-y-full');
+            searchBox.classList.add('translate-y-0');
+            setTimeout(() => searchInput.focus(), 300);
+        }
+        
+        function closeSearch() {
+            searchOverlay.classList.remove('pointer-events-auto');
+            searchOverlay.classList.add('pointer-events-none');
+            searchBackdrop.classList.remove('opacity-100');
+            searchBackdrop.classList.add('opacity-0');
+            searchBox.classList.remove('translate-y-0');
+            searchBox.classList.add('-translate-y-full');
+        }
+
+        searchBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openSearch();
+        });
+
+        searchClose.addEventListener('click', closeSearch);
+        searchBackdrop.addEventListener('click', closeSearch);
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && searchOverlay.classList.contains('pointer-events-auto')) {
+                closeSearch();
+            }
+        });
+    }
 });
 
 // Logic that applies to the dynamically loaded navbar
