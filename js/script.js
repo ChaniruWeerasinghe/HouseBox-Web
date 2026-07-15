@@ -41,6 +41,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // 4. Hero Background Slider
+    const heroSlides = document.querySelectorAll('#hero-slider > div');
+    if (heroSlides.length > 0) {
+        let currentSlide = 0;
+        setInterval(() => {
+            // Fade out current
+            heroSlides[currentSlide].classList.remove('opacity-100');
+            heroSlides[currentSlide].classList.add('opacity-0');
+            
+            // Move to next
+            currentSlide = (currentSlide + 1) % heroSlides.length;
+            
+            // Fade in next
+            heroSlides[currentSlide].classList.remove('opacity-0');
+            heroSlides[currentSlide].classList.add('opacity-100');
+        }, 2000); // changes every 2 seconds
+    }
 });
 
 // Logic that applies to the dynamically loaded navbar
