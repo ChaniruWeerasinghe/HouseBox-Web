@@ -283,6 +283,65 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleA = !toggleA;
         }, 1500);
     }
+
+    // 9. Accordion Menu Logic
+    const accordionItems = document.querySelectorAll('.accordion-item');
+    if (accordionItems.length > 0) {
+        accordionItems.forEach(item => {
+            item.addEventListener('click', () => {
+                // If clicking an already active item, do nothing (keep it open) or toggle?
+                // Standard accordions toggle, but screenshots imply one is always active.
+                
+                // Remove active styles from all items
+                accordionItems.forEach(el => {
+                    el.classList.remove('active', 'bg-[#0f4a47]', 'text-white');
+                    el.classList.add('bg-white', 'text-gray-900');
+                    
+                    const elIconWrapper = el.querySelector('.icon-wrapper');
+                    if(elIconWrapper) {
+                        elIconWrapper.classList.remove('bg-white');
+                        elIconWrapper.classList.add('bg-[#0f4a47]');
+                        
+                        const elSvg = elIconWrapper.querySelector('svg');
+                        if (elSvg) {
+                            elSvg.classList.remove('text-gray-900');
+                            elSvg.classList.add('text-white');
+                            // Replace UP arrow with DOWN arrow
+                            elSvg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>';
+                        }
+                    }
+                    
+                    const elContent = el.querySelector('.accordion-content');
+                    if(elContent) {
+                        elContent.classList.add('hidden');
+                    }
+                });
+                
+                // Add active styles to clicked item
+                item.classList.remove('bg-white', 'text-gray-900');
+                item.classList.add('active', 'bg-[#0f4a47]', 'text-white');
+                
+                const iconWrapper = item.querySelector('.icon-wrapper');
+                if(iconWrapper) {
+                    iconWrapper.classList.remove('bg-[#0f4a47]');
+                    iconWrapper.classList.add('bg-white');
+                    
+                    const svg = iconWrapper.querySelector('svg');
+                    if (svg) {
+                        svg.classList.remove('text-white');
+                        svg.classList.add('text-gray-900');
+                        // Replace DOWN arrow with UP arrow
+                        svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>';
+                    }
+                }
+                
+                const content = item.querySelector('.accordion-content');
+                if(content) {
+                    content.classList.remove('hidden');
+                }
+            });
+        });
+    }
 });
 
 // Logic that applies to the dynamically loaded navbar
