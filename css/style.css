@@ -71,10 +71,10 @@ body {
 
 /* Buoyant Title Reveal Animation */
 @keyframes buoyantReveal {
-    0% { transform: translateY(25px); opacity: 0; }
-    40% { transform: translateY(-8px); opacity: 1; }
-    65% { transform: translateY(4px); }
-    85% { transform: translateY(-2px); }
+    0% { transform: translateY(12px); opacity: 0; }
+    40% { transform: translateY(-4px); opacity: 1; }
+    65% { transform: translateY(2px); }
+    85% { transform: translateY(-1px); }
     100% { transform: translateY(0); opacity: 1; }
 }
 
@@ -85,7 +85,7 @@ body {
 .bounce-letter {
     display: inline-block;
     opacity: 0;
-    transform: translateY(25px);
+    transform: translateY(12px);
 }
 
 .title-bounce.is-bouncing .bounce-letter {
