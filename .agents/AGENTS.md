@@ -9,3 +9,6 @@ When cloning UI from screenshots provided by Chaniru:
 - For every image in the screenshots, create an image folder corresponding to the page name.
 - Instruct Chaniru exactly where to save each image and what name to give it.
 - Once Chaniru adds the images to the project, Antigravity must automatically convert all images to `.webp` format.
+
+## Reusable Components
+Before coding a new section (like a header, footer, or card), always check the project directory (especially the `components/` folder) to see if a reusable component already exists. Do not write duplicate code if a component can be reused or updated.
