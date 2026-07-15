@@ -23,7 +23,7 @@ const sectionHTML = `
             <div class="w-full grid grid-cols-12 gap-10 items-stretch">
                 
                 <!-- Left: Accordion List -->
-                <div class="col-span-4 flex flex-col gap-4 w-full">
+                <div class="col-span-4 flex flex-col justify-center gap-4 w-full h-full">
                     
                     <!-- Accordion Item 1 (Active by default) -->
                     <div class="accordion-item active bg-[#0f4a47] text-white p-6 rounded-[12px] shadow-sm cursor-pointer transition-colors duration-300">
