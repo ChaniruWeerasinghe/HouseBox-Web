@@ -65,6 +65,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Slide thumbnails up by exactly one circle + gap (80px + 20px = 100px)
             if (thumbContainer) {
+                const thumbs = thumbContainer.children;
+                if(thumbs.length > 1) {
+                    // Update borders during the slide transition
+                    thumbs[0].classList.remove('border-white');
+                    thumbs[0].classList.add('border-dark');
+                    
+                    thumbs[1].classList.remove('border-dark');
+                    thumbs[1].classList.add('border-white');
+                }
+
                 thumbContainer.style.transform = `translateY(-100px)`;
                 
                 setTimeout(() => {
