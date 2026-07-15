@@ -448,6 +448,101 @@
         </div>
     </main>
 
+    <!-- About Section -->
+    <section class="py-24 bg-white relative">
+        <div class="max-w-[1320px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-20 items-center">
+            
+            <!-- Left: Image Collage -->
+            <div class="relative w-full pr-4">
+                <div class="grid grid-cols-2 gap-5">
+                    <!-- Tall Image -->
+                    <div class="rounded-[16px] overflow-hidden h-[620px] mt-8 bg-gray-200">
+                        <img src="assets/images/home/about-tall.webp" alt="Modern Building" class="w-full h-full object-cover">
+                    </div>
+                    
+                    <!-- Right Stack -->
+                    <div class="flex flex-col gap-5">
+                        <div class="rounded-[16px] overflow-hidden h-[300px] bg-gray-200">
+                            <img src="assets/images/home/about-top.webp" alt="House on water" class="w-full h-full object-cover">
+                        </div>
+                        <div class="rounded-[16px] overflow-hidden h-[300px] bg-gray-200">
+                            <img src="assets/images/home/about-bottom.webp" alt="House with lawn" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Floating Customer Card -->
+                <div class="absolute top-[55%] left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-[16px] shadow-[0_20px_60px_rgba(0,0,0,0.08)] py-5 px-6 w-max z-10 flex flex-col items-center gap-3 border border-gray-50">
+                    <h4 class="font-semibold text-gray-900 text-[17px]">Our Happy Customer</h4>
+                    <div class="flex -space-x-3 items-center">
+                        <img src="assets/images/home/avatar-1.webp" alt="User 1" class="w-[42px] h-[42px] rounded-full border-[3px] border-white object-cover bg-gray-200">
+                        <img src="assets/images/home/avatar-2.webp" alt="User 2" class="w-[42px] h-[42px] rounded-full border-[3px] border-white object-cover bg-gray-200">
+                        <img src="assets/images/home/avatar-3.webp" alt="User 3" class="w-[42px] h-[42px] rounded-full border-[3px] border-white object-cover bg-gray-200">
+                        <img src="assets/images/home/avatar-4.webp" alt="User 4" class="w-[42px] h-[42px] rounded-full border-[3px] border-white object-cover bg-gray-200">
+                        <div class="w-[42px] h-[42px] rounded-full border-[3px] border-white bg-primary flex items-center justify-center text-black font-semibold text-[13px] relative z-10 shadow-sm">
+                            2K+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right: Content -->
+            <div class="flex flex-col items-start gap-8">
+                <!-- Top pill -->
+                <div class="bg-[#eef5f4] text-[#2c6e64] px-4 py-1.5 rounded text-[15px] font-medium tracking-wide">
+                    About Housebox
+                </div>
+                
+                <!-- Heading -->
+                <h2 class="text-[52px] leading-[1.1] font-bold text-gray-900 tracking-tight">
+                    Embrace the Elegance<br>Our Exclusive Property
+                </h2>
+                
+                <!-- Description -->
+                <p class="text-gray-600 text-lg leading-[1.8] max-w-[620px]">
+                    At HouseBox, we're redefining the way people find, sell, and invest in properties. Our mission is to simplify real a estate by provide innovative solutions, expert guidance.
+                </p>
+                
+                <!-- Divider -->
+                <div class="w-full h-px bg-gray-100 my-1"></div>
+                
+                <!-- Stats Grid -->
+                <div class="grid grid-cols-3 gap-12 w-full">
+                    <div class="flex flex-col items-start gap-1.5">
+                        <span class="text-[46px] font-bold text-gray-900 leading-none tracking-tight">10K</span>
+                        <span class="text-gray-500 font-medium text-[15px]">Homes Sold</span>
+                    </div>
+                    <div class="flex flex-col items-start gap-1.5">
+                        <span class="text-[46px] font-bold text-gray-900 leading-none tracking-tight">9K</span>
+                        <span class="text-gray-500 font-medium text-[15px]">Happy Client</span>
+                    </div>
+                    <div class="flex flex-col items-start gap-1.5">
+                        <span class="text-[46px] font-bold text-gray-900 leading-none tracking-tight">98%</span>
+                        <span class="text-gray-500 font-medium text-[15px]">Satisfaction Rate</span>
+                    </div>
+                </div>
+                
+                <!-- Divider -->
+                <div class="w-full h-px bg-gray-100 my-1"></div>
+                
+                <!-- Button -->
+                <a href="#" class="inline-flex items-center justify-center gap-2 bg-primary hover:bg-yellow-500 text-black font-semibold text-[15px] px-8 py-3.5 rounded-md mt-2 transition-transform hover:-translate-y-px">
+                    See All Properties
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 19L19 5M19 5v10M19 5H9"></path></svg>
+                </a>
+            </div>
+            
+        </div>
+        
+        <!-- Decorative Scroll/Arrow Element on Bottom Right -->
+        <div class="absolute bottom-10 right-12 opacity-80 pointer-events-none">
+            <svg width="40" height="40" viewBox="0 0 100 100" fill="none" stroke="black" stroke-width="3">
+                <path d="M50 70 V30 M35 45 L50 30 L65 45" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M70 20 Q 90 20, 90 40" stroke-linecap="round"/>
+            </svg>
+        </div>
+    </section>
+
     <!-- Search Overlay -->
     <div id="search-overlay" class="fixed inset-0 z-[200] pointer-events-none flex items-start justify-center overflow-hidden">
         <!-- Backdrop -->
