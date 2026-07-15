@@ -50,13 +50,17 @@ images.forEach((img, index) => {
 
     cardsHTML += `
                 <!-- Location Card ${index + 1} -->
-                <div class="${colSpan} location-reveal relative w-full h-[320px] rounded-[16px] overflow-hidden group cursor-pointer shadow-sm bg-gray-200" style="transition-delay: ${index * 150}ms;" data-swap-group="${swapGroup}" data-images="${altImages[index]}" data-current-index="0">
+                <div class="location-reveal relative w-full h-[320px] rounded-[8px] overflow-hidden group cursor-pointer shadow-sm bg-gray-200" style="transition-delay: ${index * 150}ms;" data-swap-group="${swapGroup}" data-images="${altImages[index]}" data-current-index="0">
                     <img src="assets/images/home/${img}" alt="Location View" class="img-back w-full h-full object-cover absolute inset-0 z-0">
                     <img src="assets/images/home/${img}" alt="Location View" class="img-front w-full h-full object-cover absolute inset-0 z-10 transition-all duration-700 group-hover:scale-105">
                     ${dotsHTML}
                 </div>
 `;
 });
+
+// Split the cards into two rows
+const row1HTML = cardsHTML.split('<!-- Location Card 4 -->')[0];
+const row2HTML = '<!-- Location Card 4 -->' + cardsHTML.split('<!-- Location Card 4 -->')[1];
 
 const sectionHTML = `
     <!-- ============================================ -->
@@ -78,9 +82,14 @@ const sectionHTML = `
             </div>
 
             <!-- Locations Grid -->
-            <div class="w-full relative mt-4">
-                <div class="w-full grid grid-cols-9 gap-6">
-${cardsHTML}
+            <div class="w-full relative mt-4 flex flex-col gap-6">
+                <!-- Row 1 (2 : 2.8 : 3.6) -->
+                <div class="w-full grid gap-6" style="grid-template-columns: 2fr 2.8fr 3.6fr;">
+${row1HTML}
+                </div>
+                <!-- Row 2 (3.6 : 2.8 : 2) -->
+                <div class="w-full grid gap-6" style="grid-template-columns: 3.6fr 2.8fr 2fr;">
+${row2HTML}
                 </div>
                 
                 <!-- Floating Next Arrow -->
