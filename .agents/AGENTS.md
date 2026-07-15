@@ -2,12 +2,13 @@
 
 ## Committing Rule
 Commit after each major step is done. However, if Antigravity makes changes and asks for clarifications, and the user (Chaniru) ignores the question and asks to do another step (meaning the previous work has no issues), then Antigravity can commit those previous changes before starting the new step.
+Also u need to think, dont commit after each small step is done, we need at leats some stuff have done, otherwise no point right.
 
 ## UI Clone Workflow
 When cloning UI from screenshots provided by Chaniru:
 - Recreate the exact same design using HTML/CSS/JS.
 - For every image in the screenshots, create an image folder corresponding to the page name.
-- Instruct Chaniru exactly where to save each image and what name to give it.
+- Instruct Chaniru exactly where to save each image and what name to give it (always include the file extension, e.g., `.png` or `.jpg`).
 - Once Chaniru adds the images to the project, Antigravity must automatically convert all images to `.webp` format.
 
 ## Reusable Components
