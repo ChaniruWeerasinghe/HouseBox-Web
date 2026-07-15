@@ -1,25 +1,30 @@
-<nav class="fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl bg-white rounded-2xl px-6 py-3 z-[100] shadow-[0_4px_20px_rgba(0,0,0,0.05)] flex justify-between items-center">
-    <a href="index.html" class="flex items-center">
-        <img src="assets/images/home/logo.webp" alt="HouseBox Logo" id="site-logo" class="h-9 block">
+<nav class="fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-[1400px] bg-white rounded-[12px] px-4 md:px-6 py-3 z-[100] shadow-[0_4px_20px_rgba(0,0,0,0.05)] flex justify-between items-center">
+    <a href="index.html" class="flex items-center gap-2">
+        <img src="assets/images/home/logo.webp" alt="HouseBox Logo" id="site-logo" class="h-10 w-auto object-contain">
+        <span class="text-[22px] font-extrabold text-gray-900 tracking-tight">HOUSEBOX</span>
     </a>
     
-    <ul class="flex gap-6 items-center">
-        <li><a href="#" class="text-gray-800 font-medium text-[15px] flex items-center gap-1 hover:text-dark transition-colors">Home <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"><path fill="currentColor" d="M213.66 101.66l-80 80a8 8 0 0 1-11.32 0l-80-80a8 8 0 0 1 11.32-11.32L128 164.69l74.34-74.35a8 8 0 0 1 11.32 11.32z"/></svg></a></li>
-        <li><a href="#" class="text-gray-800 font-medium text-[15px] flex items-center gap-1 hover:text-dark transition-colors">Pages <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"><path fill="currentColor" d="M213.66 101.66l-80 80a8 8 0 0 1-11.32 0l-80-80a8 8 0 0 1 11.32-11.32L128 164.69l74.34-74.35a8 8 0 0 1 11.32 11.32z"/></svg></a></li>
-        <li><a href="#" class="text-gray-800 font-medium text-[15px] flex items-center gap-1 hover:text-dark transition-colors">Listing <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"><path fill="currentColor" d="M213.66 101.66l-80 80a8 8 0 0 1-11.32 0l-80-80a8 8 0 0 1 11.32-11.32L128 164.69l74.34-74.35a8 8 0 0 1 11.32 11.32z"/></svg></a></li>
-        <li><a href="#" class="text-gray-800 font-medium text-[15px] flex items-center gap-1 hover:text-dark transition-colors">Properties <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"><path fill="currentColor" d="M213.66 101.66l-80 80a8 8 0 0 1-11.32 0l-80-80a8 8 0 0 1 11.32-11.32L128 164.69l74.34-74.35a8 8 0 0 1 11.32 11.32z"/></svg></a></li>
-        <li><a href="#" class="text-gray-800 font-medium text-[15px] flex items-center gap-1 hover:text-dark transition-colors">Dashboard <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"><path fill="currentColor" d="M213.66 101.66l-80 80a8 8 0 0 1-11.32 0l-80-80a8 8 0 0 1 11.32-11.32L128 164.69l74.34-74.35a8 8 0 0 1 11.32 11.32z"/></svg></a></li>
-        <li><a href="#" class="text-gray-800 font-medium text-[15px] flex items-center gap-1 hover:text-dark transition-colors">Blogs <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"><path fill="currentColor" d="M213.66 101.66l-80 80a8 8 0 0 1-11.32 0l-80-80a8 8 0 0 1 11.32-11.32L128 164.69l74.34-74.35a8 8 0 0 1 11.32 11.32z"/></svg></a></li>
+    <ul class="hidden lg:flex items-center gap-8">
+        <li><a href="#" class="text-gray-800 font-medium text-[15px] flex items-center gap-1.5 hover:text-primary transition-colors">Home <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></a></li>
+        <li><a href="#" class="text-gray-800 font-medium text-[15px] flex items-center gap-1.5 hover:text-primary transition-colors">Pages <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></a></li>
+        <li><a href="#" class="text-gray-800 font-medium text-[15px] flex items-center gap-1.5 hover:text-primary transition-colors">Listing <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></a></li>
+        <li><a href="#" class="text-gray-800 font-medium text-[15px] flex items-center gap-1.5 hover:text-primary transition-colors">Properties <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></a></li>
+        <li><a href="#" class="text-gray-800 font-medium text-[15px] flex items-center gap-1.5 hover:text-primary transition-colors">Dashboard <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></a></li>
+        <li><a href="#" class="text-gray-800 font-medium text-[15px] flex items-center gap-1.5 hover:text-primary transition-colors">Blogs <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></a></li>
     </ul>
 
-    <div class="flex items-center gap-4">
-        <button class="text-gray-800 hover:text-primary transition-colors flex items-center justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256"><path fill="currentColor" d="M229.66 218.34l-50.07-50.06a88.11 88.11 0 1 0-11.31 11.31l50.06 50.07a8 8 0 0 0 11.32-11.32zM40 112a72 72 0 1 1 72 72a72.08 72.08 0 0 1-72-72z"/></svg>
+    <div class="flex items-center">
+        <button class="p-2 text-gray-800 hover:text-primary transition-colors">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
         </button>
-        <div class="w-px h-6 bg-gray-200"></div>
-        <a href="#" class="bg-primary hover:bg-yellow-500 text-black font-semibold text-sm px-5 py-2.5 rounded-lg flex items-center gap-2 transition-transform hover:-translate-y-px">
-            View Listing 
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"><path fill="currentColor" d="M200 64v104a8 8 0 0 1-16 0V83.31L69.66 197.66a8 8 0 0 1-11.32-11.32L172.69 72H88a8 8 0 0 1 0-16h104a8 8 0 0 1 8 8z"/></svg>
+        <div class="w-px h-6 bg-gray-300 mx-3 md:mx-5"></div>
+        <a href="#" class="bg-primary hover:bg-yellow-400 text-gray-900 font-semibold text-[15px] px-6 py-2.5 rounded-[8px] flex items-center gap-2 transition-colors">
+            View Listing
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 19L19 5M19 5v10M19 5H9"></path>
+            </svg>
         </a>
     </div>
 </nav>
