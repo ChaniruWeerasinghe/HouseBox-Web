@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HouseBox - Elegant Homes For Elevated Lifestyles</title>
+    <meta name="description" content="Discover Your Ideal Property Today!">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (CDN for simple HTML projects) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#ffc107', /* Yellow from design */
+                        dark: '#114c54',    /* Deep teal */
+                        lightbg: '#f3f4f6'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-lightbg text-gray-800 font-sans antialiased overflow-x-hidden">
+
+    <!-- Navbar injected here via JS -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Hero Section -->
+    <main class="relative w-screen h-screen min-h-[700px] flex items-center overflow-hidden">
+        
+        <!-- Right Background Image -->
+        <div class="absolute top-0 right-0 w-full h-full bg-[url('assets/images/home/hero-main.webp')] bg-cover bg-center z-0"></div>
+        
+        <!-- Left Diagonal Background -->
+        <!-- Using skew to create the diagonal effect and a border for the white line -->
+        <div class="absolute top-0 -left-[20%] w-[75%] h-full bg-dark skew-x-[-15deg] border-r-[8px] border-white z-10 overflow-hidden shadow-[10px_0_30px_rgba(0,0,0,0.1)]">
+            <!-- Inner container to reverse skew for the background image -->
+            <div class="absolute top-0 left-0 w-[130%] h-full skew-x-[15deg] bg-[url('assets/images/home/hero-left-bg.webp')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
+        </div>
+        
+        <!-- Content Container -->
+        <div class="max-w-[1320px] mx-auto px-6 w-full h-full relative z-20 flex justify-between items-center">
+            
+            <!-- Left Text Content -->
+            <div class="max-w-[550px] text-white -mt-16">
+                <div class="inline-block bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-lg text-[15px] font-medium mb-6">
+                    Discover Your Ideal Property Today!
+                </div>
+                <h1 class="text-[56px] leading-[1.1] font-bold mb-8">
+                    Elegant Homes For Elevated Lifestyles
+                </h1>
+                <a href="#" class="inline-flex items-center justify-center gap-2 bg-primary hover:bg-yellow-500 text-black font-semibold text-base px-7 py-3.5 rounded-lg transition-transform hover:-translate-y-px">
+                    Find Your Dream Home Now
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"><path fill="currentColor" d="M200 64v104a8 8 0 0 1-16 0V83.31L69.66 197.66a8 8 0 0 1-11.32-11.32L172.69 72H88a8 8 0 0 1 0-16h104a8 8 0 0 1 8 8z"/></svg>
+                </a>
+            </div>
+            
+            <!-- Right Circular Thumbnails -->
+            <div class="flex flex-col gap-4 -mr-10">
+                <div class="w-20 h-20 rounded-full border-4 border-white overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.15)] bg-white">
+                    <img src="assets/images/home/thumb-1.webp" alt="Property 1" class="w-full h-full object-cover">
+                </div>
+                <div class="w-20 h-20 rounded-full border-4 border-dark overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.15)] bg-white">
+                    <img src="assets/images/home/thumb-2.webp" alt="Property 2" class="w-full h-full object-cover">
+                </div>
+                <div class="w-20 h-20 rounded-full border-4 border-white overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.15)] bg-white">
+                    <img src="assets/images/home/thumb-3.webp" alt="Property 3" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Search Widget -->
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] max-w-[1100px] z-30">
+            <div class="flex">
+                <button class="tab-btn active px-10 py-3.5 text-[15px] font-semibold bg-primary text-black rounded-t-xl transition-colors">For Sale</button>
+                <button class="tab-btn px-10 py-3.5 text-[15px] font-semibold bg-lightbg text-gray-800 rounded-t-xl transition-colors">For Rent</button>
+            </div>
+            
+            <div class="flex items-center bg-white p-6 rounded-b-xl rounded-tr-xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] gap-5">
+                <!-- Status -->
+                <div class="flex-1 flex flex-col gap-2">
+                    <label class="text-sm font-semibold text-gray-800">Status</label>
+                    <div class="custom-select flex justify-between items-center bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-500 text-sm cursor-pointer transition-colors border border-transparent">
+                        <span>All Status</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"><path fill="currentColor" d="M213.66 101.66l-80 80a8 8 0 0 1-11.32 0l-80-80a8 8 0 0 1 11.32-11.32L128 164.69l74.34-74.35a8 8 0 0 1 11.32 11.32z"/></svg>
+                    </div>
+                </div>
+                
+                <div class="w-px h-10 bg-gray-200 hidden lg:block"></div>
+                
+                <!-- Labels -->
+                <div class="flex-1 flex flex-col gap-2">
+                    <label class="text-sm font-semibold text-gray-800">Labels</label>
+                    <div class="custom-select flex justify-between items-center bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-500 text-sm cursor-pointer transition-colors border border-transparent">
+                        <span>All Labels</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"><path fill="currentColor" d="M213.66 101.66l-80 80a8 8 0 0 1-11.32 0l-80-80a8 8 0 0 1 11.32-11.32L128 164.69l74.34-74.35a8 8 0 0 1 11.32 11.32z"/></svg>
+                    </div>
+                </div>
+                
+                <div class="w-px h-10 bg-gray-200 hidden lg:block"></div>
+                
+                <!-- Types -->
+                <div class="flex-1 flex flex-col gap-2">
+                    <label class="text-sm font-semibold text-gray-800">Types</label>
+                    <div class="custom-select flex justify-between items-center bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-500 text-sm cursor-pointer transition-colors border border-transparent">
+                        <span>All Types</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"><path fill="currentColor" d="M213.66 101.66l-80 80a8 8 0 0 1-11.32 0l-80-80a8 8 0 0 1 11.32-11.32L128 164.69l74.34-74.35a8 8 0 0 1 11.32 11.32z"/></svg>
+                    </div>
+                </div>
+                
+                <div class="w-px h-10 bg-gray-200 hidden lg:block"></div>
+                
+                <!-- Customize -->
+                <div class="flex-1 flex flex-col gap-2">
+                    <label class="text-sm font-semibold text-gray-800">Customize</label>
+                    <div class="custom-select flex justify-between items-center bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-500 text-sm cursor-pointer transition-colors border border-transparent">
+                        <span>Advance</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"><path fill="currentColor" d="M224 64a8 8 0 0 1-8 8H40a8 8 0 0 1 0-16h176a8 8 0 0 1 8 8zM40 136h176a8 8 0 0 0 0-16H40a8 8 0 0 0 0 16zm176 56H40a8 8 0 0 0 0 16h176a8 8 0 0 0 0-16z"/></svg>
+                    </div>
+                </div>
+                
+                <button class="bg-primary hover:bg-yellow-500 text-black font-semibold text-base px-8 py-3.5 h-full rounded-lg flex items-center gap-2 transition-transform hover:-translate-y-px">
+                    Search 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"><path fill="currentColor" d="M229.66 218.34l-50.07-50.06a88.11 88.11 0 1 0-11.31 11.31l50.06 50.07a8 8 0 0 0 11.32-11.32zM40 112a72 72 0 1 1 72 72a72.08 72.08 0 0 1-72-72z"/></svg>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
