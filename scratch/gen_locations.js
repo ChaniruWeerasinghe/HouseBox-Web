@@ -50,7 +50,7 @@ images.forEach((img, index) => {
 
     cardsHTML += `
                 <!-- Location Card ${index + 1} -->
-                <div class="${colSpan} location-reveal relative w-full h-[320px] rounded-[16px] overflow-hidden group cursor-pointer shadow-sm bg-gray-200" data-swap-group="${swapGroup}" data-images="${altImages[index]}" data-current-index="0">
+                <div class="${colSpan} location-reveal relative w-full h-[320px] rounded-[16px] overflow-hidden group cursor-pointer shadow-sm bg-gray-200" style="transition-delay: ${index * 150}ms;" data-swap-group="${swapGroup}" data-images="${altImages[index]}" data-current-index="0">
                     <img src="assets/images/home/${img}" alt="Location View" class="img-back w-full h-full object-cover absolute inset-0 z-0">
                     <img src="assets/images/home/${img}" alt="Location View" class="img-front w-full h-full object-cover absolute inset-0 z-10 transition-all duration-700 group-hover:scale-105">
                     ${dotsHTML}
