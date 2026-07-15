@@ -314,6 +314,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     const elContent = el.querySelector('.accordion-content');
                     if(elContent) {
                         elContent.classList.add('hidden');
+                        elContent.classList.remove('text-gray-200');
+                        elContent.classList.add('text-gray-600');
                     }
                 });
                 
@@ -338,6 +340,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const content = item.querySelector('.accordion-content');
                 if(content) {
                     content.classList.remove('hidden');
+                    content.classList.remove('text-gray-600');
+                    content.classList.add('text-gray-200');
                 }
             });
         });
