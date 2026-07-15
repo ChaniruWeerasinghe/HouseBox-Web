@@ -6,3 +6,45 @@ body {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none;    /* Firefox */
 }
+
+/* Image white mist overlay-openDoors */
+@keyframes Image-white-mist-overlay-openDoors {
+    0% {
+        transform: translate(-50%, 0) skewX(-45deg) scaleX(0);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(-50%, 0) skewX(-45deg) scaleX(3);
+        opacity: 0;
+    }
+}
+
+.openDoors-container {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.openDoors-container img {
+    transition: none; /* Reset instantly on leave */
+}
+
+.openDoors-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.6);
+    transform: translate(-50%, 0) skewX(-45deg) scaleX(0);
+    z-index: 5;
+    pointer-events: none;
+    opacity: 0;
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+}
+
+.openDoors-container:hover::before {
+    animation: Image-white-mist-overlay-openDoors 1.8s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+}
