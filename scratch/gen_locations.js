@@ -35,10 +35,24 @@ images.forEach((img, index) => {
     else if (index === 4) colSpan = 'col-span-3';
     else if (index === 5) colSpan = 'col-span-2';
 
+    // Determine swap group
+    let swapGroup = (index === 0 || index === 4) ? 'A' : 'B';
+    
+    // Pick an alternate images array
+    const altImages = [
+        "hero-main-1.webp,hero-main-2.webp,hero-main-3.webp",
+        "about-tall.webp,about-bottom.webp,hero-left-bg.webp",
+        "hero-main-4.webp,about-top.webp,hero-main.webp",
+        "hero-main-2.webp,hero-left-bg.webp,about-tall.webp",
+        "about-bottom.webp,hero-main-3.webp,hero-main-1.webp",
+        "hero-main.webp,hero-main-4.webp,about-top.webp"
+    ];
+
     cardsHTML += `
                 <!-- Location Card ${index + 1} -->
-                <div class="${colSpan} relative w-full h-[320px] rounded-[16px] overflow-hidden group cursor-pointer shadow-sm">
-                    <img src="assets/images/home/${img}" alt="Location View" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="${colSpan} location-reveal relative w-full h-[320px] rounded-[16px] overflow-hidden group cursor-pointer shadow-sm bg-gray-200" data-swap-group="${swapGroup}" data-images="${altImages[index]}" data-current-index="0">
+                    <img src="assets/images/home/${img}" alt="Location View" class="img-back w-full h-full object-cover absolute inset-0 z-0">
+                    <img src="assets/images/home/${img}" alt="Location View" class="img-front w-full h-full object-cover absolute inset-0 z-10 transition-all duration-700 group-hover:scale-105">
                     ${dotsHTML}
                 </div>
 `;

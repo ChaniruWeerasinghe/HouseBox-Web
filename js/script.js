@@ -160,8 +160,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 6. Intersection Observer for Image Reveals and Title Bounces
-    const revealElements = document.querySelectorAll('.reveal-clip, .title-bounce');
+    // 6. Intersection Observer for Image Reveals, Title Bounces, and Location Cards
+    const revealElements = document.querySelectorAll('.reveal-clip, .title-bounce, .location-reveal');
     
     // Pre-process title-bounce elements for letter-by-letter animation
     document.querySelectorAll('.title-bounce').forEach(title => {
@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     setTimeout(() => {
-                        if (entry.target.classList.contains('reveal-clip')) {
+                        if (entry.target.classList.contains('reveal-clip') || entry.target.classList.contains('location-reveal')) {
                             entry.target.classList.add('is-revealed');
                         }
                         if (entry.target.classList.contains('title-bounce')) {
@@ -239,6 +239,49 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         statCounters.forEach(counter => statObserver.observe(counter));
+    }
+
+    // 8. Locations Image Swapping Animation
+    const swapGroupA = document.querySelectorAll('[data-swap-group="A"]');
+    const swapGroupB = document.querySelectorAll('[data-swap-group="B"]');
+    
+    if (swapGroupA.length > 0 && swapGroupB.length > 0) {
+        let toggleA = true;
+        
+        function swapImages(cards) {
+            cards.forEach(card => {
+                const imgFront = card.querySelector('.img-front');
+                const imgBack = card.querySelector('.img-back');
+                if (!imgFront || !imgBack) return;
+                
+                const images = card.dataset.images.split(',');
+                let currentIndex = parseInt(card.dataset.currentIndex || '0');
+                let nextIndex = (currentIndex + 1) % images.length;
+                card.dataset.currentIndex = nextIndex;
+                
+                // Set the bottom image to the next picture
+                imgBack.src = `assets/images/home/${images[nextIndex]}`;
+                
+                // Fade out the top image to reveal the bottom one
+                imgFront.style.opacity = '0';
+                
+                // After fade finishes (700ms), snap top image to the new one and reset opacity
+                setTimeout(() => {
+                    imgFront.src = imgBack.src;
+                    imgFront.style.opacity = '1';
+                }, 750); 
+            });
+        }
+        
+        // Run swap every 1.5 seconds alternating between group A and B
+        setInterval(() => {
+            if (toggleA) {
+                swapImages(swapGroupA);
+            } else {
+                swapImages(swapGroupB);
+            }
+            toggleA = !toggleA;
+        }, 1500);
     }
 });
 
