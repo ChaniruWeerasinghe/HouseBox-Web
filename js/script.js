@@ -443,8 +443,10 @@ document.addEventListener('DOMContentLoaded', () => {
         let currentIndex = 0;
 
         function updateCarousel(index) {
-            // Fade out
+            // Slide out to the left
+            featInfoPanel.style.transition = 'all 0.3s ease-in-out';
             featInfoPanel.style.opacity = '0';
+            featInfoPanel.style.transform = 'translateX(-40px)';
 
             setTimeout(() => {
                 const prop = properties[index];
@@ -460,9 +462,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 featAgentName.textContent = prop.agentName;
                 featPrice.textContent = prop.price;
 
-                // Fade in
+                // Snap to the right while invisible
+                featInfoPanel.style.transition = 'none';
+                featInfoPanel.style.transform = 'translateX(40px)';
+                
+                // Force a browser reflow to apply the instant transform
+                void featInfoPanel.offsetWidth;
+
+                // Slide into the center
+                featInfoPanel.style.transition = 'all 0.3s ease-in-out';
                 featInfoPanel.style.opacity = '1';
-            }, 300); // Wait for fade out transition (duration-300 = 300ms)
+                featInfoPanel.style.transform = 'translateX(0)';
+            }, 300); // Wait for slide out transition
         }
 
         // Loop automatically every 3 seconds
