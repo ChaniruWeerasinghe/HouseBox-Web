@@ -368,3 +368,110 @@ function initializeNavbarLogic() {
         });
     }
 }
+\n\n// Carousel logic for Featured Items section
+document.addEventListener('DOMContentLoaded', () => {
+    const featImg = document.getElementById('feat-img');
+    const featInfoPanel = document.getElementById('feat-info-panel');
+    
+    if (featImg && featInfoPanel) {
+        const featBadge1 = document.getElementById('feat-badge-1');
+        const featBadge2 = document.getElementById('feat-badge-2');
+        const featTitle = document.getElementById('feat-title');
+        const featLocation = document.getElementById('feat-location');
+        const featBeds = document.getElementById('feat-beds');
+        const featBaths = document.getElementById('feat-baths');
+        const featSqft = document.getElementById('feat-sqft');
+        const featAgentImg = document.getElementById('feat-agent-img');
+        const featAgentName = document.getElementById('feat-agent-name');
+        const featPrice = document.getElementById('feat-price');
+
+        const properties = [
+            {
+                img: 'assets/images/home/hero-left-bg-1.webp',
+                badge1: 'Featured',
+                badge2: 'For Rent',
+                title: 'Rancho Vista Verde, Santos Barba',
+                location: '742 Terrace, Springfield, IL 62704, USA',
+                beds: 'x12 Beds',
+                baths: 'x16 Baths',
+                sqft: '1200 sq',
+                agentImg: 'assets/images/home/avatar-1.webp',
+                agentName: 'Alex Roberts',
+                price: '$820,000'
+            },
+            {
+                img: 'assets/images/home/hero-main.webp',
+                badge1: 'Hot Deal',
+                badge2: 'For Sale',
+                title: 'Sunset Boulevard Estate, LA',
+                location: '124 Sunset Blvd, Los Angeles, CA 90028',
+                beds: 'x8 Beds',
+                baths: 'x10 Baths',
+                sqft: '3400 sq',
+                agentImg: 'assets/images/home/clientdp.png',
+                agentName: 'Sarah Jenkins',
+                price: '$1,450,000'
+            },
+            {
+                img: 'assets/images/home/thumb-1.webp',
+                badge1: 'New',
+                badge2: 'For Rent',
+                title: 'Lakeside Cabin Retreat',
+                location: '88 Lakeview Dr, Tahoe City, CA 96145',
+                beds: 'x4 Beds',
+                baths: 'x3 Baths',
+                sqft: '2100 sq',
+                agentImg: 'assets/images/home/avatar-1.webp',
+                agentName: 'Michael Chang',
+                price: '$4,200/mo'
+            },
+            {
+                img: 'assets/images/home/thumb-2.webp',
+                badge1: 'Luxury',
+                badge2: 'For Sale',
+                title: 'Modern Glass House',
+                location: '900 Skyline Ave, Portland, OR 97221',
+                beds: 'x6 Beds',
+                baths: 'x7 Baths',
+                sqft: '4500 sq',
+                agentImg: 'assets/images/home/clientdp.png',
+                agentName: 'Emily Clark',
+                price: '$2,100,000'
+            }
+        ];
+
+        let currentIndex = 0;
+
+        function updateCarousel(index) {
+            // Fade out
+            featImg.style.opacity = '0';
+            featInfoPanel.style.opacity = '0';
+
+            setTimeout(() => {
+                const prop = properties[index];
+                
+                featImg.src = prop.img;
+                featBadge1.textContent = prop.badge1;
+                featBadge2.textContent = prop.badge2;
+                featTitle.textContent = prop.title;
+                featLocation.textContent = prop.location;
+                featBeds.textContent = prop.beds;
+                featBaths.textContent = prop.baths;
+                featSqft.textContent = prop.sqft;
+                featAgentImg.src = prop.agentImg;
+                featAgentName.textContent = prop.agentName;
+                featPrice.textContent = prop.price;
+
+                // Fade in
+                featImg.style.opacity = '1';
+                featInfoPanel.style.opacity = '1';
+            }, 300); // Wait for fade out transition (duration-300 = 300ms)
+        }
+
+        // Loop automatically every 3 seconds
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % properties.length;
+            updateCarousel(currentIndex);
+        }, 3000);
+    }
+});
