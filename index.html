@@ -44,6 +44,30 @@
         .lenis.lenis-scrolling iframe {
             pointer-events: none;
         }
+        /* Custom Hero Slider Animations */
+        .slider-img {
+            opacity: 0;
+            transform: scale(1.05); /* Slightly zoomed when inactive to prevent hard snapping */
+            transition: opacity 1s ease-in-out, transform 2s ease-out;
+            will-change: transform, opacity;
+        }
+        .slider-img.active {
+            opacity: 1;
+            transform: scale(1.15); /* Aggressive zoom so it's very visible within 3 seconds */
+            transition: opacity 1s ease-in-out, transform 7s linear;
+        }
+        
+        .left-slider-img {
+            opacity: 0;
+            transform: scale(1.05);
+            transition: opacity 1s ease-in-out, transform 2s ease-out;
+            will-change: transform, opacity;
+        }
+        .left-slider-img.active {
+            opacity: 0.2; /* Merges with the dark teal background via mix-blend-overlay */
+            transform: scale(1.15);
+            transition: opacity 1s ease-in-out, transform 8s linear;
+        }
     </style>
 </head>
 <body class="bg-lightbg text-gray-800 font-sans antialiased overflow-x-hidden">
@@ -78,10 +102,10 @@
                             <div class="overflow-hidden">
                                 <div class="p-6 md:p-8">
                                     <div class="grid grid-cols-4 gap-6">
-                            <!-- Card 1 -->
+                            <!-- Card -->
                             <div class="flex flex-col items-center gap-3 group/card cursor-pointer">
-                                <div class="relative w-full aspect-[5/4] rounded overflow-hidden border border-gray-100 shadow-sm bg-white">
-                                    <img src="assets/images/megamenu/home-1.webp" alt="Homepage 1" class="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-500">
+                                <div class="relative w-full rounded overflow-hidden border border-gray-100 shadow-sm bg-white">
+                                    <img src="assets/images/megamenu/home-1.webp" alt="Homepage 1" class="w-full h-auto group-hover/card:scale-105 transition-transform duration-500">
                                     <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                                         <button class="bg-primary hover:bg-yellow-400 text-black font-semibold text-sm px-6 py-2.5 rounded flex items-center gap-2 translate-y-4 group-hover/card:translate-y-0 transition-transform duration-300">
                                             View Demo
@@ -92,10 +116,10 @@
                                 <span class="font-semibold text-gray-800 text-[15px]">Housebox - Homepage 01</span>
                             </div>
                             
-                            <!-- Card 2 -->
+                            <!-- Card -->
                             <div class="flex flex-col items-center gap-3 group/card cursor-pointer">
-                                <div class="relative w-full aspect-[5/4] rounded overflow-hidden border border-gray-100 shadow-sm bg-white">
-                                    <img src="assets/images/megamenu/home-2.webp" alt="Homepage 2" class="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-500">
+                                <div class="relative w-full rounded overflow-hidden border border-gray-100 shadow-sm bg-white">
+                                    <img src="assets/images/megamenu/home-2.webp" alt="Homepage 2" class="w-full h-auto group-hover/card:scale-105 transition-transform duration-500">
                                     <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                                         <button class="bg-primary hover:bg-yellow-400 text-black font-semibold text-sm px-6 py-2.5 rounded flex items-center gap-2 translate-y-4 group-hover/card:translate-y-0 transition-transform duration-300">
                                             View Demo
@@ -106,10 +130,10 @@
                                 <span class="font-semibold text-gray-800 text-[15px]">Housebox - Homepage 02</span>
                             </div>
                             
-                            <!-- Card 3 -->
+                            <!-- Card -->
                             <div class="flex flex-col items-center gap-3 group/card cursor-pointer">
-                                <div class="relative w-full aspect-[5/4] rounded overflow-hidden border border-gray-100 shadow-sm bg-white">
-                                    <img src="assets/images/megamenu/home-3.webp" alt="Homepage 3" class="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-500">
+                                <div class="relative w-full rounded overflow-hidden border border-gray-100 shadow-sm bg-white">
+                                    <img src="assets/images/megamenu/home-3.webp" alt="Homepage 3" class="w-full h-auto group-hover/card:scale-105 transition-transform duration-500">
                                     <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                                         <button class="bg-primary hover:bg-yellow-400 text-black font-semibold text-sm px-6 py-2.5 rounded flex items-center gap-2 translate-y-4 group-hover/card:translate-y-0 transition-transform duration-300">
                                             View Demo
@@ -120,10 +144,10 @@
                                 <span class="font-semibold text-gray-800 text-[15px]">Housebox - Homepage 03</span>
                             </div>
                             
-                            <!-- Card 4 -->
+                            <!-- Card -->
                             <div class="flex flex-col items-center gap-3 group/card cursor-pointer">
-                                <div class="relative w-full aspect-[5/4] rounded overflow-hidden border border-gray-100 shadow-sm bg-white">
-                                    <img src="assets/images/megamenu/home-4.webp" alt="Homepage 4" class="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-500">
+                                <div class="relative w-full rounded overflow-hidden border border-gray-100 shadow-sm bg-white">
+                                    <img src="assets/images/megamenu/home-4.webp" alt="Homepage 4" class="w-full h-auto group-hover/card:scale-105 transition-transform duration-500">
                                     <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                                         <button class="bg-primary hover:bg-yellow-400 text-black font-semibold text-sm px-6 py-2.5 rounded flex items-center gap-2 translate-y-4 group-hover/card:translate-y-0 transition-transform duration-300">
                                             View Demo
@@ -168,20 +192,23 @@
     <main class="relative w-screen h-screen min-h-[700px] flex items-center overflow-hidden">
         
         <!-- Right Background Image Slider -->
-        <div id="hero-slider" class="absolute top-0 right-0 w-full h-full z-0">
-            <div class="absolute inset-0 bg-[url('assets/images/home/hero-main-1.webp')] bg-cover bg-center transition-opacity duration-700 opacity-100"></div>
-            <div class="absolute inset-0 bg-[url('assets/images/home/hero-main-2.webp')] bg-cover bg-center transition-opacity duration-700 opacity-0"></div>
-            <div class="absolute inset-0 bg-[url('assets/images/home/hero-main-3.webp')] bg-cover bg-center transition-opacity duration-700 opacity-0"></div>
-            <div class="absolute inset-0 bg-[url('assets/images/home/hero-main-4.webp')] bg-cover bg-center transition-opacity duration-700 opacity-0"></div>
+        <div id="hero-slider" class="absolute top-0 right-0 w-full h-full z-0 overflow-hidden">
+            <div class="slider-img active absolute inset-0 bg-[url('assets/images/home/hero-main-1.webp')] bg-cover bg-center"></div>
+            <div class="slider-img absolute inset-0 bg-[url('assets/images/home/hero-main-2.webp')] bg-cover bg-center"></div>
+            <div class="slider-img absolute inset-0 bg-[url('assets/images/home/hero-main-3.webp')] bg-cover bg-center"></div>
+            <div class="slider-img absolute inset-0 bg-[url('assets/images/home/hero-main-4.webp')] bg-cover bg-center"></div>
         </div>
         
         <!-- Left Diagonal Background -->
         <!-- Using skew to create the diagonal effect and a border for the white line -->
         <div class="absolute top-0 -left-[20%] w-[75%] h-full bg-dark skew-x-[15deg] border-r-[8px] border-white z-10 overflow-hidden shadow-[10px_0_30px_rgba(0,0,0,0.1)]">
             <!-- Inner container to reverse skew for the background image -->
-            <div id="left-slider" class="absolute top-0 left-0 w-[130%] h-full skew-x-[-15deg]">
-                <div class="absolute inset-0 bg-[url('assets/images/home/hero-left-bg-1.webp')] bg-cover bg-center mix-blend-overlay transition-opacity duration-1000 opacity-20"></div>
-                <div class="absolute inset-0 bg-[url('assets/images/home/hero-left-bg-2.webp')] bg-cover bg-center mix-blend-overlay transition-opacity duration-1000 opacity-0"></div>
+            <div id="left-slider" class="absolute top-0 left-0 w-[130%] h-full skew-x-[-15deg] overflow-hidden">
+                <div class="left-slider-img active absolute inset-0 bg-[url('assets/images/home/hero-left-bg-1.webp')] bg-cover bg-center mix-blend-overlay"></div>
+                <div class="left-slider-img absolute inset-0 bg-[url('assets/images/home/hero-left-bg-2.webp')] bg-cover bg-center mix-blend-overlay"></div>
+                <!-- Adding fallback for a 3rd and 4th if they exist or just looping -->
+                <div class="left-slider-img absolute inset-0 bg-[url('assets/images/home/hero-left-bg-1.webp')] bg-cover bg-center mix-blend-overlay"></div>
+                <div class="left-slider-img absolute inset-0 bg-[url('assets/images/home/hero-left-bg-2.webp')] bg-cover bg-center mix-blend-overlay"></div>
             </div>
         </div>
         

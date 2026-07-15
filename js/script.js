@@ -48,76 +48,65 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 4. Hero Background Slider and Sync Thumbnails
+    // 4. Dual Hero Background Sliders with Ken Burns Zoom and Thumbnails
     const heroSlides = document.querySelectorAll('#hero-slider > div');
+    const leftSlides = document.querySelectorAll('#left-slider > div');
     const thumbContainer = document.getElementById('thumb-container');
     
     if (thumbContainer) {
         thumbContainer.style.transition = 'transform 0.5s ease-in-out';
     }
 
+    // --- Right Slider (3 seconds) ---
     if (heroSlides.length > 0) {
-        let currentSlide = 0;
+        let currentRightSlide = 0;
         setInterval(() => {
-            // Fade out current
-            heroSlides[currentSlide].classList.remove('opacity-100');
-            heroSlides[currentSlide].classList.add('opacity-0');
+            // Remove active from current
+            heroSlides[currentRightSlide].classList.remove('active');
             
             // Move to next
-            currentSlide = (currentSlide + 1) % heroSlides.length;
+            currentRightSlide = (currentRightSlide + 1) % heroSlides.length;
             
-            // Fade in next
-            heroSlides[currentSlide].classList.remove('opacity-0');
-            heroSlides[currentSlide].classList.add('opacity-100');
+            // Add active to next
+            heroSlides[currentRightSlide].classList.add('active');
 
             // Slide thumbnails up by exactly one circle + gap (80px + 20px = 100px)
             if (thumbContainer) {
-                const thumbs = thumbContainer.children;
-                if(thumbs.length > 1) {
-                    // Update borders during the slide transition
-                    thumbs[0].classList.remove('border-white');
-                    thumbs[0].classList.add('border-dark');
-                    
-                    thumbs[1].classList.remove('border-dark');
-                    thumbs[1].classList.add('border-white');
-                }
-
                 thumbContainer.style.transform = `translateY(-100px)`;
                 
                 setTimeout(() => {
                     // Disable transition to snap back invisibly
                     thumbContainer.style.transition = 'none';
                     
-                    // Move the first element to the end to loop it
-                    thumbContainer.appendChild(thumbContainer.firstElementChild);
-                    thumbContainer.style.transform = 'translateY(0)';
+                    // Move the first thumb to the end of the list
+                    const firstThumb = thumbContainer.firstElementChild;
+                    thumbContainer.appendChild(firstThumb);
                     
-                    // Force browser to acknowledge the change without transition
-                    void thumbContainer.offsetWidth;
+                    // Reset transform immediately
+                    thumbContainer.style.transform = `translateY(0)`;
                     
-                    // Re-enable transition for the next cycle
-                    thumbContainer.style.transition = 'transform 0.5s ease-in-out';
-                }, 500); // Wait for the transition to finish
+                    // Restore transition for the next slide
+                    setTimeout(() => {
+                        thumbContainer.style.transition = 'transform 0.5s ease-in-out';
+                    }, 50);
+                }, 500); // 500ms matches the transition duration
             }
-        }, 3000); // changes every 3 seconds
+        }, 3000);
     }
 
-    // 5. Left Background Slider
-    const leftSlides = document.querySelectorAll('#left-slider > div');
+    // --- Left Slider (4 seconds) ---
     if (leftSlides.length > 0) {
         let currentLeftSlide = 0;
         setInterval(() => {
-            // Fade out current
-            leftSlides[currentLeftSlide].classList.remove('opacity-20');
-            leftSlides[currentLeftSlide].classList.add('opacity-0');
+            // Remove active from current
+            leftSlides[currentLeftSlide].classList.remove('active');
             
             // Move to next
             currentLeftSlide = (currentLeftSlide + 1) % leftSlides.length;
             
-            // Fade in next
-            leftSlides[currentLeftSlide].classList.remove('opacity-0');
-            leftSlides[currentLeftSlide].classList.add('opacity-20');
-        }, 4000); // changes every 4 seconds
+            // Add active to next
+            leftSlides[currentLeftSlide].classList.add('active');
+        }, 4000);
     }
 });
 
