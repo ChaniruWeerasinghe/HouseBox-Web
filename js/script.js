@@ -368,7 +368,7 @@ function initializeNavbarLogic() {
         });
     }
 }
-\n\n// Carousel logic for Featured Items section
+// Carousel logic for Featured Items section
 document.addEventListener('DOMContentLoaded', () => {
     const featImg = document.getElementById('feat-img');
     const featInfoPanel = document.getElementById('feat-info-panel');
@@ -395,7 +395,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 beds: 'x12 Beds',
                 baths: 'x16 Baths',
                 sqft: '1200 sq',
-                agentImg: 'assets/images/home/avatar-1.webp',
+                agentImg: 'assets/images/home/clientdp.png',
                 agentName: 'Alex Roberts',
                 price: '$820,000'
             },
@@ -421,7 +421,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 beds: 'x4 Beds',
                 baths: 'x3 Baths',
                 sqft: '2100 sq',
-                agentImg: 'assets/images/home/avatar-1.webp',
+                agentImg: 'assets/images/home/clientdp.png',
                 agentName: 'Michael Chang',
                 price: '$4,200/mo'
             },
@@ -444,13 +444,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function updateCarousel(index) {
             // Fade out
-            featImg.style.opacity = '0';
             featInfoPanel.style.opacity = '0';
 
             setTimeout(() => {
                 const prop = properties[index];
                 
-                featImg.src = prop.img;
                 featBadge1.textContent = prop.badge1;
                 featBadge2.textContent = prop.badge2;
                 featTitle.textContent = prop.title;
@@ -463,7 +461,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 featPrice.textContent = prop.price;
 
                 // Fade in
-                featImg.style.opacity = '1';
                 featInfoPanel.style.opacity = '1';
             }, 300); // Wait for fade out transition (duration-300 = 300ms)
         }
