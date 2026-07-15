@@ -1986,67 +1986,50 @@
         </div>
     </section>
 
-    <!-- White spacer: top half of CTA sits on white page bg -->
-    <div style="height: 95px; background: #ffffff; position: relative; z-index: 1;"></div>
-
-    <!-- CTA: z-index layers it above both the spacer and the footer -->
-    <div style="position: relative; z-index: 20; margin-top: -95px; margin-bottom: -95px; padding: 0 2rem;">
-        <div style="max-width: 1320px; margin: 0 auto;">
-            !-- Footer -->
-    
-    <!-- Spacer: top half of CTA floats on page bg -->
-    <div style="height: 90px; background: #ffffff;"></div>
-
     <!-- ============================================ -->
-    <!-- CTA BANNER — straddles page/footer boundary -->
+    <!-- CTA BANNER — perfectly straddling white & gray -->
     <!-- ============================================ -->
-    <div class="w-full px-8 md:px-16" style="position: relative; z-index: 20; margin-bottom: -90px;">
-        <div class="max-w-[1320px] mx-auto">
+    <div class="relative w-full">
+        <!-- Split background: Top half white, bottom half gray (#f3f4f0) -->
+        <div class="absolute inset-0 z-0 flex flex-col">
+            <div class="w-full h-1/2 bg-white"></div>
+            <div class="w-full h-1/2 bg-[#f3f4f0]"></div>
+        </div>
+        
+        <!-- CTA Content -->
+        <div class="relative z-10 w-full px-8 md:px-16 py-12">
+            <div class="max-w-[1320px] mx-auto">
+                <div class="relative w-full rounded-[20px] overflow-hidden flex flex-col md:flex-row items-center justify-between px-12 py-14 gap-8"
+                     style="background: url('assets/images/home/cta-bg2.png') center center / cover no-repeat;">
+                    <!-- Left: Text -->
+                    <div class="relative z-10 flex flex-col gap-4 max-w-[480px]">
+                        <h2 class="text-white font-bold leading-tight" style="font-size: 38px;">
+                            Step Into Your Dream<br>Home with HouseBox
+                        </h2>
+                        <p class="text-white/70 text-[15px] leading-relaxed">
+                            At HouseBox, we believe your next home is more than just a place – it's where your future begins you're buy.
+                        </p>
+                    </div>
+
+                    <!-- Right: CTA Button -->
+                    <div class="relative z-10 shrink-0">
+                        <a href="#" id="cta-dream-home-btn"
+                           class="inline-flex items-center gap-3 bg-[#ffc107] text-gray-900 font-bold px-8 py-4 rounded-[8px] text-[16px] hover:bg-yellow-400 transition-colors duration-200 shadow-lg">
+                            Find Your Dream Home
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H9M17 7v8"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- Footer -->
-    
-    <!-- Spacer: top half of CTA floats on page bg -->
-    <div style="height: 90px; background: #ffffff;"></div>
-
     <!-- ============================================ -->
-    <!-- CTA BANNER — straddles page/footer boundary -->
+    <!-- FOOTER SECTION -->
     <!-- ============================================ -->
-    <div class="w-full px-8 md:px-16" style="position: relative; z-index: 20; margin-bottom: -90px;">
-        <div class="max-w-[1320px] mx-auto">
-            <div class="relative w-full rounded-[20px] overflow-hidden flex flex-col md:flex-row items-center justify-between px-12 py-14 gap-8"
-                 style="background: url('assets/images/home/cta-bg2.png') center center / cover no-repeat;">
-                
-
-
-                <!-- Left: Text -->
-                <div class="relative z-10 flex flex-col gap-4 max-w-[480px]">
-                    <h2 class="text-white font-bold leading-tight" style="font-size: 38px;">
-                        Step Into Your Dream<br>Home with HouseBox
-                    </h2>
-                    <p class="text-white/70 text-[15px] leading-relaxed">
-                        At HouseBox, we believe your next home is more than just a place – it's where your future begins you're buy.
-                    </p>
-                </div>
-
-                <!-- Right: CTA Button -->
-                <div class="relative z-10 shrink-0">
-                    <a href="#" id="cta-dream-home-btn"
-                       class="inline-flex items-center gap-3 bg-[#ffc107] text-gray-900 font-bold px-8 py-4 rounded-[8px] text-[16px] hover:bg-yellow-400 transition-colors duration-200 shadow-lg">
-                        Find Your Dream Home
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H9M17 7v8"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-            </div>
-        </div>
-        </div>
-    </div>
-
-<footer class="w-full bg-[#f3f4f0] pb-0 relative z-10" style="padding-top: 95px;"><!-- Footer Grid -->
+    <footer class="w-full bg-[#f3f4f0] pb-0 relative z-10 pt-8"><!-- Footer Grid -->
             <div class="w-full grid grid-cols-1 md:grid-cols-4 gap-12 pb-16">
 
                 <!-- Col 1: Brand -->
