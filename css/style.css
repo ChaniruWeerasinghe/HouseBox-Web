@@ -2,9 +2,12 @@
 ::-webkit-scrollbar {
     display: none;
 }
+
 body {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none;    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 /* Image white mist overlay-openDoors */
@@ -13,6 +16,7 @@ body {
         transform: translate(-50%, 0) skewX(-45deg) scaleX(0);
         opacity: 0.8;
     }
+
     100% {
         transform: translate(-50%, 0) skewX(-45deg) scaleX(3);
         opacity: 0;
@@ -26,7 +30,8 @@ body {
 }
 
 .openDoors-container img {
-    transition: none; /* Reset instantly on leave */
+    transition: none;
+    /* Reset instantly on leave */
 }
 
 .openDoors-container::before {
@@ -56,10 +61,33 @@ body {
     inset: 0;
     background: #ffffff;
     transform-origin: right;
-    transition: transform 2.5s linear;
+    transition: transform 1.2s linear;
     z-index: 20;
 }
 
 .reveal-clip.is-revealed::after {
     transform: scaleX(0);
+}
+
+/* Buoyant Title Reveal Animation */
+@keyframes buoyantReveal {
+    0% { transform: translateY(25px); opacity: 0; }
+    40% { transform: translateY(-8px); opacity: 1; }
+    65% { transform: translateY(4px); }
+    85% { transform: translateY(-2px); }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.title-bounce {
+    /* Container no longer needs initial state */
+}
+
+.bounce-letter {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(25px);
+}
+
+.title-bounce.is-bouncing .bounce-letter {
+    animation: buoyantReveal 1.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }

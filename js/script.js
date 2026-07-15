@@ -160,14 +160,41 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 6. Intersection Observer for Image Reveals
-    const revealElements = document.querySelectorAll('.reveal-clip');
+    // 6. Intersection Observer for Image Reveals and Title Bounces
+    const revealElements = document.querySelectorAll('.reveal-clip, .title-bounce');
+    
+    // Pre-process title-bounce elements for letter-by-letter animation
+    document.querySelectorAll('.title-bounce').forEach(title => {
+        // Keep <br> intact by splitting on it first
+        const lines = title.innerHTML.split(/<br\s*\/?>/i);
+        let charIndex = 0;
+        
+        const newHTML = lines.map(line => {
+            return line.split('').map(char => {
+                // Ignore spaces so they don't break layout or animate weirdly
+                if (char === ' ' || char === '\n') return char;
+                
+                // Wrap each letter in a span with a staggered delay
+                const delay = (charIndex * 0.04).toFixed(2);
+                charIndex++;
+                return `<span class="bounce-letter" style="animation-delay: ${delay}s">${char}</span>`;
+            }).join('');
+        }).join('<br>');
+        
+        title.innerHTML = newHTML;
+    });
+
     if (revealElements.length > 0) {
         const revealObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     setTimeout(() => {
-                        entry.target.classList.add('is-revealed');
+                        if (entry.target.classList.contains('reveal-clip')) {
+                            entry.target.classList.add('is-revealed');
+                        }
+                        if (entry.target.classList.contains('title-bounce')) {
+                            entry.target.classList.add('is-bouncing');
+                        }
                     }, 150);
                     observer.unobserve(entry.target);
                 }
