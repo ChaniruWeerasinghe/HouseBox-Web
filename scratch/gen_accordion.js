@@ -96,12 +96,6 @@ const sectionHTML = `
                 </div>
 
             </div>
-            
-            <!-- Scroll to Top Button (Floating bottom right of section) -->
-            <button class="absolute -bottom-6 right-0 w-[54px] h-[54px] bg-white rounded-full border border-gray-200 shadow-sm flex items-center justify-center hover:bg-gray-50 transition-transform hover:-translate-y-1 z-30">
-                <svg class="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
-            </button>
-
         </div>
     </section>
 `;
@@ -111,7 +105,7 @@ let content = fs.readFileSync(indexFile, 'utf-8');
 
 const insertTarget = '    <!-- ============================================ -->\n    <!-- INJECTION POINT -->';
 if (content.includes(insertTarget)) {
-    content = content.replace(insertTarget, sectionHTML + '\\n' + insertTarget);
+    content = content.replace(insertTarget, sectionHTML + '\n' + insertTarget);
     fs.writeFileSync(indexFile, content);
     console.log('Successfully injected Property Location Accordion section into index.html');
 } else {

@@ -60,25 +60,35 @@ const sectionHTML = `
                             </div>
 
                             <!-- Stats (Features) -->
-                            <div class="flex items-center gap-4 mt-6">
-                                <div class="flex items-center gap-2 border border-gray-200 rounded-[8px] px-5 py-2.5 text-gray-600 text-[14px]">
-                                    <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-                                        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            <div class="flex items-center gap-3 mt-6">
+                                <div class="flex items-center gap-2 border border-gray-200 rounded-full px-5 py-2.5 text-gray-700 font-medium text-[15px]">
+                                    <svg class="w-[18px] h-[18px] text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
+                                        <path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/>
+                                        <path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/>
+                                        <path d="M12 4v6"/>
+                                        <path d="M2 18h20"/>
                                     </svg>
                                     <span id="feat-beds">x12 Beds</span>
                                 </div>
-                                <div class="flex items-center gap-2 border border-gray-200 rounded-[8px] px-5 py-2.5 text-gray-600 text-[14px]">
-                                    <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-                                        <path d="M7 21V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v16"></path>
-                                        <path d="M10 21v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4"></path>
-                                        <path d="M10 9h.01M14 9h.01M10 13h.01M14 13h.01"></path>
+                                <div class="flex items-center gap-2 border border-gray-200 rounded-full px-5 py-2.5 text-gray-700 font-medium text-[15px]">
+                                    <svg class="w-[18px] h-[18px] text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
+                                        <path d="M4 12h16a1 1 0 0 1 1 1v3a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4v-3a1 1 0 0 1 1 -1z" />
+                                        <path d="M6 12v-7a2 2 0 0 1 2 -2h3v2.25" />
+                                        <path d="M4 21l1 -1.5" />
+                                        <path d="M20 21l-1 -1.5" />
                                     </svg>
                                     <span id="feat-baths">x16 Baths</span>
                                 </div>
-                                <div class="flex items-center gap-2 border border-gray-200 rounded-[8px] px-5 py-2.5 text-gray-600 text-[14px]">
-                                    <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-                                        <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7M21 21v-6h-6M3 3v6h6M21 21l-7-7M3 3l7 7"></path>
+                                <div class="flex items-center gap-2 border border-gray-200 rounded-full px-5 py-2.5 text-gray-700 font-medium text-[15px]">
+                                    <svg class="w-[18px] h-[18px] text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
+                                        <circle cx="5" cy="5" r="2" />
+                                        <circle cx="19" cy="5" r="2" />
+                                        <circle cx="5" cy="19" r="2" />
+                                        <circle cx="19" cy="19" r="2" />
+                                        <line x1="5" y1="7" x2="5" y2="17" />
+                                        <line x1="7" y1="5" x2="17" y2="5" />
+                                        <line x1="7" y1="19" x2="17" y2="19" />
+                                        <line x1="19" y1="7" x2="19" y2="17" />
                                     </svg>
                                     <span id="feat-sqft">1200 sq</span>
                                 </div>
@@ -88,7 +98,7 @@ const sectionHTML = `
                         <!-- Card Footer -->
                         <div class="w-full border-t border-gray-100 pt-6 mt-4 flex items-center justify-between">
                             <div class="flex items-center gap-3">
-                                <img id="feat-agent-img" src="assets/images/home/avatar-1.webp" alt="Alex Roberts" class="w-12 h-12 rounded-full object-cover shadow-sm bg-gray-100">
+                                <img id="feat-agent-img" src="assets/images/home/clientdp.png" alt="Alex Roberts" class="w-[72px] h-[48px] object-contain">
                                 <span id="feat-agent-name" class="font-semibold text-gray-900 text-[15px]">Alex Roberts</span>
                             </div>
                             <div class="flex items-center gap-4">
@@ -121,7 +131,7 @@ let content = fs.readFileSync(indexFile, 'utf-8');
 const insertTarget = '    <!-- INJECTION POINT -->';
 if (content.includes(insertTarget)) {
     // Inject the section, and re-add the insertion target right below it
-    content = content.replace(insertTarget, sectionHTML + '\\n' + insertTarget);
+    content = content.replace(insertTarget, sectionHTML + '\n' + insertTarget);
     fs.writeFileSync(indexFile, content);
     console.log('Successfully injected Featured Items section into index.html');
 } else {

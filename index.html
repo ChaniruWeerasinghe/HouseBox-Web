@@ -1377,145 +1377,138 @@
                 <div class="w-full grid gap-6" style="grid-template-columns: 2fr 2.8fr 3.6fr;">
 
                 <!-- Location Card 1 -->
-                <div class="location-reveal relative w-full h-[320px] rounded-[8px] overflow-hidden group cursor-pointer shadow-sm bg-gray-200" style="transition-delay: 0ms;" data-swap-group="A" data-images="hero-main-1.webp,hero-main-2.webp,hero-main-3.webp" data-current-index="0">
-                    <img src="assets/images/home/hero-main-1.webp" alt="Location View" class="img-back w-full h-full object-cover absolute inset-0 z-0">
-                    <img src="assets/images/home/hero-main-1.webp" alt="Location View" class="img-front w-full h-full object-cover absolute inset-0 z-10 transition-all duration-700 group-hover:scale-105">
+                <div class="location-reveal relative w-full h-[320px] rounded-[12px] overflow-hidden group cursor-pointer shadow-sm bg-gray-200" style="transition-delay: 0ms;" data-swap-group="A" data-images="hero-main-1.webp,hero-main-2.webp,hero-main-3.webp" data-current-index="0">
+                    <!-- Base image -->
+                    <img src="assets/images/home/hero-main-1.webp" alt="Location View" class="img-back w-full h-full object-cover absolute inset-0 z-0 transition-transform duration-700 ease-in-out group-hover:scale-110">
+                    <!-- Expanding dark overlay: scale from center point to full card -->
+                    <div class="absolute inset-0 z-10 pointer-events-none">
+                        <div class="w-full h-full bg-[#0c2d3a]/65 origin-center scale-0 group-hover:scale-100 transition-transform duration-500 ease-in-out"></div>
+                    </div>
+                    <!-- Overlay content — fades in after overlay expands -->
+                    <div class="absolute inset-0 z-20 flex flex-col justify-between p-5 opacity-0 group-hover:opacity-100 transition-opacity duration-400 delay-200 pointer-events-none">
+                        <!-- Count badge top right -->
+                        <div class="flex justify-end">
+                            <span class="w-10 h-10 rounded-full bg-white text-gray-900 font-bold text-[15px] flex items-center justify-center shadow">10</span>
+                        </div>
+                        <!-- City name bottom left -->
+                        <div class="flex items-end justify-start">
+                            <div class="bg-white text-gray-900 font-bold text-[16px] px-5 py-3 rounded-[6px] shadow">Chicago</div>
+                        </div>
+                    </div>
                     
-                            <!-- Dot Indicators -->
-                            <div class="absolute bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-10">
-                                <div class="w-2 h-2 rounded-full bg-white opacity-90"></div>
-                                <div class="w-2 h-2 rounded-full bg-primary opacity-100"></div>
-                            </div>
-                            <!-- Subtle gradient overlay at bottom for dots -->
-                            <div class="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
-        
+                    <!-- Dot Indicators -->
+                    <div class="absolute bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-30">
+                        <div class="w-2 h-2 rounded-full bg-white opacity-90"></div>
+                        <div class="w-2 h-2 rounded-full bg-primary opacity-100"></div>
+                    </div>
+                    <div class="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/20 to-transparent pointer-events-none z-30"></div>
                 </div>
-
                 <!-- Location Card 2 -->
-                <div class="location-reveal relative w-full h-[320px] rounded-[8px] overflow-hidden group cursor-pointer shadow-sm bg-gray-200" style="transition-delay: 150ms;" data-swap-group="B" data-images="about-tall.webp,about-bottom.webp,hero-left-bg.webp" data-current-index="0">
-                    <img src="assets/images/home/hero-main-2.webp" alt="Location View" class="img-back w-full h-full object-cover absolute inset-0 z-0">
-                    <img src="assets/images/home/hero-main-2.webp" alt="Location View" class="img-front w-full h-full object-cover absolute inset-0 z-10 transition-all duration-700 group-hover:scale-105">
+                <div class="location-reveal relative w-full h-[320px] rounded-[12px] overflow-hidden group cursor-pointer shadow-sm bg-gray-200" style="transition-delay: 150ms;" data-swap-group="B" data-images="about-tall.webp,about-bottom.webp,hero-left-bg.webp" data-current-index="0">
+                    <!-- Base image -->
+                    <img src="assets/images/home/hero-main-2.webp" alt="Location View" class="img-back w-full h-full object-cover absolute inset-0 z-0 transition-transform duration-700 ease-in-out group-hover:scale-110">
+                    <!-- Expanding dark overlay: scale from center point to full card -->
+                    <div class="absolute inset-0 z-10 pointer-events-none">
+                        <div class="w-full h-full bg-[#0c2d3a]/65 origin-center scale-0 group-hover:scale-100 transition-transform duration-500 ease-in-out"></div>
+                    </div>
+                    <!-- Overlay content — fades in after overlay expands -->
+                    <div class="absolute inset-0 z-20 flex flex-col justify-between p-5 opacity-0 group-hover:opacity-100 transition-opacity duration-400 delay-200 pointer-events-none">
+                        <!-- Count badge top right -->
+                        <div class="flex justify-end">
+                            <span class="w-10 h-10 rounded-full bg-white text-gray-900 font-bold text-[15px] flex items-center justify-center shadow">12</span>
+                        </div>
+                        <!-- City name bottom left -->
+                        <div class="flex items-end justify-start">
+                            <div class="bg-white text-gray-900 font-bold text-[16px] px-5 py-3 rounded-[6px] shadow">Los Angeles</div>
+                        </div>
+                    </div>
                     
                 </div>
-
                 <!-- Location Card 3 -->
-                <div class="location-reveal relative w-full h-[320px] rounded-[8px] overflow-hidden group cursor-pointer shadow-sm bg-gray-200" style="transition-delay: 300ms;" data-swap-group="B" data-images="hero-main-4.webp,about-top.webp,hero-main.webp" data-current-index="0">
-                    <img src="assets/images/home/hero-main-3.webp" alt="Location View" class="img-back w-full h-full object-cover absolute inset-0 z-0">
-                    <img src="assets/images/home/hero-main-3.webp" alt="Location View" class="img-front w-full h-full object-cover absolute inset-0 z-10 transition-all duration-700 group-hover:scale-105">
+                <div class="location-reveal relative w-full h-[320px] rounded-[12px] overflow-hidden group cursor-pointer shadow-sm bg-gray-200" style="transition-delay: 300ms;" data-swap-group="B" data-images="hero-main-4.webp,about-top.webp,hero-main.webp" data-current-index="0">
+                    <!-- Base image -->
+                    <img src="assets/images/home/hero-main-3.webp" alt="Location View" class="img-back w-full h-full object-cover absolute inset-0 z-0 transition-transform duration-700 ease-in-out group-hover:scale-110">
+                    <!-- Expanding dark overlay: scale from center point to full card -->
+                    <div class="absolute inset-0 z-10 pointer-events-none">
+                        <div class="w-full h-full bg-[#0c2d3a]/65 origin-center scale-0 group-hover:scale-100 transition-transform duration-500 ease-in-out"></div>
+                    </div>
+                    <!-- Overlay content — fades in after overlay expands -->
+                    <div class="absolute inset-0 z-20 flex flex-col justify-between p-5 opacity-0 group-hover:opacity-100 transition-opacity duration-400 delay-200 pointer-events-none">
+                        <!-- Count badge top right -->
+                        <div class="flex justify-end">
+                            <span class="w-10 h-10 rounded-full bg-white text-gray-900 font-bold text-[15px] flex items-center justify-center shadow">15</span>
+                        </div>
+                        <!-- City name bottom left -->
+                        <div class="flex items-end justify-start">
+                            <div class="bg-white text-gray-900 font-bold text-[16px] px-5 py-3 rounded-[6px] shadow">New York</div>
+                        </div>
+                    </div>
                     
                 </div>
-
-                
-                </div>
-                <!-- Row 2 (3.6 : 2.8 : 2) -->
-                <div class="w-full grid gap-6" style="grid-template-columns: 3.6fr 2.8fr 2fr;">
-<!-- Location Card 4 -->
-                <div class="location-reveal relative w-full h-[320px] rounded-[8px] overflow-hidden group cursor-pointer shadow-sm bg-gray-200" style="transition-delay: 450ms;" data-swap-group="B" data-images="hero-main-2.webp,hero-left-bg.webp,about-tall.webp" data-current-index="0">
-                    <img src="assets/images/home/hero-main-4.webp" alt="Location View" class="img-back w-full h-full object-cover absolute inset-0 z-0">
-                    <img src="assets/images/home/hero-main-4.webp" alt="Location View" class="img-front w-full h-full object-cover absolute inset-0 z-10 transition-all duration-700 group-hover:scale-105">
+                <!-- Location Card 4 -->
+                <div class="location-reveal relative w-full h-[320px] rounded-[12px] overflow-hidden group cursor-pointer shadow-sm bg-gray-200" style="transition-delay: 450ms;" data-swap-group="B" data-images="hero-main-2.webp,hero-left-bg.webp,about-tall.webp" data-current-index="0">
+                    <!-- Base image -->
+                    <img src="assets/images/home/hero-main-4.webp" alt="Location View" class="img-back w-full h-full object-cover absolute inset-0 z-0 transition-transform duration-700 ease-in-out group-hover:scale-110">
+                    <!-- Expanding dark overlay: scale from center point to full card -->
+                    <div class="absolute inset-0 z-10 pointer-events-none">
+                        <div class="w-full h-full bg-[#0c2d3a]/65 origin-center scale-0 group-hover:scale-100 transition-transform duration-500 ease-in-out"></div>
+                    </div>
+                    <!-- Overlay content — fades in after overlay expands -->
+                    <div class="absolute inset-0 z-20 flex flex-col justify-between p-5 opacity-0 group-hover:opacity-100 transition-opacity duration-400 delay-200 pointer-events-none">
+                        <!-- Count badge top right -->
+                        <div class="flex justify-end">
+                            <span class="w-10 h-10 rounded-full bg-white text-gray-900 font-bold text-[15px] flex items-center justify-center shadow">8</span>
+                        </div>
+                        <!-- City name bottom left -->
+                        <div class="flex items-end justify-start">
+                            <div class="bg-white text-gray-900 font-bold text-[16px] px-5 py-3 rounded-[6px] shadow">Miami</div>
+                        </div>
+                    </div>
                     
                 </div>
-
                 <!-- Location Card 5 -->
-                <div class="location-reveal relative w-full h-[320px] rounded-[8px] overflow-hidden group cursor-pointer shadow-sm bg-gray-200" style="transition-delay: 600ms;" data-swap-group="A" data-images="about-bottom.webp,hero-main-3.webp,hero-main-1.webp" data-current-index="0">
-                    <img src="assets/images/home/about-tall.webp" alt="Location View" class="img-back w-full h-full object-cover absolute inset-0 z-0">
-                    <img src="assets/images/home/about-tall.webp" alt="Location View" class="img-front w-full h-full object-cover absolute inset-0 z-10 transition-all duration-700 group-hover:scale-105">
+                <div class="location-reveal relative w-full h-[320px] rounded-[12px] overflow-hidden group cursor-pointer shadow-sm bg-gray-200" style="transition-delay: 600ms;" data-swap-group="A" data-images="about-bottom.webp,hero-main-3.webp,hero-main-1.webp" data-current-index="0">
+                    <!-- Base image -->
+                    <img src="assets/images/home/about-tall.webp" alt="Location View" class="img-back w-full h-full object-cover absolute inset-0 z-0 transition-transform duration-700 ease-in-out group-hover:scale-110">
+                    <!-- Expanding dark overlay: scale from center point to full card -->
+                    <div class="absolute inset-0 z-10 pointer-events-none">
+                        <div class="w-full h-full bg-[#0c2d3a]/65 origin-center scale-0 group-hover:scale-100 transition-transform duration-500 ease-in-out"></div>
+                    </div>
+                    <!-- Overlay content — fades in after overlay expands -->
+                    <div class="absolute inset-0 z-20 flex flex-col justify-between p-5 opacity-0 group-hover:opacity-100 transition-opacity duration-400 delay-200 pointer-events-none">
+                        <!-- Count badge top right -->
+                        <div class="flex justify-end">
+                            <span class="w-10 h-10 rounded-full bg-white text-gray-900 font-bold text-[15px] flex items-center justify-center shadow">11</span>
+                        </div>
+                        <!-- City name bottom left -->
+                        <div class="flex items-end justify-start">
+                            <div class="bg-white text-gray-900 font-bold text-[16px] px-5 py-3 rounded-[6px] shadow">Seattle</div>
+                        </div>
+                    </div>
                     
                 </div>
-
                 <!-- Location Card 6 -->
-                <div class="location-reveal relative w-full h-[320px] rounded-[8px] overflow-hidden group cursor-pointer shadow-sm bg-gray-200" style="transition-delay: 750ms;" data-swap-group="B" data-images="hero-main.webp,hero-main-4.webp,about-top.webp" data-current-index="0">
-                    <img src="assets/images/home/about-bottom.webp" alt="Location View" class="img-back w-full h-full object-cover absolute inset-0 z-0">
-                    <img src="assets/images/home/about-bottom.webp" alt="Location View" class="img-front w-full h-full object-cover absolute inset-0 z-10 transition-all duration-700 group-hover:scale-105">
+                <div class="location-reveal relative w-full h-[320px] rounded-[12px] overflow-hidden group cursor-pointer shadow-sm bg-gray-200" style="transition-delay: 750ms;" data-swap-group="B" data-images="hero-main.webp,hero-main-4.webp,about-top.webp" data-current-index="0">
+                    <!-- Base image -->
+                    <img src="assets/images/home/about-bottom.webp" alt="Location View" class="img-back w-full h-full object-cover absolute inset-0 z-0 transition-transform duration-700 ease-in-out group-hover:scale-110">
+                    <!-- Expanding dark overlay: scale from center point to full card -->
+                    <div class="absolute inset-0 z-10 pointer-events-none">
+                        <div class="w-full h-full bg-[#0c2d3a]/65 origin-center scale-0 group-hover:scale-100 transition-transform duration-500 ease-in-out"></div>
+                    </div>
+                    <!-- Overlay content — fades in after overlay expands -->
+                    <div class="absolute inset-0 z-20 flex flex-col justify-between p-5 opacity-0 group-hover:opacity-100 transition-opacity duration-400 delay-200 pointer-events-none">
+                        <!-- Count badge top right -->
+                        <div class="flex justify-end">
+                            <span class="w-10 h-10 rounded-full bg-white text-gray-900 font-bold text-[15px] flex items-center justify-center shadow">9</span>
+                        </div>
+                        <!-- City name bottom left -->
+                        <div class="flex items-end justify-start">
+                            <div class="bg-white text-gray-900 font-bold text-[16px] px-5 py-3 rounded-[6px] shadow">Boston</div>
+                        </div>
+                    </div>
                     
                 </div>
-
-                </div>
                 
-                <!-- Floating Next Arrow -->
-                <button class="absolute -right-6 top-[75%] -translate-y-1/2 w-[60px] h-[60px] rounded-full border-[1.5px] border-gray-900 flex items-center justify-center bg-white hover:bg-gray-50 transition-colors z-20 shadow-sm">
-                    <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"></path></svg>
-                </button>
-            </div>
-            
-        </div>
-    </section>
-\n
-    <!-- ============================================ -->
-    <!-- PROPERTY LOCATION ACCORDION SECTION -->
-    <!-- ============================================ -->
-    <section class="w-full bg-[#f4f7f6] pt-24 pb-28 px-12 relative overflow-hidden">
-        <div class="max-w-[1400px] mx-auto w-full flex flex-col items-center gap-14 relative z-10">
-            
-            <!-- Section Header -->
-            <div class="w-full flex flex-col items-center text-center gap-4">
-                <!-- Pill -->
-                <span class="inline-block bg-[#e8efec] text-[#0f4a47] font-medium px-4 py-1.5 rounded-sm text-[14px]">
-                    Property Location
-                </span>
-                <!-- Title -->
-                <h2 class="text-[44px] leading-tight font-bold text-gray-900 tracking-tight">
-                    Explore Our Property Location
-                </h2>
-            </div>
-
-            <!-- Content Grid: Accordion + Map -->
-            <div class="w-full grid grid-cols-12 gap-10 items-stretch">
-                
-                <!-- Left: Accordion List -->
-                <div class="col-span-4 flex flex-col justify-center gap-4 w-full h-full">
-                    
-                    <!-- Accordion Item 1 (Active by default) -->
-                    <div class="accordion-item active bg-[#0f4a47] text-white p-6 rounded-[12px] shadow-sm cursor-pointer transition-colors duration-300">
-                        <div class="flex items-center justify-between">
-                            <h3 class="text-[18px] font-semibold">First Floor</h3>
-                            <div class="icon-wrapper w-9 h-9 bg-white rounded-full flex items-center justify-center transition-transform duration-300">
-                                <svg class="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg>
-                            </div>
-                        </div>
-                        <div class="accordion-content mt-4 text-[15px] leading-relaxed text-gray-200">
-                            Kitchen appliances are essential tools that simplify and enhance our culinary experiences, transforming routine.
-                        </div>
-                    </div>
-
-                    <!-- Accordion Item 2 -->
-                    <div class="accordion-item bg-white text-gray-900 p-6 rounded-[12px] shadow-sm cursor-pointer transition-colors duration-300">
-                        <div class="flex items-center justify-between">
-                            <h3 class="text-[18px] font-semibold">Second Floor</h3>
-                            <div class="icon-wrapper w-9 h-9 bg-[#0f4a47] rounded-full flex items-center justify-center transition-transform duration-300">
-                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                            </div>
-                        </div>
-                        <div class="accordion-content hidden mt-4 text-[15px] leading-relaxed text-gray-600">
-                            The second floor features spacious bedrooms and luxurious bathrooms designed for maximum comfort and relaxation.
-                        </div>
-                    </div>
-
-                    <!-- Accordion Item 3 -->
-                    <div class="accordion-item bg-white text-gray-900 p-6 rounded-[12px] shadow-sm cursor-pointer transition-colors duration-300">
-                        <div class="flex items-center justify-between">
-                            <h3 class="text-[18px] font-semibold">Swimming Pool</h3>
-                            <div class="icon-wrapper w-9 h-9 bg-[#0f4a47] rounded-full flex items-center justify-center transition-transform duration-300">
-                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                            </div>
-                        </div>
-                        <div class="accordion-content hidden mt-4 text-[15px] leading-relaxed text-gray-600">
-                            Enjoy our infinity pool with temperature control, surrounded by a beautiful deck area perfect for lounging.
-                        </div>
-                    </div>
-
-                    <!-- Accordion Item 4 -->
-                    <div class="accordion-item bg-white text-gray-900 p-6 rounded-[12px] shadow-sm cursor-pointer transition-colors duration-300">
-                        <div class="flex items-center justify-between">
-                            <h3 class="text-[18px] font-semibold">Kitchen Appliances</h3>
-                            <div class="icon-wrapper w-9 h-9 bg-[#0f4a47] rounded-full flex items-center justify-center transition-transform duration-300">
-                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                            </div>
-                        </div>
-                        <div class="accordion-content hidden mt-4 text-[15px] leading-relaxed text-gray-600">
-                            Fully equipped with top-of-the-line modern appliances to make your culinary endeavors a breeze.
-                        </div>
-                    </div>
                 </div>
 
                 <!-- Right: Map Embed -->
@@ -1536,12 +1529,6 @@
                 </div>
 
             </div>
-            
-            <!-- Scroll to Top Button (Floating bottom right of section) -->
-            <button class="absolute -bottom-6 right-0 w-[54px] h-[54px] bg-white rounded-full border border-gray-200 shadow-sm flex items-center justify-center hover:bg-gray-50 transition-transform hover:-translate-y-1 z-30">
-                <svg class="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
-            </button>
-
         </div>
     </section>
 \n    <!-- ============================================ -->
@@ -1897,6 +1884,359 @@
         </div>
     </section>
 
+
+    <!-- ============================================ -->
+    <!-- OUR FEATURED ITEMS (PARALLAX) SECTION -->
+    <!-- ============================================ -->
+    <!-- Background container with bg-fixed for parallax -->
+    <section class="w-full relative py-24 bg-fixed bg-center bg-cover bg-no-repeat" style="background-image: url('assets/images/home/hero-main.webp');">
+        
+        <!-- Dark Green Overlay -->
+        <div class="absolute inset-0 bg-[#063330]/85 z-0 pointer-events-none"></div>
+
+        <div class="max-w-[1600px] mx-auto w-full flex flex-col items-center relative z-10 px-8">
+            
+            <!-- Section Header -->
+            <div class="w-full flex flex-col items-center text-center gap-4 mb-16">
+                <!-- Pill -->
+                <span class="inline-block bg-white/10 border border-white/20 text-white font-medium px-4 py-1.5 rounded-sm text-[14px] backdrop-blur-sm">
+                    Our Best Featured Item
+                </span>
+                <!-- Title -->
+                <h2 class="text-[44px] leading-tight font-bold text-white tracking-tight">
+                    Our Featured Items
+                </h2>
+            </div>
+
+            <!-- Slider Area -->
+            <div class="w-full flex items-center justify-between gap-6 relative">
+                
+                <!-- Left Navigation Arrow -->
+                <button class="w-14 h-14 bg-white rounded-full flex items-center justify-center flex-shrink-0 shadow-lg hover:-translate-y-1 hover:shadow-xl transition-all z-20 group">
+                    <svg class="w-6 h-6 text-gray-900 group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+                </button>
+
+                <!-- Central Cards Container -->
+                <div class="flex-grow flex gap-6 h-[460px]">
+                    
+                    <!-- Left: House Image Card -->
+                    <div class="w-[40%] h-full relative overflow-hidden rounded-[24px] shadow-2xl">
+                        <img id="feat-img" src="assets/images/home/hero-left-bg-1.webp" alt="Property View" class="w-full h-full object-cover transition-opacity duration-300">
+                    </div>
+
+                    <!-- Right: Info Card -->
+                    <div class="w-[60%] h-full bg-white p-10 flex flex-col justify-between rounded-[24px] shadow-2xl transition-opacity duration-300" id="feat-info-panel">
+                        
+                        <div class="flex flex-col items-start gap-4">
+                            <!-- Badges -->
+                            <div class="flex items-center gap-3">
+                                <span id="feat-badge-1" class="bg-[#0f4a47] text-white font-semibold px-4 py-1.5 rounded-[4px] text-[13px]">Featured</span>
+                                <span id="feat-badge-2" class="bg-yellow-400 text-gray-900 font-bold px-4 py-1.5 rounded-[4px] text-[13px]">For Rent</span>
+                            </div>
+
+                            <!-- Title -->
+                            <h3 id="feat-title" class="text-[28px] font-bold text-gray-900 tracking-tight leading-tight mt-1">Rancho Vista Verde, Santos Barba</h3>
+                            
+                            <!-- Location -->
+                            <div class="flex items-center gap-2 text-gray-600 font-medium">
+                                <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                <span id="feat-location" class="text-[16px]">742 Terrace, Springfield, IL 62704, USA</span>
+                            </div>
+
+                            <!-- Stats (Features) -->
+                            <div class="flex items-center gap-3 mt-6">
+                                <div class="flex items-center gap-2 border border-gray-200 rounded-full px-5 py-2.5 text-gray-700 font-medium text-[15px]">
+                                    <svg class="w-[18px] h-[18px] text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
+                                        <path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/>
+                                        <path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/>
+                                        <path d="M12 4v6"/>
+                                        <path d="M2 18h20"/>
+                                    </svg>
+                                    <span id="feat-beds">x12 Beds</span>
+                                </div>
+                                <div class="flex items-center gap-2 border border-gray-200 rounded-full px-5 py-2.5 text-gray-700 font-medium text-[15px]">
+                                    <svg class="w-[18px] h-[18px] text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
+                                        <path d="M4 12h16a1 1 0 0 1 1 1v3a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4v-3a1 1 0 0 1 1 -1z" />
+                                        <path d="M6 12v-7a2 2 0 0 1 2 -2h3v2.25" />
+                                        <path d="M4 21l1 -1.5" />
+                                        <path d="M20 21l-1 -1.5" />
+                                    </svg>
+                                    <span id="feat-baths">x16 Baths</span>
+                                </div>
+                                <div class="flex items-center gap-2 border border-gray-200 rounded-full px-5 py-2.5 text-gray-700 font-medium text-[15px]">
+                                    <svg class="w-[18px] h-[18px] text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
+                                        <circle cx="5" cy="5" r="2" />
+                                        <circle cx="19" cy="5" r="2" />
+                                        <circle cx="5" cy="19" r="2" />
+                                        <circle cx="19" cy="19" r="2" />
+                                        <line x1="5" y1="7" x2="5" y2="17" />
+                                        <line x1="7" y1="5" x2="17" y2="5" />
+                                        <line x1="7" y1="19" x2="17" y2="19" />
+                                        <line x1="19" y1="7" x2="19" y2="17" />
+                                    </svg>
+                                    <span id="feat-sqft">1200 sq</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card Footer -->
+                        <div class="w-full border-t border-gray-100 pt-6 mt-4 flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <img id="feat-agent-img" src="assets/images/home/clientdp.png" alt="Alex Roberts" class="w-[72px] h-[48px] object-contain">
+                                <span id="feat-agent-name" class="font-semibold text-gray-900 text-[15px]">Alex Roberts</span>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <button class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:text-red-500 hover:bg-red-50 transition-colors">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                                </button>
+                                <button id="feat-price" class="bg-[#0f4a47] hover:bg-[#0a3331] text-white font-bold text-[15px] px-6 py-2.5 rounded-[6px] transition-colors">
+                                    $820,000
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Navigation Arrow -->
+                <button class="w-14 h-14 bg-white rounded-full flex items-center justify-center flex-shrink-0 shadow-lg hover:-translate-y-1 hover:shadow-xl transition-all z-20 group">
+                    <svg class="w-6 h-6 text-gray-900 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ============================================ -->
+    <!-- TESTIMONIALS SECTION -->
+    <section class="w-full bg-[#f4f5f5] py-24 relative font-sans">
+        
+        <div class="max-w-[1600px] mx-auto w-full px-8 relative z-10">
+            
+            <!-- Section Header -->
+            <div class="flex items-end justify-between w-full mb-12">
+                <!-- Left: Titles -->
+                <div class="flex flex-col items-start gap-3">
+                    <span class="bg-[#dce6e5] text-[#0f4a47] font-semibold px-4 py-1.5 rounded-[4px] text-[14px]">Trusted By Thousand People</span>
+                    <h2 class="text-[44px] font-bold text-gray-900 tracking-tight leading-tight">Hear Our Happy Clients</h2>
+                </div>
+                
+                <!-- Right: Button -->
+                <button class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold text-[15px] px-8 py-3.5 rounded-[6px] transition-colors flex items-center gap-2 group shadow-sm">
+                    View All Testimonials
+                    <svg class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 19L19 5M19 5v10M19 5h-10"></path></svg>
+                </button>
+            </div>
+
+            <!-- Content Area -->
+            <div class="flex gap-12 h-[520px]">
+                
+                <!-- Left: Large Family Image -->
+                <div class="w-[45%] h-full rounded-[24px] overflow-hidden shadow-lg bg-gray-200">
+                    <img src="assets/images/home/hero-main.webp" alt="Happy Family" class="w-full h-full object-cover">
+                </div>
+
+                <!-- Right: Testimonial Bubble & Avatars -->
+                <div class="w-[55%] h-full flex items-center pr-8">
+                    
+                    <!-- Main Testimonial Block -->
+                    <div class="flex-grow flex flex-col mr-12 h-full justify-center">
+                        
+                        <!-- Dark Green Speech Bubble -->
+                        <div class="relative bg-[#0f4a47] rounded-[16px] p-10 shadow-2xl">
+                            
+                            <!-- Stars and Quote -->
+                            <div class="flex justify-between items-start mb-6">
+                                <div class="flex items-center gap-1.5 text-yellow-500">
+                                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                </div>
+                                <svg class="w-10 h-10 text-[#dce6e5]/40" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                                </svg>
+                            </div>
+
+                            <!-- Text -->
+                            <p class="text-[#93b4af] text-[20px] font-medium leading-relaxed">
+                                "From start to finish, the team was exceptional. There are listened to our needs, provided expert guidance, & found us the perfect home. We couldn't be happier on with their service! got the best deal possible! Thanks"
+                            </p>
+
+                            <!-- Speech Bubble Tail -->
+                            <div class="absolute -bottom-5 left-10 w-0 h-0 border-l-[20px] border-l-transparent border-r-[20px] border-r-transparent border-t-[24px] border-t-[#0f4a47]"></div>
+                        </div>
+
+                        <!-- Author Info -->
+                        <div class="flex items-center justify-between mt-10 ml-8">
+                            <!-- Avatar & Name -->
+                            <div class="flex items-center gap-4">
+                                <div class="w-[52px] h-[52px] rounded-full overflow-hidden bg-gray-200 shadow-md">
+                                    <img src="assets/images/home/avatar-1.webp" alt="Sheldon Jackson" class="w-full h-full object-cover">
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-bold text-gray-900 text-[18px]">Sheldon Jackson</span>
+                                    <span class="text-gray-500 font-medium text-[14px]">Shop Store Owner</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Google Logo text-based -->
+                            <div class="font-sans font-bold text-[26px] tracking-tighter select-none opacity-90">
+                                <span class="text-[#4285F4]">G</span><span class="text-[#EA4335]">o</span><span class="text-[#FBBC05]">o</span><span class="text-[#4285F4]">g</span><span class="text-[#34A853]">l</span><span class="text-[#EA4335]">e</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Right Stack of Avatars -->
+                    <div class="flex flex-col justify-center items-center gap-6 h-full ml-auto">
+                        <!-- Active Avatar -->
+                        <div class="w-[60px] h-[60px] rounded-full p-1 border-2 border-[#0f4a47] cursor-pointer hover:scale-110 transition-transform">
+                            <img src="assets/images/home/avatar-1.webp" class="w-full h-full rounded-full object-cover">
+                        </div>
+                        <!-- Inactive Avatars -->
+                        <div class="w-[52px] h-[52px] rounded-full p-[2px] border border-gray-300 opacity-60 cursor-pointer hover:opacity-100 hover:scale-110 transition-all">
+                            <img src="assets/images/home/clientdp.png" class="w-full h-full rounded-full object-cover">
+                        </div>
+                        <div class="w-[52px] h-[52px] rounded-full p-[2px] border border-gray-300 opacity-60 cursor-pointer hover:opacity-100 hover:scale-110 transition-all">
+                            <img src="assets/images/home/avatar-1.webp" class="w-full h-full rounded-full object-cover">
+                        </div>
+                        <div class="w-[52px] h-[52px] rounded-full p-[2px] border border-gray-300 opacity-60 cursor-pointer hover:opacity-100 hover:scale-110 transition-all">
+                            <img src="assets/images/home/clientdp.webp" class="w-full h-full rounded-full object-cover">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+
+    <!-- ============================================ -->
+    <!-- BLOG SECTION -->
+    <section class="w-full bg-white py-24 relative font-sans">
+        
+        <div class="max-w-[1400px] mx-auto w-full px-8 relative z-10">
+            
+            <!-- Section Header -->
+            <div class="flex flex-col items-center text-center w-full mb-14">
+                <span class="bg-[#dce6e5] text-[#0f4a47] font-semibold px-4 py-1.5 rounded-[4px] text-[14px] mb-4">Latest Blog Posts</span>
+                <h2 class="text-[44px] font-bold text-gray-900 tracking-tight leading-tight">Our Real Estate Updates</h2>
+            </div>
+
+            <!-- Blog Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Blog Card 1 -->
+                <div class="bg-white rounded-[16px] shadow-[0_4px_24px_rgba(0,0,0,0.06)] border border-gray-100 overflow-hidden flex flex-col group cursor-pointer hover:-translate-y-1 transition-all duration-300">
+                    <!-- Image -->
+                    <div class="relative w-full h-[260px] overflow-hidden">
+                        <img src="assets/images/home/thumb-1.webp" alt="Blog 1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        
+                        <!-- Author Badge -->
+                        <div class="absolute bottom-5 left-5 bg-yellow-400 text-gray-900 font-bold px-3 py-1.5 rounded-[4px] text-[13px] flex items-center gap-1.5 shadow-sm">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0-2a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm9 11a1 1 0 0 1-2 0v-2a3 3 0 0 0-3-3H8a3 3 0 0 0-3 3v2a1 1 0 0 1-2 0v-2a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v2z"/></svg>
+                            By Alex Roy
+                        </div>
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="p-8 flex flex-col flex-grow items-start">
+                        <!-- Date -->
+                        <div class="flex items-center gap-2 text-gray-800 font-semibold text-[14px] mb-3">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                            8 December 2024
+                        </div>
+                        
+                        <!-- Title -->
+                        <h3 class="text-[22px] font-bold text-gray-900 leading-[1.3] mb-8 group-hover:text-[#0f4a47] transition-colors">
+                            5 Tips Find Your Dream Home Without An Stress Know Budget
+                        </h3>
+                        
+                        <!-- Learn More -->
+                        <div class="mt-auto flex items-center gap-1.5 font-bold text-[15px] text-gray-900 group-hover:text-[#0f4a47] transition-colors">
+                            Learn More
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H9M17 7v8"></path></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Card 2 -->
+                <div class="bg-white rounded-[16px] shadow-[0_4px_24px_rgba(0,0,0,0.06)] border border-gray-100 overflow-hidden flex flex-col group cursor-pointer hover:-translate-y-1 transition-all duration-300">
+                    <!-- Image -->
+                    <div class="relative w-full h-[260px] overflow-hidden">
+                        <img src="assets/images/home/hero-main.webp" alt="Blog 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        
+                        <!-- Author Badge -->
+                        <div class="absolute bottom-5 left-5 bg-yellow-400 text-gray-900 font-bold px-3 py-1.5 rounded-[4px] text-[13px] flex items-center gap-1.5 shadow-sm">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0-2a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm9 11a1 1 0 0 1-2 0v-2a3 3 0 0 0-3-3H8a3 3 0 0 0-3 3v2a1 1 0 0 1-2 0v-2a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v2z"/></svg>
+                            By Alex Roy
+                        </div>
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="p-8 flex flex-col flex-grow items-start">
+                        <!-- Date -->
+                        <div class="flex items-center gap-2 text-gray-800 font-semibold text-[14px] mb-3">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                            8 December 2024
+                        </div>
+                        
+                        <!-- Title -->
+                        <h3 class="text-[22px] font-bold text-gray-900 leading-[1.3] mb-8 group-hover:text-[#0f4a47] transition-colors">
+                            How Choose the Perfect Home Neighborhood For Your Family
+                        </h3>
+                        
+                        <!-- Learn More -->
+                        <div class="mt-auto flex items-center gap-1.5 font-bold text-[15px] text-gray-900 group-hover:text-[#0f4a47] transition-colors">
+                            Learn More
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H9M17 7v8"></path></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Card 3 -->
+                <div class="bg-white rounded-[16px] shadow-[0_4px_24px_rgba(0,0,0,0.06)] border border-gray-100 overflow-hidden flex flex-col group cursor-pointer hover:-translate-y-1 transition-all duration-300">
+                    <!-- Image -->
+                    <div class="relative w-full h-[260px] overflow-hidden">
+                        <img src="assets/images/home/thumb-2.webp" alt="Blog 3" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        
+                        <!-- Author Badge -->
+                        <div class="absolute bottom-5 left-5 bg-yellow-400 text-gray-900 font-bold px-3 py-1.5 rounded-[4px] text-[13px] flex items-center gap-1.5 shadow-sm">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0-2a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm9 11a1 1 0 0 1-2 0v-2a3 3 0 0 0-3-3H8a3 3 0 0 0-3 3v2a1 1 0 0 1-2 0v-2a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v2z"/></svg>
+                            By Alex Roy
+                        </div>
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="p-8 flex flex-col flex-grow items-start">
+                        <!-- Date -->
+                        <div class="flex items-center gap-2 text-gray-800 font-semibold text-[14px] mb-3">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                            8 December 2024
+                        </div>
+                        
+                        <!-- Title -->
+                        <h3 class="text-[22px] font-bold text-gray-900 leading-[1.3] mb-8 group-hover:text-[#0f4a47] transition-colors">
+                            Common Homebuyer Mistakes And How To Home Avoid Them
+                        </h3>
+                        
+                        <!-- Learn More -->
+                        <div class="mt-auto flex items-center gap-1.5 font-bold text-[15px] text-gray-900 group-hover:text-[#0f4a47] transition-colors">
+                            Learn More
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H9M17 7v8"></path></svg>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- INJECTION POINT -->
 
     <!-- Search Overlay -->
@@ -1924,6 +2264,23 @@
     <!-- Lenis Smooth Scroll Library -->
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
     <script src="js/script.js?v=5"></script>
+
+    <!-- ============================================ -->
+    <!-- SCROLL TO TOP BUTTON -->
+    <div id="scroll-to-top" class="fixed bottom-10 right-10 z-50 opacity-0 translate-y-4 transition-all duration-300 pointer-events-none cursor-pointer flex items-center justify-center w-14 h-14 group">
+        <!-- SVG Progress Circle -->
+        <svg class="absolute inset-0 w-full h-full -rotate-90 drop-shadow-sm" viewBox="0 0 100 100">
+            <!-- Background track (optional, but screenshot shows only the active progress) -->
+            <!-- <circle cx="50" cy="50" r="46" fill="none" stroke="#f3f4f6" stroke-width="4"></circle> -->
+            <circle id="scroll-progress-circle" cx="50" cy="50" r="46" fill="none" stroke="#111827" stroke-width="4" stroke-dasharray="289.02" stroke-dashoffset="289.02" stroke-linecap="round" class="transition-all duration-150 ease-out"></circle>
+        </svg>
+        
+        <!-- White Button Background & Arrow -->
+        <div class="relative w-[85%] h-[85%] bg-white rounded-full flex items-center justify-center shadow-[0_2px_10px_rgba(0,0,0,0.08)] group-hover:shadow-[0_4px_16px_rgba(0,0,0,0.12)] transition-shadow">
+            <svg class="w-5 h-5 text-gray-900 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 20V4M5 11l7-7 7 7"></path></svg>
+        </div>
+    </div>
+
 
     <!-- ============================================ -->
     <!-- SCROLL TO TOP BUTTON -->

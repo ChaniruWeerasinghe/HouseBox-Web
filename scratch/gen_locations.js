@@ -37,7 +37,7 @@ images.forEach((img, index) => {
 
     // Determine swap group
     let swapGroup = (index === 0 || index === 4) ? 'A' : 'B';
-    
+
     // Pick an alternate images array
     const altImages = [
         "hero-main-1.webp,hero-main-2.webp,hero-main-3.webp",
@@ -92,10 +92,6 @@ ${row1HTML}
 ${row2HTML}
                 </div>
                 
-                <!-- Floating Next Arrow -->
-                <button class="absolute -right-6 top-[75%] -translate-y-1/2 w-[60px] h-[60px] rounded-full border-[1.5px] border-gray-900 flex items-center justify-center bg-white hover:bg-gray-50 transition-colors z-20 shadow-sm">
-                    <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"></path></svg>
-                </button>
             </div>
             
         </div>
@@ -105,9 +101,9 @@ ${row2HTML}
 const indexFile = 'index.html';
 let content = fs.readFileSync(indexFile, 'utf-8');
 
-const insertTarget = '    <!-- Search Overlay -->';
+const insertTarget = '    <!-- ============================================ -->\n    <!-- INJECTION POINT -->';
 if (content.includes(insertTarget)) {
-    content = content.replace(insertTarget, sectionHTML + '\\n' + insertTarget);
+    content = content.replace(insertTarget, sectionHTML + '\n' + insertTarget);
     fs.writeFileSync(indexFile, content);
     console.log('Successfully injected Explore Locations section into index.html');
 } else {
