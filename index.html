@@ -23,15 +23,6 @@
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
-                    },
-                    keyframes: {
-                        marqueeY: {
-                            '0%': { transform: 'translateY(0)' },
-                            '100%': { transform: 'translateY(-50%)' }
-                        }
-                    },
-                    animation: {
-                        'marquee-y': 'marqueeY 10s linear infinite'
                     }
                 }
             }
@@ -78,33 +69,19 @@
                 </a>
             </div>
             
-            <!-- Right Circular Thumbnails (Vertical Marquee) -->
-            <div class="h-[320px] overflow-hidden -mr-10 relative pointer-events-none mask-image-gradient">
-                <div class="flex flex-col gap-5 animate-marquee-y">
-                    <!-- Original 4 -->
-                    <div class="w-20 h-20 rounded-full border-4 border-white overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.15)] bg-white shrink-0 pointer-events-auto">
+            <!-- Right Circular Thumbnails (Vertical Stepper) -->
+            <div class="h-[320px] overflow-hidden -mr-10 relative pointer-events-none mask-image-gradient flex items-center">
+                <div id="thumb-container" class="flex flex-col gap-5">
+                    <div class="w-20 h-20 rounded-full border-4 border-white overflow-hidden bg-white shrink-0 pointer-events-auto">
                         <img src="assets/images/home/thumb-1.webp" alt="Property 1" class="w-full h-full object-cover">
                     </div>
-                    <div class="w-20 h-20 rounded-full border-4 border-dark overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.15)] bg-white shrink-0 pointer-events-auto">
+                    <div class="w-20 h-20 rounded-full border-4 border-dark overflow-hidden bg-white shrink-0 pointer-events-auto">
                         <img src="assets/images/home/thumb-2.webp" alt="Property 2" class="w-full h-full object-cover">
                     </div>
-                    <div class="w-20 h-20 rounded-full border-4 border-white overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.15)] bg-white shrink-0 pointer-events-auto">
+                    <div class="w-20 h-20 rounded-full border-4 border-white overflow-hidden bg-white shrink-0 pointer-events-auto">
                         <img src="assets/images/home/thumb-3.webp" alt="Property 3" class="w-full h-full object-cover">
                     </div>
-                    <div class="w-20 h-20 rounded-full border-4 border-white overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.15)] bg-white shrink-0 pointer-events-auto">
-                        <img src="assets/images/home/thumb-4.webp" alt="Property 4" class="w-full h-full object-cover">
-                    </div>
-                    <!-- Duplicate 4 for seamless loop -->
-                    <div class="w-20 h-20 rounded-full border-4 border-white overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.15)] bg-white shrink-0 pointer-events-auto">
-                        <img src="assets/images/home/thumb-1.webp" alt="Property 1" class="w-full h-full object-cover">
-                    </div>
-                    <div class="w-20 h-20 rounded-full border-4 border-dark overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.15)] bg-white shrink-0 pointer-events-auto">
-                        <img src="assets/images/home/thumb-2.webp" alt="Property 2" class="w-full h-full object-cover">
-                    </div>
-                    <div class="w-20 h-20 rounded-full border-4 border-white overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.15)] bg-white shrink-0 pointer-events-auto">
-                        <img src="assets/images/home/thumb-3.webp" alt="Property 3" class="w-full h-full object-cover">
-                    </div>
-                    <div class="w-20 h-20 rounded-full border-4 border-white overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.15)] bg-white shrink-0 pointer-events-auto">
+                    <div class="w-20 h-20 rounded-full border-4 border-white overflow-hidden bg-white shrink-0 pointer-events-auto">
                         <img src="assets/images/home/thumb-4.webp" alt="Property 4" class="w-full h-full object-cover">
                     </div>
                 </div>
