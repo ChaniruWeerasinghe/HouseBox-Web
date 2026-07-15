@@ -36,12 +36,12 @@ const sectionHTML = `
                 <div class="flex-grow flex gap-6 h-[460px]">
                     
                     <!-- Left: House Image Card -->
-                    <div class="w-[45%] h-full relative overflow-hidden rounded-[24px] shadow-2xl">
+                    <div class="w-[40%] h-full relative overflow-hidden rounded-[24px] shadow-2xl">
                         <img src="assets/images/home/hero-left-bg-1.webp" alt="Property View" class="w-full h-full object-cover">
                     </div>
 
                     <!-- Right: Info Card -->
-                    <div class="w-[55%] h-full bg-white p-10 flex flex-col justify-between rounded-[24px] shadow-2xl">
+                    <div class="w-[60%] h-full bg-white p-10 flex flex-col justify-between rounded-[24px] shadow-2xl">
                         
                         <div class="flex flex-col items-start gap-4">
                             <!-- Badges -->
