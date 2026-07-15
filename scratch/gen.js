@@ -1,15 +1,15 @@
 const fs = require('fs');
 
 const properties = [
-    { title: "Luxury Suite Villa", agent: "Sheldon Jackson", image: "featured-1.webp", map: "map-1.webp" },
-    { title: "Apartment Diamond", agent: "Alex Roberts", image: "featured-2.webp", map: "map-2.webp" },
-    { title: "Apartment Angles", agent: "Alesa Healy", image: "featured-3.webp", map: "map-3.webp" },
-    { title: "Modern Glass House", agent: "Sarah Connor", image: "featured-4.webp", map: "map-4.webp" },
-    { title: "Cozy Wood Cabin", agent: "Michael Smith", image: "featured-5.webp", map: "map-5.webp" },
-    { title: "Beachfront Villa", agent: "David Chen", image: "featured-6.webp", map: "map-6.webp" },
-    { title: "Downtown Penthouse", agent: "Jessica Alba", image: "featured-7.webp", map: "map-7.webp" },
-    { title: "Suburban Family Home", agent: "Tom Hanks", image: "featured-8.webp", map: "map-8.webp" },
-    { title: "Countryside Estate", agent: "Emily Blunt", image: "featured-9.webp", map: "map-9.webp" },
+    { title: "Luxury Suite Villa", agent: "Sheldon Jackson", image: "hero-main.webp", map: "about-top.webp" },
+    { title: "Apartment Diamond", agent: "Alex Roberts", image: "hero-main-1.webp", map: "about-top.webp" },
+    { title: "Apartment Angles", agent: "Alesa Healy", image: "hero-main-2.webp", map: "about-top.webp" },
+    { title: "Modern Glass House", agent: "Sarah Connor", image: "hero-main-3.webp", map: "about-top.webp" },
+    { title: "Cozy Wood Cabin", agent: "Michael Smith", image: "hero-main-4.webp", map: "about-top.webp" },
+    { title: "Beachfront Villa", agent: "David Chen", image: "about-tall.webp", map: "about-top.webp" },
+    { title: "Downtown Penthouse", agent: "Jessica Alba", image: "about-top.webp", map: "about-top.webp" },
+    { title: "Suburban Family Home", agent: "Tom Hanks", image: "about-bottom.webp", map: "about-top.webp" },
+    { title: "Countryside Estate", agent: "Emily Blunt", image: "hero-left-bg.webp", map: "about-top.webp" },
 ];
 
 let rowsHTML = '';
