@@ -173,7 +173,7 @@ ${rowsHTML}
 const indexFile = 'index.html';
 let content = fs.readFileSync(indexFile, 'utf-8');
 
-const insertTarget = '    <!-- Search Overlay -->';
+const insertTarget = '    <!-- ============================================ -->\n    <!-- EXPLORE LOCATIONS SECTION -->';
 if (content.includes(insertTarget)) {
     content = content.replace(insertTarget, sectionHTML + '\\n' + insertTarget);
     fs.writeFileSync(indexFile, content);
