@@ -106,6 +106,14 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Add active to next
             leftSlides[currentLeftSlide].classList.add('active');
+            
+            // Trigger staggered text animation
+            const heroTexts = document.querySelectorAll('.hero-text-anim');
+            heroTexts.forEach(t => {
+                t.classList.remove('animate-text');
+                void t.offsetWidth; // trigger reflow to restart animation
+                t.classList.add('animate-text');
+            });
         }, 4000);
     }
 });

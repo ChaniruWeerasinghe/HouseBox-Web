@@ -66,6 +66,17 @@
             transform: scale(1.15);
             transition: opacity 1s ease-in-out, transform 8s linear;
         }
+
+        /* Staggered Text Mask Animation */
+        @keyframes textSlideOutIn {
+            0% { transform: translateX(0); opacity: 1; }
+            45% { transform: translateX(-105%); opacity: 0; }
+            55% { transform: translateX(-105%); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+        .animate-text {
+            animation: textSlideOutIn 1.2s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+        }
     </style>
 </head>
 <body class="bg-lightbg text-gray-800 font-sans antialiased overflow-x-hidden">
@@ -214,17 +225,23 @@
         <div class="max-w-[1320px] mx-auto px-6 w-full h-full relative z-20 flex justify-between items-center">
             
             <!-- Left Text Content -->
-            <div class="max-w-[550px] text-white -mt-16">
-                <div class="inline-block bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded text-[15px] font-medium mb-6">
-                    Discover Your Ideal Property Today!
+            <div class="max-w-[550px] text-white -mt-16 flex flex-col items-start">
+                <div class="overflow-hidden mb-6 p-1 -m-1">
+                    <div class="hero-text-anim inline-block bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded text-[15px] font-medium" style="animation-delay: 0ms;">
+                        Discover Your Ideal Property Today!
+                    </div>
                 </div>
-                <h1 class="text-[56px] leading-[1.1] font-bold mb-8">
-                    Elegant Homes For Elevated Lifestyles
-                </h1>
-                <a href="#" class="inline-flex items-center justify-center gap-2 bg-primary hover:bg-yellow-500 text-black font-semibold text-base px-7 py-3.5 rounded transition-transform hover:-translate-y-px">
-                    Find Your Dream Home Now
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"><path fill="currentColor" d="M200 64v104a8 8 0 0 1-16 0V83.31L69.66 197.66a8 8 0 0 1-11.32-11.32L172.69 72H88a8 8 0 0 1 0-16h104a8 8 0 0 1 8 8z"/></svg>
-                </a>
+                <div class="overflow-hidden mb-8 py-2 -my-2">
+                    <h1 class="hero-text-anim text-[56px] leading-[1.1] font-bold" style="animation-delay: 100ms;">
+                        Elegant Homes For Elevated Lifestyles
+                    </h1>
+                </div>
+                <div class="overflow-hidden p-1 -m-1">
+                    <a href="#" class="hero-text-anim inline-flex items-center justify-center gap-2 bg-primary hover:bg-yellow-500 text-black font-semibold text-base px-7 py-3.5 rounded transition-transform hover:-translate-y-px" style="animation-delay: 200ms;">
+                        Find Your Dream Home Now
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"><path fill="currentColor" d="M200 64v104a8 8 0 0 1-16 0V83.31L69.66 197.66a8 8 0 0 1-11.32-11.32L172.69 72H88a8 8 0 0 1 0-16h104a8 8 0 0 1 8 8z"/></svg>
+                    </a>
+                </div>
             </div>
             
             <!-- Right Circular Thumbnails (Vertical Stepper) -->
