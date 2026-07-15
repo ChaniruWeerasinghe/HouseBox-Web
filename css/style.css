@@ -54,6 +54,24 @@ body {
     animation: Image-white-mist-overlay-openDoors 1.8s cubic-bezier(0.2, 1, 0.3, 1) forwards;
 }
 
+@keyframes Image-white-mist-overlay-openDoors {
+    0% {
+        transform: translate(-50%, 0) skewX(-45deg) scaleX(0);
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    60% {
+        transform: translate(-50%, 0) skewX(-45deg) scaleX(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(100%, 0) skewX(-45deg) scaleX(1);
+        opacity: 0;
+    }
+}
+
 /* Image Reveal Animation on Scroll */
 .reveal-clip::after {
     content: '';
