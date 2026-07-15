@@ -1,19 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. Load Navbar Component
-    const navbarPlaceholder = document.getElementById('navbar-placeholder');
-    if (navbarPlaceholder) {
-        fetch('components/navbar.html')
-            .then(response => {
-                if (!response.ok) throw new Error("Could not load navbar");
-                return response.text();
-            })
-            .then(data => {
-                navbarPlaceholder.innerHTML = data;
-                initializeNavbarLogic(); // Call logic related to navbar after it loads
-            })
-            .catch(error => console.error("Error loading component:", error));
-    }
+    // 1. Navbar Logic (now hardcoded in index.html)
+    // initializeNavbarLogic(); // Call if needed
 
     // 2. Search Tabs Logic
     const tabs = document.querySelectorAll('.tab-btn');
