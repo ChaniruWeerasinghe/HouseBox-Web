@@ -1,15 +1,15 @@
 const fs = require('fs');
 
 const properties = [
-    { title: "Luxury Suite Villa", agent: "Sheldon Jackson", image: "hero-main.webp", map: "about-top.webp" },
-    { title: "Apartment Diamond", agent: "Alex Roberts", image: "hero-main-1.webp", map: "about-top.webp" },
-    { title: "Apartment Angles", agent: "Alesa Healy", image: "hero-main-2.webp", map: "about-top.webp" },
-    { title: "Modern Glass House", agent: "Sarah Connor", image: "hero-main-3.webp", map: "about-top.webp" },
-    { title: "Cozy Wood Cabin", agent: "Michael Smith", image: "hero-main-4.webp", map: "about-top.webp" },
-    { title: "Beachfront Villa", agent: "David Chen", image: "about-tall.webp", map: "about-top.webp" },
-    { title: "Downtown Penthouse", agent: "Jessica Alba", image: "about-top.webp", map: "about-top.webp" },
-    { title: "Suburban Family Home", agent: "Tom Hanks", image: "about-bottom.webp", map: "about-top.webp" },
-    { title: "Countryside Estate", agent: "Emily Blunt", image: "hero-left-bg.webp", map: "about-top.webp" },
+    { title: "Luxury Suite Villa", agent: "Sheldon Jackson", image: "hero-main.webp", location: "Los Angeles, CA" },
+    { title: "Apartment Diamond", agent: "Alex Roberts", image: "hero-main-1.webp", location: "Miami, FL" },
+    { title: "Apartment Angles", agent: "Alesa Healy", image: "hero-main-2.webp", location: "New York, NY" },
+    { title: "Modern Glass House", agent: "Sarah Connor", image: "hero-main-3.webp", location: "Austin, TX" },
+    { title: "Cozy Wood Cabin", agent: "Michael Smith", image: "hero-main-4.webp", location: "Denver, CO" },
+    { title: "Beachfront Villa", agent: "David Chen", image: "about-tall.webp", location: "San Diego, CA" },
+    { title: "Downtown Penthouse", agent: "Jessica Alba", image: "about-top.webp", location: "Chicago, IL" },
+    { title: "Suburban Family Home", agent: "Tom Hanks", image: "about-bottom.webp", location: "Seattle, WA" },
+    { title: "Countryside Estate", agent: "Emily Blunt", image: "hero-left-bg.webp", location: "San Francisco, CA" },
 ];
 
 let rowsHTML = '';
@@ -88,24 +88,16 @@ properties.forEach((prop, index) => {
                     </div>
 
                     <!-- Right: Map -->
-                    <div class="col-span-3 relative w-full h-full rounded-[16px] overflow-hidden group bg-gray-200">
-                        <img src="assets/images/home/${prop.map}" alt="Map View" class="w-full h-full object-cover">
-                        
-                        <!-- Hover Overlay for Map -->
-                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <span class="text-white font-medium text-[13px]">Use ctrl + scroll to zoom</span>
-                        </div>
-
-                        <!-- Open In Maps Button -->
-                        <a href="#" class="absolute top-4 left-4 bg-white hover:bg-gray-50 transition-colors text-primary font-medium px-3 py-1.5 rounded-sm text-[12px] shadow-sm flex items-center gap-1.5 z-10">
-                            Open In Maps
-                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                        </a>
-                        
-                        <!-- Fullscreen Icon Bottom Right -->
-                        <div class="absolute bottom-4 right-4 bg-white w-8 h-8 rounded-full flex items-center justify-center shadow-sm">
-                            <svg class="w-4 h-4 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path></svg>
-                        </div>
+                    <div class="col-span-3 relative w-full h-full rounded-[16px] overflow-hidden border border-gray-100 shadow-sm bg-gray-100">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=${encodeURIComponent(prop.location)}&t=&z=11&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
                     </div>
                 </div>
 `;
