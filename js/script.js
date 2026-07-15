@@ -94,6 +94,24 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }, 2000); // changes every 2 seconds
     }
+
+    // 5. Left Background Slider
+    const leftSlides = document.querySelectorAll('#left-slider > div');
+    if (leftSlides.length > 0) {
+        let currentLeftSlide = 0;
+        setInterval(() => {
+            // Fade out current
+            leftSlides[currentLeftSlide].classList.remove('opacity-20');
+            leftSlides[currentLeftSlide].classList.add('opacity-0');
+            
+            // Move to next
+            currentLeftSlide = (currentLeftSlide + 1) % leftSlides.length;
+            
+            // Fade in next
+            leftSlides[currentLeftSlide].classList.remove('opacity-0');
+            leftSlides[currentLeftSlide].classList.add('opacity-20');
+        }, 3000); // changes every 3 seconds
+    }
 });
 
 // Logic that applies to the dynamically loaded navbar
