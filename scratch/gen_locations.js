@@ -26,9 +26,18 @@ images.forEach((img, index) => {
         `;
     }
 
+    // Determine col-span based on index (0 to 5)
+    let colSpan = '';
+    if (index === 0) colSpan = 'col-span-2';
+    else if (index === 1) colSpan = 'col-span-3';
+    else if (index === 2) colSpan = 'col-span-4';
+    else if (index === 3) colSpan = 'col-span-4';
+    else if (index === 4) colSpan = 'col-span-3';
+    else if (index === 5) colSpan = 'col-span-2';
+
     cardsHTML += `
                 <!-- Location Card ${index + 1} -->
-                <div class="relative w-full aspect-[4/3] rounded-[16px] overflow-hidden group cursor-pointer shadow-sm">
+                <div class="${colSpan} relative w-full h-[320px] rounded-[16px] overflow-hidden group cursor-pointer shadow-sm">
                     <img src="assets/images/home/${img}" alt="Location View" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                     ${dotsHTML}
                 </div>
@@ -56,7 +65,7 @@ const sectionHTML = `
 
             <!-- Locations Grid -->
             <div class="w-full relative mt-4">
-                <div class="w-full grid grid-cols-3 gap-6">
+                <div class="w-full grid grid-cols-9 gap-6">
 ${cardsHTML}
                 </div>
                 
