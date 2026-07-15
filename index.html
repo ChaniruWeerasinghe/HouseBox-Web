@@ -50,7 +50,76 @@
             
             <!-- Middle: Links -->
             <ul class="hidden lg:flex items-center gap-6 absolute left-1/2 -translate-x-1/2 w-max">
-                <li><a href="#" class="text-gray-800 font-medium text-[15px] flex items-center gap-1 hover:text-primary transition-colors">Home <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></a></li>
+                <li class="group">
+                    <a href="#" class="text-primary font-medium text-[15px] flex items-center gap-1 relative py-6 after:absolute after:bottom-4 after:left-0 after:w-full after:h-0.5 after:bg-primary">
+                        Home 
+                        <svg class="w-3.5 h-3.5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                    </a>
+                    
+                    <!-- Mega Menu Dropdown -->
+                    <div class="fixed top-[88px] left-1/2 -translate-x-1/2 w-[95%] max-w-[1300px] bg-white rounded-[12px] shadow-[0_15px_40px_rgba(0,0,0,0.12)] p-6 md:p-8 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 translate-y-2 group-hover:translate-y-0 z-50">
+                        <!-- Invisible bridge to prevent hover loss -->
+                        <div class="absolute -top-6 left-0 w-full h-6 bg-transparent"></div>
+                        
+                        <div class="grid grid-cols-4 gap-6">
+                            <!-- Card 1 -->
+                            <div class="flex flex-col items-center gap-4 group/card cursor-pointer">
+                                <div class="relative w-full aspect-[4/3] rounded-lg overflow-hidden border border-gray-100 shadow-[0_2px_10px_rgba(0,0,0,0.05)] bg-gray-50">
+                                    <img src="assets/images/megamenu/home-1.webp" alt="Homepage 1" class="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-500">
+                                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                        <button class="bg-primary hover:bg-yellow-400 text-black font-semibold text-sm px-6 py-2.5 rounded flex items-center gap-2 translate-y-4 group-hover/card:translate-y-0 transition-transform duration-300">
+                                            View Demo
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 19L19 5M19 5v10M19 5H9"></path></svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <span class="font-semibold text-gray-800 text-[15px]">Housebox - Homepage 01</span>
+                            </div>
+                            
+                            <!-- Card 2 -->
+                            <div class="flex flex-col items-center gap-4 group/card cursor-pointer">
+                                <div class="relative w-full aspect-[4/3] rounded-lg overflow-hidden border border-gray-100 shadow-[0_2px_10px_rgba(0,0,0,0.05)] bg-gray-50">
+                                    <img src="assets/images/megamenu/home-2.webp" alt="Homepage 2" class="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-500">
+                                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                        <button class="bg-primary hover:bg-yellow-400 text-black font-semibold text-sm px-6 py-2.5 rounded flex items-center gap-2 translate-y-4 group-hover/card:translate-y-0 transition-transform duration-300">
+                                            View Demo
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 19L19 5M19 5v10M19 5H9"></path></svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <span class="font-semibold text-gray-800 text-[15px]">Housebox - Homepage 02</span>
+                            </div>
+                            
+                            <!-- Card 3 -->
+                            <div class="flex flex-col items-center gap-4 group/card cursor-pointer">
+                                <div class="relative w-full aspect-[4/3] rounded-lg overflow-hidden border border-gray-100 shadow-[0_2px_10px_rgba(0,0,0,0.05)] bg-gray-50">
+                                    <img src="assets/images/megamenu/home-3.webp" alt="Homepage 3" class="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-500">
+                                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                        <button class="bg-primary hover:bg-yellow-400 text-black font-semibold text-sm px-6 py-2.5 rounded flex items-center gap-2 translate-y-4 group-hover/card:translate-y-0 transition-transform duration-300">
+                                            View Demo
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 19L19 5M19 5v10M19 5H9"></path></svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <span class="font-semibold text-gray-800 text-[15px]">Housebox - Homepage 03</span>
+                            </div>
+                            
+                            <!-- Card 4 -->
+                            <div class="flex flex-col items-center gap-4 group/card cursor-pointer">
+                                <div class="relative w-full aspect-[4/3] rounded-lg overflow-hidden border border-gray-100 shadow-[0_2px_10px_rgba(0,0,0,0.05)] bg-gray-50">
+                                    <img src="assets/images/megamenu/home-4.webp" alt="Homepage 4" class="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-500">
+                                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                        <button class="bg-primary hover:bg-yellow-400 text-black font-semibold text-sm px-6 py-2.5 rounded flex items-center gap-2 translate-y-4 group-hover/card:translate-y-0 transition-transform duration-300">
+                                            View Demo
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 19L19 5M19 5v10M19 5H9"></path></svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <span class="font-semibold text-gray-800 text-[15px]">Housebox - Homepage 04</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
                 <li><a href="#" class="text-gray-800 font-medium text-[15px] flex items-center gap-1 hover:text-primary transition-colors">Pages <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></a></li>
                 <li><a href="#" class="text-gray-800 font-medium text-[15px] flex items-center gap-1 hover:text-primary transition-colors">Listing <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></a></li>
                 <li><a href="#" class="text-gray-800 font-medium text-[15px] flex items-center gap-1 hover:text-primary transition-colors">Properties <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></a></li>
