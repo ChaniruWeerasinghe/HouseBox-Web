@@ -1611,25 +1611,35 @@
                             </div>
 
                             <!-- Stats (Features) -->
-                            <div class="flex items-center gap-4 mt-6">
-                                <div class="flex items-center gap-2 border border-gray-200 rounded-[8px] px-5 py-2.5 text-gray-600 text-[14px]">
-                                    <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-                                        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            <div class="flex items-center gap-3 mt-6">
+                                <div class="flex items-center gap-2 border border-gray-200 rounded-full px-5 py-2.5 text-gray-700 font-medium text-[15px]">
+                                    <svg class="w-[18px] h-[18px] text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
+                                        <path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/>
+                                        <path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/>
+                                        <path d="M12 4v6"/>
+                                        <path d="M2 18h20"/>
                                     </svg>
                                     <span id="feat-beds">x12 Beds</span>
                                 </div>
-                                <div class="flex items-center gap-2 border border-gray-200 rounded-[8px] px-5 py-2.5 text-gray-600 text-[14px]">
-                                    <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-                                        <path d="M7 21V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v16"></path>
-                                        <path d="M10 21v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4"></path>
-                                        <path d="M10 9h.01M14 9h.01M10 13h.01M14 13h.01"></path>
+                                <div class="flex items-center gap-2 border border-gray-200 rounded-full px-5 py-2.5 text-gray-700 font-medium text-[15px]">
+                                    <svg class="w-[18px] h-[18px] text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
+                                        <path d="M4 12h16a1 1 0 0 1 1 1v3a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4v-3a1 1 0 0 1 1 -1z" />
+                                        <path d="M6 12v-7a2 2 0 0 1 2 -2h3v2.25" />
+                                        <path d="M4 21l1 -1.5" />
+                                        <path d="M20 21l-1 -1.5" />
                                     </svg>
                                     <span id="feat-baths">x16 Baths</span>
                                 </div>
-                                <div class="flex items-center gap-2 border border-gray-200 rounded-[8px] px-5 py-2.5 text-gray-600 text-[14px]">
-                                    <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-                                        <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7M21 21v-6h-6M3 3v6h6M21 21l-7-7M3 3l7 7"></path>
+                                <div class="flex items-center gap-2 border border-gray-200 rounded-full px-5 py-2.5 text-gray-700 font-medium text-[15px]">
+                                    <svg class="w-[18px] h-[18px] text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
+                                        <circle cx="5" cy="5" r="2" />
+                                        <circle cx="19" cy="5" r="2" />
+                                        <circle cx="5" cy="19" r="2" />
+                                        <circle cx="19" cy="19" r="2" />
+                                        <line x1="5" y1="7" x2="5" y2="17" />
+                                        <line x1="7" y1="5" x2="17" y2="5" />
+                                        <line x1="7" y1="19" x2="17" y2="19" />
+                                        <line x1="19" y1="7" x2="19" y2="17" />
                                     </svg>
                                     <span id="feat-sqft">1200 sq</span>
                                 </div>
@@ -1639,7 +1649,7 @@
                         <!-- Card Footer -->
                         <div class="w-full border-t border-gray-100 pt-6 mt-4 flex items-center justify-between">
                             <div class="flex items-center gap-3">
-                                <img id="feat-agent-img" src="assets/images/home/avatar-1.webp" alt="Alex Roberts" class="w-12 h-12 rounded-full object-cover shadow-sm bg-gray-100">
+                                <img id="feat-agent-img" src="assets/images/home/clientdp.png" alt="Alex Roberts" class="w-[72px] h-[48px] object-contain">
                                 <span id="feat-agent-name" class="font-semibold text-gray-900 text-[15px]">Alex Roberts</span>
                             </div>
                             <div class="flex items-center gap-4">
@@ -1664,6 +1674,113 @@
 
         </div>
     </section>
+
+    <!-- ============================================ -->
+    <!-- TESTIMONIALS SECTION -->
+    <section class="w-full bg-[#f4f5f5] py-24 relative font-sans">
+        
+        <div class="max-w-[1600px] mx-auto w-full px-8 relative z-10">
+            
+            <!-- Section Header -->
+            <div class="flex items-end justify-between w-full mb-12">
+                <!-- Left: Titles -->
+                <div class="flex flex-col items-start gap-3">
+                    <span class="bg-[#dce6e5] text-[#0f4a47] font-semibold px-4 py-1.5 rounded-[4px] text-[14px]">Trusted By Thousand People</span>
+                    <h2 class="text-[44px] font-bold text-gray-900 tracking-tight leading-tight">Hear Our Happy Clients</h2>
+                </div>
+                
+                <!-- Right: Button -->
+                <button class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold text-[15px] px-8 py-3.5 rounded-[6px] transition-colors flex items-center gap-2 group shadow-sm">
+                    View All Testimonials
+                    <svg class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 19L19 5M19 5v10M19 5h-10"></path></svg>
+                </button>
+            </div>
+
+            <!-- Content Area -->
+            <div class="flex gap-12 h-[520px]">
+                
+                <!-- Left: Large Family Image -->
+                <div class="w-[45%] h-full rounded-[24px] overflow-hidden shadow-lg bg-gray-200">
+                    <img src="assets/images/home/hero-main.webp" alt="Happy Family" class="w-full h-full object-cover">
+                </div>
+
+                <!-- Right: Testimonial Bubble & Avatars -->
+                <div class="w-[55%] h-full flex items-center pr-8">
+                    
+                    <!-- Main Testimonial Block -->
+                    <div class="flex-grow flex flex-col mr-12 h-full justify-center">
+                        
+                        <!-- Dark Green Speech Bubble -->
+                        <div class="relative bg-[#0f4a47] rounded-[16px] p-10 shadow-2xl">
+                            
+                            <!-- Stars and Quote -->
+                            <div class="flex justify-between items-start mb-6">
+                                <div class="flex items-center gap-1.5 text-yellow-500">
+                                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                </div>
+                                <svg class="w-10 h-10 text-[#dce6e5]/40" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                                </svg>
+                            </div>
+
+                            <!-- Text -->
+                            <p class="text-[#93b4af] text-[20px] font-medium leading-relaxed">
+                                "From start to finish, the team was exceptional. There are listened to our needs, provided expert guidance, & found us the perfect home. We couldn't be happier on with their service! got the best deal possible! Thanks"
+                            </p>
+
+                            <!-- Speech Bubble Tail -->
+                            <div class="absolute -bottom-5 left-10 w-0 h-0 border-l-[20px] border-l-transparent border-r-[20px] border-r-transparent border-t-[24px] border-t-[#0f4a47]"></div>
+                        </div>
+
+                        <!-- Author Info -->
+                        <div class="flex items-center justify-between mt-10 ml-8">
+                            <!-- Avatar & Name -->
+                            <div class="flex items-center gap-4">
+                                <div class="w-[52px] h-[52px] rounded-full overflow-hidden bg-gray-200 shadow-md">
+                                    <img src="assets/images/home/avatar-1.webp" alt="Sheldon Jackson" class="w-full h-full object-cover">
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-bold text-gray-900 text-[18px]">Sheldon Jackson</span>
+                                    <span class="text-gray-500 font-medium text-[14px]">Shop Store Owner</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Google Logo text-based -->
+                            <div class="font-sans font-bold text-[26px] tracking-tighter select-none opacity-90">
+                                <span class="text-[#4285F4]">G</span><span class="text-[#EA4335]">o</span><span class="text-[#FBBC05]">o</span><span class="text-[#4285F4]">g</span><span class="text-[#34A853]">l</span><span class="text-[#EA4335]">e</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Right Stack of Avatars -->
+                    <div class="flex flex-col justify-center items-center gap-6 h-full ml-auto">
+                        <!-- Active Avatar -->
+                        <div class="w-[60px] h-[60px] rounded-full p-1 border-2 border-[#0f4a47] cursor-pointer hover:scale-110 transition-transform">
+                            <img src="assets/images/home/avatar-1.webp" class="w-full h-full rounded-full object-cover">
+                        </div>
+                        <!-- Inactive Avatars -->
+                        <div class="w-[52px] h-[52px] rounded-full p-[2px] border border-gray-300 opacity-60 cursor-pointer hover:opacity-100 hover:scale-110 transition-all">
+                            <img src="assets/images/home/clientdp.png" class="w-full h-full rounded-full object-cover">
+                        </div>
+                        <div class="w-[52px] h-[52px] rounded-full p-[2px] border border-gray-300 opacity-60 cursor-pointer hover:opacity-100 hover:scale-110 transition-all">
+                            <img src="assets/images/home/avatar-1.webp" class="w-full h-full rounded-full object-cover">
+                        </div>
+                        <div class="w-[52px] h-[52px] rounded-full p-[2px] border border-gray-300 opacity-60 cursor-pointer hover:opacity-100 hover:scale-110 transition-all">
+                            <img src="assets/images/home/clientdp.webp" class="w-full h-full rounded-full object-cover">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
     <!-- INJECTION POINT -->
 
     <!-- Search Overlay -->
