@@ -1,38 +1,43 @@
-<nav class="fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-[1400px] bg-white rounded-[12px] px-4 md:px-6 py-3 z-[100] shadow-[0_4px_20px_rgba(0,0,0,0.05)] flex justify-between items-center">
-    <a href="index.html" class="flex items-center gap-3">
-        <!-- Exact Logo Replica -->
-        <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center shrink-0">
-            <svg class="w-5 h-5 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 22h16"></path>
-                <path d="M6 22V12h4v10"></path>
-                <path d="M10 22V6h5v16"></path>
-                <path d="M15 22v-9h4v9"></path>
-            </svg>
-        </div>
-        <span class="text-[22px] font-extrabold text-black tracking-tight">HOUSEBOX</span>
-    </a>
-    
-    <ul class="hidden lg:flex items-center gap-6">
-        <li><a href="#" class="text-gray-800 font-medium text-[15px] flex items-center gap-1 hover:text-primary transition-colors">Home <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></a></li>
-        <li><a href="#" class="text-gray-800 font-medium text-[15px] flex items-center gap-1 hover:text-primary transition-colors">Pages <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></a></li>
-        <li><a href="#" class="text-gray-800 font-medium text-[15px] flex items-center gap-1 hover:text-primary transition-colors">Listing <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></a></li>
-        <li><a href="#" class="text-gray-800 font-medium text-[15px] flex items-center gap-1 hover:text-primary transition-colors">Properties <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></a></li>
-        <li><a href="#" class="text-gray-800 font-medium text-[15px] flex items-center gap-1 hover:text-primary transition-colors">Dashboard <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></a></li>
-        <li><a href="#" class="text-gray-800 font-medium text-[15px] flex items-center gap-1 hover:text-primary transition-colors">Blogs <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></a></li>
-    </ul>
-
-    <div class="flex items-center">
-        <button class="p-2 text-gray-800 hover:text-primary transition-colors">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-            </svg>
-        </button>
-        <div class="w-px h-6 bg-gray-300 mx-3 md:mx-5"></div>
-        <a href="#" class="bg-primary hover:bg-yellow-400 text-gray-900 font-semibold text-[15px] px-6 py-2.5 rounded-[8px] flex items-center gap-2 transition-colors">
-            View Listing
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 19L19 5M19 5v10M19 5H9"></path>
-            </svg>
+<nav class="fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-[1400px] bg-white rounded-[12px] px-4 md:px-6 py-3 z-[100] shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
+    <div class="w-full flex items-center justify-between relative">
+        
+        <!-- Left: Logo -->
+        <a href="index.html" class="flex items-center gap-3 relative z-10">
+            <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 22h16"></path>
+                    <path d="M6 22V12h4v10"></path>
+                    <path d="M10 22V6h5v16"></path>
+                    <path d="M15 22v-9h4v9"></path>
+                </svg>
+            </div>
+            <span class="text-[22px] font-extrabold text-black tracking-tight">HOUSEBOX</span>
         </a>
+        
+        <!-- Middle: Links -->
+        <ul class="hidden lg:flex items-center gap-6 absolute left-1/2 -translate-x-1/2 w-max">
+            <li><a href="#" class="text-gray-800 font-medium text-[15px] flex items-center gap-1 hover:text-primary transition-colors">Home <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></a></li>
+            <li><a href="#" class="text-gray-800 font-medium text-[15px] flex items-center gap-1 hover:text-primary transition-colors">Pages <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></a></li>
+            <li><a href="#" class="text-gray-800 font-medium text-[15px] flex items-center gap-1 hover:text-primary transition-colors">Listing <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></a></li>
+            <li><a href="#" class="text-gray-800 font-medium text-[15px] flex items-center gap-1 hover:text-primary transition-colors">Properties <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></a></li>
+            <li><a href="#" class="text-gray-800 font-medium text-[15px] flex items-center gap-1 hover:text-primary transition-colors">Dashboard <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></a></li>
+            <li><a href="#" class="text-gray-800 font-medium text-[15px] flex items-center gap-1 hover:text-primary transition-colors">Blogs <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></a></li>
+        </ul>
+
+        <!-- Right: Actions -->
+        <div class="flex items-center relative z-10">
+            <button class="p-2 text-gray-800 hover:text-primary transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+            </button>
+            <div class="w-px h-6 bg-gray-300 mx-3 md:mx-5"></div>
+            <a href="#" class="bg-primary hover:bg-yellow-400 text-gray-900 font-semibold text-[15px] px-6 py-2.5 rounded-[8px] flex items-center gap-2 transition-colors">
+                View Listing
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 19L19 5M19 5v10M19 5H9"></path>
+                </svg>
+            </a>
+        </div>
     </div>
 </nav>
