@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 void t.offsetWidth; // trigger reflow to restart animation
                 t.classList.add('animate-text');
             });
-        }, 4000);
+        }, 4500);
     }
 });
 
