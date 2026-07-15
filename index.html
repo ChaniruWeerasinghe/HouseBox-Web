@@ -384,59 +384,62 @@
         </div>
 
         <!-- Floating Search Widget -->
-        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] max-w-[1100px] z-30">
-            <div class="flex">
-                <button class="tab-btn active px-10 py-3.5 text-[15px] font-semibold bg-primary text-black rounded-t transition-colors">For Sale</button>
-                <button class="tab-btn px-10 py-3.5 text-[15px] font-semibold bg-lightbg text-gray-800 rounded-t transition-colors">For Rent</button>
-            </div>
-            
-            <div class="flex items-center bg-white p-6 rounded-b rounded-tr shadow-[0_10px_40px_rgba(0,0,0,0.08)] gap-5">
-                <!-- Status -->
-                <div class="flex-1 flex flex-col gap-2">
-                    <label class="text-sm font-semibold text-gray-800">Status</label>
-                    <div class="custom-select flex justify-between items-center bg-lightbg hover:bg-gray-200 px-4 py-3 rounded text-gray-500 text-sm cursor-pointer transition-colors border border-transparent">
-                        <span>All Status</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"><path fill="currentColor" d="M213.66 101.66l-80 80a8 8 0 0 1-11.32 0l-80-80a8 8 0 0 1 11.32-11.32L128 164.69l74.34-74.35a8 8 0 0 1 11.32 11.32z"/></svg>
-                    </div>
+        <div class="absolute bottom-0 left-0 w-full z-30 flex justify-center">
+            <div class="w-full max-w-[1320px] px-6">
+                <div class="flex">
+                    <button class="tab-btn active px-10 py-3.5 text-[15px] font-semibold bg-primary text-black rounded-tl-xl transition-colors">For Sale</button>
+                    <button class="tab-btn px-10 py-3.5 text-[15px] font-medium bg-lightbg text-gray-600 hover:text-gray-900 rounded-tr-xl transition-colors">For Rent</button>
                 </div>
                 
-                <div class="w-px h-10 bg-gray-200 hidden lg:block"></div>
-                
-                <!-- Labels -->
-                <div class="flex-1 flex flex-col gap-2">
-                    <label class="text-sm font-semibold text-gray-800">Labels</label>
-                    <div class="custom-select flex justify-between items-center bg-lightbg hover:bg-gray-200 px-4 py-3 rounded text-gray-500 text-sm cursor-pointer transition-colors border border-transparent">
-                        <span>All Labels</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"><path fill="currentColor" d="M213.66 101.66l-80 80a8 8 0 0 1-11.32 0l-80-80a8 8 0 0 1 11.32-11.32L128 164.69l74.34-74.35a8 8 0 0 1 11.32 11.32z"/></svg>
+                <div class="flex items-start bg-white p-6 rounded-b-xl rounded-tr-xl shadow-[0_15px_50px_rgba(0,0,0,0.08)] gap-6 w-full">
+                    <!-- Status -->
+                    <div class="flex-1 flex flex-col gap-2.5">
+                        <label class="text-[14px] font-semibold text-gray-900">Status</label>
+                        <div class="custom-select flex justify-between items-center bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-800 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px]">
+                            <span class="font-medium">All Status</span>
+                            <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="w-px h-10 bg-gray-200 hidden lg:block"></div>
-                
-                <!-- Types -->
-                <div class="flex-1 flex flex-col gap-2">
-                    <label class="text-sm font-semibold text-gray-800">Types</label>
-                    <div class="custom-select flex justify-between items-center bg-lightbg hover:bg-gray-200 px-4 py-3 rounded text-gray-500 text-sm cursor-pointer transition-colors border border-transparent">
-                        <span>All Types</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"><path fill="currentColor" d="M213.66 101.66l-80 80a8 8 0 0 1-11.32 0l-80-80a8 8 0 0 1 11.32-11.32L128 164.69l74.34-74.35a8 8 0 0 1 11.32 11.32z"/></svg>
+                    
+                    <div class="w-px h-10 bg-gray-200 hidden lg:block mt-[34px]"></div>
+                    
+                    <!-- Labels -->
+                    <div class="flex-1 flex flex-col gap-2.5">
+                        <label class="text-[14px] font-semibold text-gray-900">Labels</label>
+                        <div class="custom-select flex justify-between items-center bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-800 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px]">
+                            <span class="font-medium">All Labels</span>
+                            <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="w-px h-10 bg-gray-200 hidden lg:block"></div>
-                
-                <!-- Customize -->
-                <div class="flex-1 flex flex-col gap-2">
-                    <label class="text-sm font-semibold text-gray-800">Customize</label>
-                    <div class="custom-select flex justify-between items-center bg-lightbg hover:bg-gray-200 px-4 py-3 rounded text-gray-500 text-sm cursor-pointer transition-colors border border-transparent">
-                        <span>Advance</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"><path fill="currentColor" d="M224 64a8 8 0 0 1-8 8H40a8 8 0 0 1 0-16h176a8 8 0 0 1 8 8zM40 136h176a8 8 0 0 0 0-16H40a8 8 0 0 0 0 16zm176 56H40a8 8 0 0 0 0 16h176a8 8 0 0 0 0-16z"/></svg>
+                    
+                    <div class="w-px h-10 bg-gray-200 hidden lg:block mt-[34px]"></div>
+                    
+                    <!-- Types -->
+                    <div class="flex-1 flex flex-col gap-2.5">
+                        <label class="text-[14px] font-semibold text-gray-900">Types</label>
+                        <div class="custom-select flex justify-between items-center bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-800 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px]">
+                            <span class="font-medium">All Types</span>
+                            <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
                     </div>
+                    
+                    <div class="w-px h-10 bg-gray-200 hidden lg:block mt-[34px]"></div>
+                    
+                    <!-- Customize -->
+                    <div class="flex-1 flex flex-col gap-2.5">
+                        <label class="text-[14px] font-semibold text-gray-900">Customize</label>
+                        <div class="custom-select flex justify-between items-center bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-800 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px]">
+                            <span class="font-medium">Advance</span>
+                            <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75"></path></svg>
+                        </div>
+                    </div>
+                    
+                    <!-- Search Button -->
+                    <button class="bg-primary hover:bg-yellow-500 text-black font-semibold text-[15px] px-8 py-3 rounded-lg flex items-center justify-center gap-2 self-end mt-auto transition-transform hover:-translate-y-px h-[48px]">
+                        Search 
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </button>
                 </div>
-                
-                <button class="bg-primary hover:bg-yellow-500 text-black font-semibold text-base px-8 py-3.5 h-full rounded flex items-center gap-2 transition-transform hover:-translate-y-px">
-                    Search 
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"><path fill="currentColor" d="M229.66 218.34l-50.07-50.06a88.11 88.11 0 1 0-11.31 11.31l50.06 50.07a8 8 0 0 0 11.32-11.32zM40 112a72 72 0 1 1 72 72a72.08 72.08 0 0 1-72-72z"/></svg>
-                </button>
             </div>
         </div>
     </main>
