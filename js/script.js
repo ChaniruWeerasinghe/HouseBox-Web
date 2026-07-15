@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     thumbContainer.style.transition = 'transform 0.5s ease-in-out';
                 }, 500); // Wait for the transition to finish
             }
-        }, 2000); // changes every 2 seconds
+        }, 3000); // changes every 3 seconds
     }
 
     // 5. Left Background Slider
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Fade in next
             leftSlides[currentLeftSlide].classList.remove('opacity-0');
             leftSlides[currentLeftSlide].classList.add('opacity-20');
-        }, 3000); // changes every 3 seconds
+        }, 4000); // changes every 4 seconds
     }
 });
 
