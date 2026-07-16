@@ -543,11 +543,94 @@
                 </button>
             </div>
             <div class="flex flex-col p-6 gap-5 overflow-y-auto">
+                <!-- Home -->
                 <a href="#" class="text-gray-900 font-semibold text-[17px] hover:text-primary transition-colors">Home</a>
-                <a href="#" class="text-gray-600 font-medium text-[17px] hover:text-primary transition-colors">About</a>
-                <a href="#" class="text-gray-600 font-medium text-[17px] hover:text-primary transition-colors">Property</a>
-                <a href="#" class="text-gray-600 font-medium text-[17px] hover:text-primary transition-colors">Agents</a>
-                <a href="#" class="text-gray-600 font-medium text-[17px] hover:text-primary transition-colors">Blogs</a>
+                
+                <!-- About Accordion -->
+                <details class="group/mob-about">
+                    <summary class="flex items-center justify-between cursor-pointer list-none [&::-webkit-details-marker]:hidden text-gray-600 font-medium text-[17px] hover:text-primary transition-colors">
+                        About
+                        <svg class="w-4 h-4 text-gray-400 group-open/mob-about:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </summary>
+                    <div class="flex flex-col gap-4 pl-4 mt-4 border-l-2 border-gray-100">
+                        <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Our Services</a>
+                        <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Pricing</a>
+                        <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Contact Us</a>
+                        <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">FAQ's</a>
+                        <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Privacy Policy</a>
+                        <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Loan Calculator</a>
+                    </div>
+                </details>
+
+                <!-- Listing Accordion -->
+                <details class="group/mob-listing">
+                    <summary class="flex items-center justify-between cursor-pointer list-none [&::-webkit-details-marker]:hidden text-gray-600 font-medium text-[17px] hover:text-primary transition-colors">
+                        Listing
+                        <svg class="w-4 h-4 text-gray-400 group-open/mob-listing:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </summary>
+                    <div class="flex flex-col gap-4 pl-4 mt-4 border-l-2 border-gray-100">
+                        <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Property Half Grid</a>
+                        <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Property Half Map List</a>
+                        <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Property Top Map Grid</a>
+                        <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Property Top Map List</a>
+                        <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Find Sidebar Grid</a>
+                        <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Find Sidebar List</a>
+                    </div>
+                </details>
+
+                <!-- Properties Accordion -->
+                <details class="group/mob-properties">
+                    <summary class="flex items-center justify-between cursor-pointer list-none [&::-webkit-details-marker]:hidden text-gray-600 font-medium text-[17px] hover:text-primary transition-colors">
+                        Properties
+                        <svg class="w-4 h-4 text-gray-400 group-open/mob-properties:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </summary>
+                    <div class="flex flex-col gap-4 pl-4 mt-4 border-l-2 border-gray-100">
+                        <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Property Details 01</a>
+                        <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Property Details 02</a>
+                        <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Property Details 03</a>
+                        <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Property Details 04</a>
+                    </div>
+                </details>
+
+                <!-- Dashboard Accordion -->
+                <details class="group/mob-dashboard">
+                    <summary class="flex items-center justify-between cursor-pointer list-none [&::-webkit-details-marker]:hidden text-gray-600 font-medium text-[17px] hover:text-primary transition-colors">
+                        Dashboard
+                        <svg class="w-4 h-4 text-gray-400 group-open/mob-dashboard:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </summary>
+                    <div class="flex flex-col gap-4 pl-4 mt-4 border-l-2 border-gray-100">
+                        <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Dashboard</a>
+                        <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">My Properties</a>
+                        <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Message</a>
+                        <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">My Favourites</a>
+                        <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Reviews</a>
+                        <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">My Propfile</a>
+                        <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Add Property</a>
+                    </div>
+                </details>
+
+                <!-- Blogs Accordion -->
+                <details class="group/mob-blogs">
+                    <summary class="flex items-center justify-between cursor-pointer list-none [&::-webkit-details-marker]:hidden text-gray-600 font-medium text-[17px] hover:text-primary transition-colors">
+                        Blogs
+                        <svg class="w-4 h-4 text-gray-400 group-open/mob-blogs:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </summary>
+                    <div class="flex flex-col gap-4 pl-4 mt-4 border-l-2 border-gray-100">
+                        <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Blog Default</a>
+                        <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Blog Grid</a>
+                        <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Blog Post Details</a>
+                    </div>
+                </details>
                 <div class="w-full h-px bg-gray-100 my-2"></div>
                 <a href="#" class="bg-primary text-gray-900 font-semibold text-[16px] px-6 py-3.5 rounded text-center transition-colors flex items-center justify-center gap-2">
                     View Listing
