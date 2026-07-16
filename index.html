@@ -736,12 +736,22 @@
                 
                 <!-- Mobile Toggle Button (Visible only on mobile when closed) -->
                 <div id="mobile-search-toggle" class="lg:hidden w-full flex justify-center transition-all duration-300 z-40 relative cursor-pointer group" onclick="toggleMobileSearch()">
-                    <div class="bg-white shadow-[0_-10px_30px_rgba(0,0,0,0.15)] rounded-t-2xl px-10 py-3 flex flex-col items-center gap-1.5 text-gray-900 font-bold text-[16px] border-b-[4px] border-primary translate-y-1 group-hover:translate-y-0 transition-transform">
-                        <svg class="w-5 h-5 text-gray-500 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"></path>
-                        </svg>
+                    <div class="bg-primary shadow-[0_-10px_30px_rgba(0,0,0,0.15)] rounded-t-2xl px-10 py-3 flex flex-col items-center gap-1.5 text-black font-bold text-[16px] hover:bg-yellow-500 transition-colors">
+                        
+                        <!-- Interactive Arrow Design -->
+                        <div class="relative w-8 h-8 flex items-center justify-center -mt-1 mb-0.5">
+                            <!-- Pulsing Ring -->
+                            <div class="absolute inset-0 bg-white rounded-full animate-ping opacity-60"></div>
+                            <!-- Arrow Circle -->
+                            <div class="relative w-full h-full bg-white rounded-full shadow-md flex items-center justify-center animate-bounce">
+                                <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 15l7-7 7 7"></path>
+                                </svg>
+                            </div>
+                        </div>
+
                         <span class="flex items-center gap-2">
-                            <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                             </svg>
                             Search Properties
