@@ -525,8 +525,9 @@
                 </div>
             </div>
         </div>
+    </nav>
 
-        <!-- Mobile Menu Overlay -->
+    <!-- Mobile Menu Overlay -->
         <div id="mobile-menu-overlay" data-lenis-prevent class="fixed inset-0 bg-black/50 z-[60] hidden opacity-0 transition-opacity duration-300 cursor-pointer"></div>
 
         <!-- Mobile Menu Drawer (Left to Right) -->
@@ -547,14 +548,14 @@
                 <a href="#" class="text-gray-900 font-semibold text-[17px] hover:text-primary transition-colors">Home</a>
                 
                 <!-- About Accordion -->
-                <details class="group/mob-about">
-                    <summary class="flex items-center justify-between cursor-pointer list-none [&::-webkit-details-marker]:hidden text-gray-600 font-medium text-[17px] hover:text-primary transition-colors">
+                <div class="mobile-accordion">
+                    <button class="mobile-accordion-btn w-full flex items-center justify-between cursor-pointer text-gray-600 font-medium text-[17px] hover:text-primary transition-colors">
                         About
-                        <svg class="w-4 h-4 text-gray-400 group-open/mob-about:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-4 h-4 text-gray-400 transition-transform duration-300 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
                         </svg>
-                    </summary>
-                    <div class="flex flex-col gap-4 pl-4 mt-4 border-l-2 border-gray-100">
+                    </button>
+                    <div class="mobile-accordion-content hidden flex-col gap-4 pl-4 mt-4 border-l-2 border-gray-100">
                         <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Our Services</a>
                         <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Pricing</a>
                         <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Contact Us</a>
@@ -562,17 +563,17 @@
                         <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Privacy Policy</a>
                         <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Loan Calculator</a>
                     </div>
-                </details>
+                </div>
 
                 <!-- Listing Accordion -->
-                <details class="group/mob-listing">
-                    <summary class="flex items-center justify-between cursor-pointer list-none [&::-webkit-details-marker]:hidden text-gray-600 font-medium text-[17px] hover:text-primary transition-colors">
+                <div class="mobile-accordion">
+                    <button class="mobile-accordion-btn w-full flex items-center justify-between cursor-pointer text-gray-600 font-medium text-[17px] hover:text-primary transition-colors">
                         Listing
-                        <svg class="w-4 h-4 text-gray-400 group-open/mob-listing:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-4 h-4 text-gray-400 transition-transform duration-300 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
                         </svg>
-                    </summary>
-                    <div class="flex flex-col gap-4 pl-4 mt-4 border-l-2 border-gray-100">
+                    </button>
+                    <div class="mobile-accordion-content hidden flex-col gap-4 pl-4 mt-4 border-l-2 border-gray-100">
                         <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Property Half Grid</a>
                         <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Property Half Map List</a>
                         <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Property Top Map Grid</a>
@@ -580,33 +581,33 @@
                         <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Find Sidebar Grid</a>
                         <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Find Sidebar List</a>
                     </div>
-                </details>
+                </div>
 
                 <!-- Properties Accordion -->
-                <details class="group/mob-properties">
-                    <summary class="flex items-center justify-between cursor-pointer list-none [&::-webkit-details-marker]:hidden text-gray-600 font-medium text-[17px] hover:text-primary transition-colors">
+                <div class="mobile-accordion">
+                    <button class="mobile-accordion-btn w-full flex items-center justify-between cursor-pointer text-gray-600 font-medium text-[17px] hover:text-primary transition-colors">
                         Properties
-                        <svg class="w-4 h-4 text-gray-400 group-open/mob-properties:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-4 h-4 text-gray-400 transition-transform duration-300 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
                         </svg>
-                    </summary>
-                    <div class="flex flex-col gap-4 pl-4 mt-4 border-l-2 border-gray-100">
+                    </button>
+                    <div class="mobile-accordion-content hidden flex-col gap-4 pl-4 mt-4 border-l-2 border-gray-100">
                         <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Property Details 01</a>
                         <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Property Details 02</a>
                         <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Property Details 03</a>
                         <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Property Details 04</a>
                     </div>
-                </details>
+                </div>
 
                 <!-- Dashboard Accordion -->
-                <details class="group/mob-dashboard">
-                    <summary class="flex items-center justify-between cursor-pointer list-none [&::-webkit-details-marker]:hidden text-gray-600 font-medium text-[17px] hover:text-primary transition-colors">
+                <div class="mobile-accordion">
+                    <button class="mobile-accordion-btn w-full flex items-center justify-between cursor-pointer text-gray-600 font-medium text-[17px] hover:text-primary transition-colors">
                         Dashboard
-                        <svg class="w-4 h-4 text-gray-400 group-open/mob-dashboard:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-4 h-4 text-gray-400 transition-transform duration-300 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
                         </svg>
-                    </summary>
-                    <div class="flex flex-col gap-4 pl-4 mt-4 border-l-2 border-gray-100">
+                    </button>
+                    <div class="mobile-accordion-content hidden flex-col gap-4 pl-4 mt-4 border-l-2 border-gray-100">
                         <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Dashboard</a>
                         <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">My Properties</a>
                         <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Message</a>
@@ -615,22 +616,22 @@
                         <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">My Propfile</a>
                         <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Add Property</a>
                     </div>
-                </details>
+                </div>
 
                 <!-- Blogs Accordion -->
-                <details class="group/mob-blogs">
-                    <summary class="flex items-center justify-between cursor-pointer list-none [&::-webkit-details-marker]:hidden text-gray-600 font-medium text-[17px] hover:text-primary transition-colors">
+                <div class="mobile-accordion">
+                    <button class="mobile-accordion-btn w-full flex items-center justify-between cursor-pointer text-gray-600 font-medium text-[17px] hover:text-primary transition-colors">
                         Blogs
-                        <svg class="w-4 h-4 text-gray-400 group-open/mob-blogs:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-4 h-4 text-gray-400 transition-transform duration-300 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
                         </svg>
-                    </summary>
-                    <div class="flex flex-col gap-4 pl-4 mt-4 border-l-2 border-gray-100">
+                    </button>
+                    <div class="mobile-accordion-content hidden flex-col gap-4 pl-4 mt-4 border-l-2 border-gray-100">
                         <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Blog Default</a>
                         <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Blog Grid</a>
                         <a href="#" class="text-gray-500 hover:text-primary text-[15px] font-medium">Blog Post Details</a>
                     </div>
-                </details>
+                </div>
                 <div class="w-full h-px bg-gray-100 my-2"></div>
                 <a href="#" class="bg-primary text-gray-900 font-semibold text-[16px] px-6 py-3.5 rounded text-center transition-colors flex items-center justify-center gap-2">
                     View Listing
@@ -640,8 +641,6 @@
                 </a>
             </div>
         </div>
-    </nav>
-
     <!-- Hero Section -->
     <main class="relative w-full h-screen min-h-[700px] flex items-center overflow-hidden">
 
@@ -1076,8 +1075,8 @@
                 <div class="flex items-center gap-3 md:gap-4 w-max">
                     <!-- Active Tab -->
                     <button
-                        class="bg-[#0f4a47] text-white px-6 py-2.5 rounded-sm font-medium text-[15px] flex items-center gap-2 transition-colors">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        class="bg-[#0f4a47] text-white px-6 py-2.5 rounded-sm font-medium text-[15px] flex items-center gap-2 transition-colors whitespace-nowrap shrink-0">
+                        <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
                             </path>
@@ -1086,8 +1085,8 @@
                     </button>
                     <!-- Inactive Tabs -->
                     <button
-                        class="bg-[#dfe6e4] text-gray-700 hover:bg-gray-300 px-6 py-2.5 rounded-sm font-medium text-[15px] flex items-center gap-2 transition-colors">
-                        <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        class="bg-[#dfe6e4] text-gray-700 hover:bg-gray-300 px-6 py-2.5 rounded-sm font-medium text-[15px] flex items-center gap-2 transition-colors whitespace-nowrap shrink-0">
+                        <svg class="w-5 h-5 text-gray-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
                             </path>
@@ -1095,8 +1094,8 @@
                         Villas
                     </button>
                     <button
-                        class="bg-[#dfe6e4] text-gray-700 hover:bg-gray-300 px-6 py-2.5 rounded-sm font-medium text-[15px] flex items-center gap-2 transition-colors">
-                        <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        class="bg-[#dfe6e4] text-gray-700 hover:bg-gray-300 px-6 py-2.5 rounded-sm font-medium text-[15px] flex items-center gap-2 transition-colors whitespace-nowrap shrink-0">
+                        <svg class="w-5 h-5 text-gray-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
                             </path>
@@ -1104,8 +1103,8 @@
                         Apartments
                     </button>
                     <button
-                        class="bg-[#dfe6e4] text-gray-700 hover:bg-gray-300 px-6 py-2.5 rounded-sm font-medium text-[15px] flex items-center gap-2 transition-colors">
-                        <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        class="bg-[#dfe6e4] text-gray-700 hover:bg-gray-300 px-6 py-2.5 rounded-sm font-medium text-[15px] flex items-center gap-2 transition-colors whitespace-nowrap shrink-0">
+                        <svg class="w-5 h-5 text-gray-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
                             </path>
@@ -1113,8 +1112,8 @@
                         Houses
                     </button>
                     <button
-                        class="bg-[#dfe6e4] text-gray-700 hover:bg-gray-300 px-6 py-2.5 rounded-sm font-medium text-[15px] flex items-center gap-2 transition-colors">
-                        <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        class="bg-[#dfe6e4] text-gray-700 hover:bg-gray-300 px-6 py-2.5 rounded-sm font-medium text-[15px] flex items-center gap-2 transition-colors whitespace-nowrap shrink-0">
+                        <svg class="w-5 h-5 text-gray-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
                             </path>
@@ -1122,8 +1121,8 @@
                         Condos
                     </button>
                     <button
-                        class="bg-[#dfe6e4] text-gray-700 hover:bg-gray-300 px-6 py-2.5 rounded-sm font-medium text-[15px] flex items-center gap-2 transition-colors">
-                        <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        class="bg-[#dfe6e4] text-gray-700 hover:bg-gray-300 px-6 py-2.5 rounded-sm font-medium text-[15px] flex items-center gap-2 transition-colors whitespace-nowrap shrink-0">
+                        <svg class="w-5 h-5 text-gray-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
                         </svg>
