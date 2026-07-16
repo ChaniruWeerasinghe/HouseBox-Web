@@ -24,6 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Search Tabs Logic
     const tabs = document.querySelectorAll('.tab-btn');
+    const formPanes = document.querySelectorAll('.search-form-pane');
+
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
             // Remove active styles from all tabs
@@ -34,6 +36,20 @@ document.addEventListener('DOMContentLoaded', () => {
             // Add active styles to clicked tab
             tab.classList.remove('bg-lightbg', 'text-gray-800');
             tab.classList.add('active', 'bg-primary', 'text-black');
+
+            // Toggle forms
+            const targetId = tab.getAttribute('data-target');
+            if (targetId) {
+                formPanes.forEach(pane => {
+                    if (pane.id === targetId) {
+                        pane.classList.remove('hidden');
+                        pane.classList.add('flex');
+                    } else {
+                        pane.classList.add('hidden');
+                        pane.classList.remove('flex');
+                    }
+                });
+            }
         });
     });
 
