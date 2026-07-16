@@ -525,3 +525,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// -----------------------------------------------------
+// CTA Banner Text Animation Logic
+// -----------------------------------------------------
+document.addEventListener('DOMContentLoaded', () => {
+    const ctaText = document.getElementById('cta-text-container');
+    if (ctaText) {
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Remove initial offset/opacity classes
+                    ctaText.classList.remove('-translate-x-[50px]', 'opacity-0');
+                    // Add settled classes
+                    ctaText.classList.add('translate-x-0', 'opacity-100');
+                    
+                    // Stop observing once animated
+                    observer.unobserve(ctaText);
+                }
+            });
+        }, {
+            root: null,
+            threshold: 0.2 // Trigger when 20% visible
+        });
+        
+        observer.observe(ctaText);
+    }
+});
