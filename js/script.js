@@ -176,8 +176,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 6. Intersection Observer for Image Reveals, Title Bounces, and Location Cards
-    const revealElements = document.querySelectorAll('.reveal-clip, .title-bounce, .location-reveal');
+    // 6. Intersection Observer for Image Reveals, Title Bounces, Location Cards, and Fade Animations
+    const revealElements = document.querySelectorAll('.reveal-clip, .title-bounce, .location-reveal, .fade-up-reveal, .fade-right-reveal, .fade-left-reveal');
     
     // Pre-process title-bounce elements for letter-by-letter animation
     document.querySelectorAll('.title-bounce').forEach(title => {
@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     setTimeout(() => {
-                        if (entry.target.classList.contains('reveal-clip') || entry.target.classList.contains('location-reveal')) {
+                        if (entry.target.classList.contains('reveal-clip') || entry.target.classList.contains('location-reveal') || entry.target.classList.contains('fade-up-reveal') || entry.target.classList.contains('fade-right-reveal') || entry.target.classList.contains('fade-left-reveal')) {
                             entry.target.classList.add('is-revealed');
                         }
                         if (entry.target.classList.contains('title-bounce')) {

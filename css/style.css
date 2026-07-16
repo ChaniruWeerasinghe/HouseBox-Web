@@ -127,6 +127,39 @@ body, html {
 }
 
 
+/* Fade Up Reveal Animation for Text/Elements */
+.fade-up-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.2s cubic-bezier(0.2, 1, 0.3, 1), transform 1.2s cubic-bezier(0.2, 1, 0.3, 1);
+}
+.fade-up-reveal.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Fade Right Reveal Animation for Images */
+.fade-right-reveal {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 1.2s cubic-bezier(0.2, 1, 0.3, 1), transform 1.2s cubic-bezier(0.2, 1, 0.3, 1);
+}
+.fade-right-reveal.is-revealed {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Fade Left Reveal */
+.fade-left-reveal {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 1.2s cubic-bezier(0.2, 1, 0.3, 1), transform 1.2s cubic-bezier(0.2, 1, 0.3, 1);
+}
+.fade-left-reveal.is-revealed {
+    opacity: 1;
+    transform: translateX(0);
+}
+
 /* Custom Range Slider for Dual Thumbs */
 .custom-range::-webkit-slider-thumb {
     pointer-events: auto;
