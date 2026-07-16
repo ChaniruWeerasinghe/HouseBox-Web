@@ -588,3 +588,33 @@ document.addEventListener('DOMContentLoaded', () => {
         menuOverlay.addEventListener('click', toggleMenu);
     }
 });
+
+// -----------------------------------------------------
+// Mobile Search Widget Toggle Logic
+// -----------------------------------------------------
+window.toggleMobileSearch = function() {
+    const toggleBtn = document.getElementById('mobile-search-toggle');
+    const searchWidget = document.getElementById('search-widget-container');
+
+    if (toggleBtn && searchWidget) {
+        const isClosed = searchWidget.classList.contains('translate-y-full');
+        
+        if (isClosed) {
+            // Open Widget
+            searchWidget.classList.remove('translate-y-full', 'opacity-0', 'pointer-events-none');
+            searchWidget.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
+            
+            // Hide Toggle Button
+            toggleBtn.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
+            toggleBtn.classList.add('translate-y-full', 'opacity-0', 'pointer-events-none');
+        } else {
+            // Close Widget
+            searchWidget.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
+            searchWidget.classList.add('translate-y-full', 'opacity-0', 'pointer-events-none');
+            
+            // Show Toggle Button
+            toggleBtn.classList.remove('translate-y-full', 'opacity-0', 'pointer-events-none');
+            toggleBtn.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
+        }
+    }
+};
