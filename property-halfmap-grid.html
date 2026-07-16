@@ -765,161 +765,514 @@
 
                     <!-- FOR SALE FORM -->
                     <div id="form-sale"
-                        class="search-form-pane flex flex-col lg:flex-row items-stretch lg:items-start bg-white p-6 rounded-b-xl rounded-tr-xl shadow-[0_15px_50px_rgba(0,0,0,0.08)] gap-4 lg:gap-6 w-full">
-                        <!-- Status -->
-                        <div class="flex-1 flex flex-col gap-2.5">
-                            <label class="text-[14px] font-semibold text-gray-900">Status</label>
-                            <div
-                                class="custom-select flex justify-between items-center bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-800 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px]">
-                                <span class="font-medium">All Status</span>
-                                <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                        d="M19 9l-7 7-7-7"></path>
-                                </svg>
+                        class="search-form-pane  flex flex-col bg-white p-6 rounded-b-xl rounded-tr-xl shadow-[0_15px_50px_rgba(0,0,0,0.08)] w-full">
+                        
+                        <!-- Top Row (Always visible) -->
+                        <div class="flex flex-col lg:flex-row items-stretch lg:items-start gap-4 lg:gap-6 w-full">
+                            <!-- Status -->
+                            <div class="flex-1 flex flex-col gap-2.5">
+                                <label class="text-[14px] font-semibold text-gray-900">Status</label>
+                                <div class="custom-select flex justify-between items-center bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-800 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px]">
+                                    <span class="font-medium">All Status</span>
+                                    <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                                </div>
                             </div>
+                            <div class="w-px h-10 bg-gray-200 hidden lg:block mt-[34px]"></div>
+                            
+                            <!-- Labels -->
+                            <div class="flex-1 flex flex-col gap-2.5">
+                                <label class="text-[14px] font-semibold text-gray-900">Labels</label>
+                                <div class="custom-select flex justify-between items-center bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-800 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px]">
+                                    <span class="font-medium">All Labels</span>
+                                    <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                                </div>
+                            </div>
+                            <div class="w-px h-10 bg-gray-200 hidden lg:block mt-[34px]"></div>
+
+                            <!-- Types -->
+                            <div class="flex-1 flex flex-col gap-2.5">
+                                <label class="text-[14px] font-semibold text-gray-900">Types</label>
+                                <div class="custom-select flex justify-between items-center bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-800 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px]">
+                                    <span class="font-medium">All Types</span>
+                                    <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                                </div>
+                            </div>
+                            <div class="w-px h-10 bg-gray-200 hidden lg:block mt-[34px]"></div>
+                            <!-- Customize -->
+                            <div class="flex-1 flex flex-col gap-2.5">
+                                <label class="text-[14px] font-semibold text-gray-900">Customize</label>
+                                <div onclick="document.getElementById('advanced-panel-sale').classList.toggle('hidden')" class="custom-select flex justify-between items-center bg-primary hover:bg-[#b5c724] px-4 py-3 rounded-lg text-gray-900 font-medium text-[15px] cursor-pointer transition-colors border border-transparent h-[48px]">
+                                    <span>Advance</span>
+                                    <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            
+                            <!-- Search Button -->
+                            <button class="bg-primary hover:bg-[#b5c724] text-black font-semibold text-[15px] px-8 py-3 rounded-lg flex items-center justify-center gap-2 self-stretch lg:self-end mt-2 lg:mt-auto transition-transform hover:-translate-y-px h-[48px] ml-0 lg:ml-4 w-full lg:w-auto">
+                                Search
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                </svg>
+                            </button>
                         </div>
 
-                        <div class="w-px h-10 bg-gray-200 hidden lg:block mt-[34px]"></div>
+                        <!-- Advanced Filter Panel (Hidden by default) -->
+                        <div id="advanced-panel-sale" class="hidden w-full mt-6 pt-6 border-t border-gray-100 flex-col gap-6">
+                            
+                            <!-- Row 1: Bathrooms, Bedrooms, States, City -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
+                                <div class="flex flex-col gap-2.5">
+                                    <label class="text-[14px] font-semibold text-gray-900">Bathrooms</label>
+                                    <div class="custom-select flex justify-between items-center bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-800 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px]">
+                                        <span class="font-medium">Bathrooms</span>
+                                        <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-2.5">
+                                    <label class="text-[14px] font-semibold text-gray-900">Bedrooms</label>
+                                    <div class="custom-select flex justify-between items-center bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-800 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px]">
+                                        <span class="font-medium">Bedrooms</span>
+                                        <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-2.5">
+                                    <label class="text-[14px] font-semibold text-gray-900">States</label>
+                                    <div class="custom-select flex justify-between items-center bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-800 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px]">
+                                        <span class="font-medium">All States</span>
+                                        <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-2.5">
+                                    <label class="text-[14px] font-semibold text-gray-900">City</label>
+                                    <div class="custom-select flex justify-between items-center bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-800 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px]">
+                                        <span class="font-medium">All Cities</span>
+                                        <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Row 2: Garages, Rooms, Sliders -->
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full">
+                                <!-- Garages & Rooms in one col -->
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div class="flex flex-col gap-2.5">
+                                        <label class="text-[14px] font-semibold text-gray-900">Garages</label>
+                                        <div class="custom-select flex justify-between items-center bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-800 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px]">
+                                            <span class="font-medium">Any Garages</span>
+                                            <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col gap-2.5">
+                                        <label class="text-[14px] font-semibold text-gray-900">Rooms</label>
+                                        <div class="custom-select flex justify-between items-center bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-800 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px]">
+                                            <span class="font-medium">Any Rooms</span>
+                                            <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Empty space to match image layout -->
+                                <div class="hidden lg:block"></div>
+                            </div>
 
-                        <!-- Labels -->
-                        <div class="flex-1 flex flex-col gap-2.5">
-                            <label class="text-[14px] font-semibold text-gray-900">Labels</label>
-                            <div
-                                class="custom-select flex justify-between items-center bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-800 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px]">
-                                <span class="font-medium">All Labels</span>
-                                <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                        d="M19 9l-7 7-7-7"></path>
-                                </svg>
+                            <!-- Sliders -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full mt-4">
+                                <div class="flex flex-col gap-4">
+                                    <label class="text-[15px] font-semibold text-gray-900">Price Range: $200 - $2,500,000</label>
+                                    <div class="relative w-full h-1 bg-primary/30 rounded-full">
+                                        <div class="absolute top-0 left-0 h-full bg-primary rounded-full w-[100%]"></div>
+                                        <div class="absolute top-1/2 left-0 -translate-y-1/2 w-4 h-4 bg-white border-2 border-primary rounded-full cursor-pointer shadow-sm"></div>
+                                        <div class="absolute top-1/2 right-0 -translate-y-1/2 w-4 h-4 bg-white border-2 border-primary rounded-full cursor-pointer shadow-sm"></div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-4">
+                                    <label class="text-[15px] font-semibold text-gray-900">Size Range: 146 SqFt - 448 SqFt</label>
+                                    <div class="relative w-full h-1 bg-primary/30 rounded-full">
+                                        <div class="absolute top-0 left-0 h-full bg-primary rounded-full w-[100%]"></div>
+                                        <div class="absolute top-1/2 left-0 -translate-y-1/2 w-4 h-4 bg-white border-2 border-primary rounded-full cursor-pointer shadow-sm"></div>
+                                        <div class="absolute top-1/2 right-0 -translate-y-1/2 w-4 h-4 bg-white border-2 border-primary rounded-full cursor-pointer shadow-sm"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- OTHERS FEATURES -->
+                            <div class="w-full mt-6">
+                                <label class="text-[14px] font-semibold text-gray-900 uppercase tracking-wide block mb-6">OTHERS FEATURES</label>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-y-6 gap-x-6">
+                                    <label class="flex items-center gap-3 cursor-pointer group">
+                                        <div class="relative flex items-center justify-center w-4 h-4">
+                                            <input type="checkbox" class="peer appearance-none w-4 h-4 border border-gray-300 rounded checked:bg-primary checked:border-primary cursor-pointer transition-colors">
+                                            <svg class="absolute w-3 h-3 text-white pointer-events-none opacity-0 peer-checked:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                        </div>
+                                        <span class="text-[15px] text-gray-800 font-medium group-hover:text-primary transition-colors">Air Conditioning</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 cursor-pointer group">
+                                        <div class="relative flex items-center justify-center w-4 h-4">
+                                            <input type="checkbox" class="peer appearance-none w-4 h-4 border border-gray-300 rounded checked:bg-primary checked:border-primary cursor-pointer transition-colors">
+                                            <svg class="absolute w-3 h-3 text-white pointer-events-none opacity-0 peer-checked:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                        </div>
+                                        <span class="text-[15px] text-gray-800 font-medium group-hover:text-primary transition-colors">Laundry</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 cursor-pointer group">
+                                        <div class="relative flex items-center justify-center w-4 h-4">
+                                            <input type="checkbox" class="peer appearance-none w-4 h-4 border border-gray-300 rounded checked:bg-primary checked:border-primary cursor-pointer transition-colors">
+                                            <svg class="absolute w-3 h-3 text-white pointer-events-none opacity-0 peer-checked:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                        </div>
+                                        <span class="text-[15px] text-gray-800 font-medium group-hover:text-primary transition-colors">Refrigerator</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 cursor-pointer group">
+                                        <div class="relative flex items-center justify-center w-4 h-4">
+                                            <input type="checkbox" class="peer appearance-none w-4 h-4 border border-gray-300 rounded checked:bg-primary checked:border-primary cursor-pointer transition-colors">
+                                            <svg class="absolute w-3 h-3 text-white pointer-events-none opacity-0 peer-checked:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                        </div>
+                                        <span class="text-[15px] text-gray-800 font-medium group-hover:text-primary transition-colors">Washer</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 cursor-pointer group">
+                                        <div class="relative flex items-center justify-center w-4 h-4">
+                                            <input type="checkbox" class="peer appearance-none w-4 h-4 border border-gray-300 rounded checked:bg-primary checked:border-primary cursor-pointer transition-colors">
+                                            <svg class="absolute w-3 h-3 text-white pointer-events-none opacity-0 peer-checked:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                        </div>
+                                        <span class="text-[15px] text-gray-800 font-medium group-hover:text-primary transition-colors">Barbeque</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 cursor-pointer group">
+                                        <div class="relative flex items-center justify-center w-4 h-4">
+                                            <input type="checkbox" class="peer appearance-none w-4 h-4 border border-gray-300 rounded checked:bg-primary checked:border-primary cursor-pointer transition-colors">
+                                            <svg class="absolute w-3 h-3 text-white pointer-events-none opacity-0 peer-checked:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                        </div>
+                                        <span class="text-[15px] text-gray-800 font-medium group-hover:text-primary transition-colors">Lawn</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 cursor-pointer group">
+                                        <div class="relative flex items-center justify-center w-4 h-4">
+                                            <input type="checkbox" class="peer appearance-none w-4 h-4 border border-gray-300 rounded checked:bg-primary checked:border-primary cursor-pointer transition-colors">
+                                            <svg class="absolute w-3 h-3 text-white pointer-events-none opacity-0 peer-checked:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                        </div>
+                                        <span class="text-[15px] text-gray-800 font-medium group-hover:text-primary transition-colors">Sauna</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 cursor-pointer group">
+                                        <div class="relative flex items-center justify-center w-4 h-4">
+                                            <input type="checkbox" class="peer appearance-none w-4 h-4 border border-gray-300 rounded checked:bg-primary checked:border-primary cursor-pointer transition-colors">
+                                            <svg class="absolute w-3 h-3 text-white pointer-events-none opacity-0 peer-checked:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                        </div>
+                                        <span class="text-[15px] text-gray-800 font-medium group-hover:text-primary transition-colors">Wifi</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 cursor-pointer group">
+                                        <div class="relative flex items-center justify-center w-4 h-4">
+                                            <input type="checkbox" class="peer appearance-none w-4 h-4 border border-gray-300 rounded checked:bg-primary checked:border-primary cursor-pointer transition-colors">
+                                            <svg class="absolute w-3 h-3 text-white pointer-events-none opacity-0 peer-checked:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                        </div>
+                                        <span class="text-[15px] text-gray-800 font-medium group-hover:text-primary transition-colors">Dryer</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 cursor-pointer group">
+                                        <div class="relative flex items-center justify-center w-4 h-4">
+                                            <input type="checkbox" class="peer appearance-none w-4 h-4 border border-gray-300 rounded checked:bg-primary checked:border-primary cursor-pointer transition-colors">
+                                            <svg class="absolute w-3 h-3 text-white pointer-events-none opacity-0 peer-checked:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                        </div>
+                                        <span class="text-[15px] text-gray-800 font-medium group-hover:text-primary transition-colors">Microwave</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 cursor-pointer group">
+                                        <div class="relative flex items-center justify-center w-4 h-4">
+                                            <input type="checkbox" class="peer appearance-none w-4 h-4 border border-gray-300 rounded checked:bg-primary checked:border-primary cursor-pointer transition-colors">
+                                            <svg class="absolute w-3 h-3 text-white pointer-events-none opacity-0 peer-checked:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                        </div>
+                                        <span class="text-[15px] text-gray-800 font-medium group-hover:text-primary transition-colors">Swimming Pool</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 cursor-pointer group">
+                                        <div class="relative flex items-center justify-center w-4 h-4">
+                                            <input type="checkbox" class="peer appearance-none w-4 h-4 border border-gray-300 rounded checked:bg-primary checked:border-primary cursor-pointer transition-colors">
+                                            <svg class="absolute w-3 h-3 text-white pointer-events-none opacity-0 peer-checked:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                        </div>
+                                        <span class="text-[15px] text-gray-800 font-medium group-hover:text-primary transition-colors">Window Coverings</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 cursor-pointer group">
+                                        <div class="relative flex items-center justify-center w-4 h-4">
+                                            <input type="checkbox" class="peer appearance-none w-4 h-4 border border-gray-300 rounded checked:bg-primary checked:border-primary cursor-pointer transition-colors">
+                                            <svg class="absolute w-3 h-3 text-white pointer-events-none opacity-0 peer-checked:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                        </div>
+                                        <span class="text-[15px] text-gray-800 font-medium group-hover:text-primary transition-colors">Gym</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 cursor-pointer group">
+                                        <div class="relative flex items-center justify-center w-4 h-4">
+                                            <input type="checkbox" class="peer appearance-none w-4 h-4 border border-gray-300 rounded checked:bg-primary checked:border-primary cursor-pointer transition-colors">
+                                            <svg class="absolute w-3 h-3 text-white pointer-events-none opacity-0 peer-checked:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                        </div>
+                                        <span class="text-[15px] text-gray-800 font-medium group-hover:text-primary transition-colors">Outdoor Shower</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 cursor-pointer group">
+                                        <div class="relative flex items-center justify-center w-4 h-4">
+                                            <input type="checkbox" class="peer appearance-none w-4 h-4 border border-gray-300 rounded checked:bg-primary checked:border-primary cursor-pointer transition-colors">
+                                            <svg class="absolute w-3 h-3 text-white pointer-events-none opacity-0 peer-checked:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                        </div>
+                                        <span class="text-[15px] text-gray-800 font-medium group-hover:text-primary transition-colors">TV Cable</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 cursor-pointer group">
+                                        <div class="relative flex items-center justify-center w-4 h-4">
+                                            <input type="checkbox" class="peer appearance-none w-4 h-4 border border-gray-300 rounded checked:bg-primary checked:border-primary cursor-pointer transition-colors">
+                                            <svg class="absolute w-3 h-3 text-white pointer-events-none opacity-0 peer-checked:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                        </div>
+                                        <span class="text-[15px] text-gray-800 font-medium group-hover:text-primary transition-colors">Fireplace</span>
+                                    </label>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="w-px h-10 bg-gray-200 hidden lg:block mt-[34px]"></div>
-
-                        <!-- Types -->
-                        <div class="flex-1 flex flex-col gap-2.5">
-                            <label class="text-[14px] font-semibold text-gray-900">Types</label>
-                            <div
-                                class="custom-select flex justify-between items-center bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-800 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px]">
-                                <span class="font-medium">All Types</span>
-                                <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                        d="M19 9l-7 7-7-7"></path>
-                                </svg>
-                            </div>
-                        </div>
-
-                        <div class="w-px h-10 bg-gray-200 hidden lg:block mt-[34px]"></div>
-
-                        <!-- Customize -->
-                        <div class="flex-1 flex flex-col gap-2.5">
-                            <label class="text-[14px] font-semibold text-gray-900">Customize</label>
-                            <div
-                                class="custom-select flex justify-between items-center bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-800 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px]">
-                                <span class="font-medium">Advance</span>
-                                <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75">
-                                    </path>
-                                </svg>
-                            </div>
-                        </div>
-
-                        <div class="w-px h-10 bg-gray-200 hidden lg:block mt-[34px]"></div>
-
-                        <!-- Search Button -->
-                        <button
-                            class="bg-primary hover:bg-yellow-500 text-black font-semibold text-[15px] px-8 py-3 rounded-lg flex items-center justify-center gap-2 self-stretch lg:self-end mt-2 lg:mt-auto transition-transform hover:-translate-y-px h-[48px]">
-                            Search
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                            </svg>
-                        </button>
                     </div>
 
                     <!-- FOR RENT FORM -->
                     <div id="form-rent"
-                        class="search-form-pane hidden flex-col lg:flex-row items-stretch lg:items-start bg-white p-6 rounded-b-xl rounded-tr-xl shadow-[0_15px_50px_rgba(0,0,0,0.08)] gap-4 lg:gap-6 w-full">
-                        <!-- Rent Period -->
-                        <div class="flex-1 flex flex-col gap-2.5">
-                            <label class="text-[14px] font-semibold text-gray-900">Rent Period</label>
-                            <div
-                                class="custom-select flex justify-between items-center bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-800 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px]">
-                                <span class="font-medium">Monthly</span>
-                                <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                        d="M19 9l-7 7-7-7"></path>
-                                </svg>
+                        class="search-form-pane hidden flex flex-col bg-white p-6 rounded-b-xl rounded-tr-xl shadow-[0_15px_50px_rgba(0,0,0,0.08)] w-full">
+                        
+                        <!-- Top Row (Always visible) -->
+                        <div class="flex flex-col lg:flex-row items-stretch lg:items-start gap-4 lg:gap-6 w-full">
+                            <!-- Rent Period -->
+                            <div class="flex-1 flex flex-col gap-2.5">
+                                <label class="text-[14px] font-semibold text-gray-900">Rent Period</label>
+                                <div class="custom-select flex justify-between items-center bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-800 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px]">
+                                    <span class="font-medium">Monthly</span>
+                                    <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                                </div>
                             </div>
+                            <div class="w-px h-10 bg-gray-200 hidden lg:block mt-[34px]"></div>
+                            
+                            <!-- Location -->
+                            <div class="flex-1 flex flex-col gap-2.5">
+                                <label class="text-[14px] font-semibold text-gray-900">Location</label>
+                                <div class="custom-select flex justify-between items-center bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-800 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px]">
+                                    <span class="font-medium">All Locations</span>
+                                    <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                                </div>
+                            </div>
+                            <div class="w-px h-10 bg-gray-200 hidden lg:block mt-[34px]"></div>
+
+                            <!-- Property Types -->
+                            <div class="flex-1 flex flex-col gap-2.5">
+                                <label class="text-[14px] font-semibold text-gray-900">Property</label>
+                                <div class="custom-select flex justify-between items-center bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-800 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px]">
+                                    <span class="font-medium">Apartments</span>
+                                    <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                                </div>
+                            </div>
+                            <div class="w-px h-10 bg-gray-200 hidden lg:block mt-[34px]"></div>
+                            <!-- Customize -->
+                            <div class="flex-1 flex flex-col gap-2.5">
+                                <label class="text-[14px] font-semibold text-gray-900">Customize</label>
+                                <div onclick="document.getElementById('advanced-panel-rent').classList.toggle('hidden')" class="custom-select flex justify-between items-center bg-primary hover:bg-[#b5c724] px-4 py-3 rounded-lg text-gray-900 font-medium text-[15px] cursor-pointer transition-colors border border-transparent h-[48px]">
+                                    <span>Advance</span>
+                                    <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            
+                            <!-- Search Button -->
+                            <button class="bg-primary hover:bg-[#b5c724] text-black font-semibold text-[15px] px-8 py-3 rounded-lg flex items-center justify-center gap-2 self-stretch lg:self-end mt-2 lg:mt-auto transition-transform hover:-translate-y-px h-[48px] ml-0 lg:ml-4 w-full lg:w-auto">
+                                Search
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                </svg>
+                            </button>
                         </div>
 
-                        <div class="w-px h-10 bg-gray-200 hidden lg:block mt-[34px]"></div>
+                        <!-- Advanced Filter Panel (Hidden by default) -->
+                        <div id="advanced-panel-rent" class="hidden w-full mt-6 pt-6 border-t border-gray-100 flex-col gap-6">
+                            
+                            <!-- Row 1: Bathrooms, Bedrooms, States, City -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
+                                <div class="flex flex-col gap-2.5">
+                                    <label class="text-[14px] font-semibold text-gray-900">Bathrooms</label>
+                                    <div class="custom-select flex justify-between items-center bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-800 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px]">
+                                        <span class="font-medium">Bathrooms</span>
+                                        <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-2.5">
+                                    <label class="text-[14px] font-semibold text-gray-900">Bedrooms</label>
+                                    <div class="custom-select flex justify-between items-center bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-800 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px]">
+                                        <span class="font-medium">Bedrooms</span>
+                                        <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-2.5">
+                                    <label class="text-[14px] font-semibold text-gray-900">States</label>
+                                    <div class="custom-select flex justify-between items-center bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-800 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px]">
+                                        <span class="font-medium">All States</span>
+                                        <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-2.5">
+                                    <label class="text-[14px] font-semibold text-gray-900">City</label>
+                                    <div class="custom-select flex justify-between items-center bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-800 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px]">
+                                        <span class="font-medium">All Cities</span>
+                                        <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Row 2: Garages, Rooms, Sliders -->
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full">
+                                <!-- Garages & Rooms in one col -->
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div class="flex flex-col gap-2.5">
+                                        <label class="text-[14px] font-semibold text-gray-900">Garages</label>
+                                        <div class="custom-select flex justify-between items-center bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-800 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px]">
+                                            <span class="font-medium">Any Garages</span>
+                                            <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col gap-2.5">
+                                        <label class="text-[14px] font-semibold text-gray-900">Rooms</label>
+                                        <div class="custom-select flex justify-between items-center bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-800 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px]">
+                                            <span class="font-medium">Any Rooms</span>
+                                            <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Empty space to match image layout -->
+                                <div class="hidden lg:block"></div>
+                            </div>
 
-                        <!-- Location -->
-                        <div class="flex-1 flex flex-col gap-2.5">
-                            <label class="text-[14px] font-semibold text-gray-900">Location</label>
-                            <div
-                                class="custom-select flex justify-between items-center bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-800 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px]">
-                                <span class="font-medium">All Locations</span>
-                                <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                        d="M19 9l-7 7-7-7"></path>
-                                </svg>
+                            <!-- Sliders -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full mt-4">
+                                <div class="flex flex-col gap-4">
+                                    <label class="text-[15px] font-semibold text-gray-900">Price Range: $200 - $2,500,000</label>
+                                    <div class="relative w-full h-1 bg-primary/30 rounded-full">
+                                        <div class="absolute top-0 left-0 h-full bg-primary rounded-full w-[100%]"></div>
+                                        <div class="absolute top-1/2 left-0 -translate-y-1/2 w-4 h-4 bg-white border-2 border-primary rounded-full cursor-pointer shadow-sm"></div>
+                                        <div class="absolute top-1/2 right-0 -translate-y-1/2 w-4 h-4 bg-white border-2 border-primary rounded-full cursor-pointer shadow-sm"></div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-4">
+                                    <label class="text-[15px] font-semibold text-gray-900">Size Range: 146 SqFt - 448 SqFt</label>
+                                    <div class="relative w-full h-1 bg-primary/30 rounded-full">
+                                        <div class="absolute top-0 left-0 h-full bg-primary rounded-full w-[100%]"></div>
+                                        <div class="absolute top-1/2 left-0 -translate-y-1/2 w-4 h-4 bg-white border-2 border-primary rounded-full cursor-pointer shadow-sm"></div>
+                                        <div class="absolute top-1/2 right-0 -translate-y-1/2 w-4 h-4 bg-white border-2 border-primary rounded-full cursor-pointer shadow-sm"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- OTHERS FEATURES -->
+                            <div class="w-full mt-6">
+                                <label class="text-[14px] font-semibold text-gray-900 uppercase tracking-wide block mb-6">OTHERS FEATURES</label>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-y-6 gap-x-6">
+                                    <label class="flex items-center gap-3 cursor-pointer group">
+                                        <div class="relative flex items-center justify-center w-4 h-4">
+                                            <input type="checkbox" class="peer appearance-none w-4 h-4 border border-gray-300 rounded checked:bg-primary checked:border-primary cursor-pointer transition-colors">
+                                            <svg class="absolute w-3 h-3 text-white pointer-events-none opacity-0 peer-checked:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                        </div>
+                                        <span class="text-[15px] text-gray-800 font-medium group-hover:text-primary transition-colors">Air Conditioning</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 cursor-pointer group">
+                                        <div class="relative flex items-center justify-center w-4 h-4">
+                                            <input type="checkbox" class="peer appearance-none w-4 h-4 border border-gray-300 rounded checked:bg-primary checked:border-primary cursor-pointer transition-colors">
+                                            <svg class="absolute w-3 h-3 text-white pointer-events-none opacity-0 peer-checked:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                        </div>
+                                        <span class="text-[15px] text-gray-800 font-medium group-hover:text-primary transition-colors">Laundry</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 cursor-pointer group">
+                                        <div class="relative flex items-center justify-center w-4 h-4">
+                                            <input type="checkbox" class="peer appearance-none w-4 h-4 border border-gray-300 rounded checked:bg-primary checked:border-primary cursor-pointer transition-colors">
+                                            <svg class="absolute w-3 h-3 text-white pointer-events-none opacity-0 peer-checked:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                        </div>
+                                        <span class="text-[15px] text-gray-800 font-medium group-hover:text-primary transition-colors">Refrigerator</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 cursor-pointer group">
+                                        <div class="relative flex items-center justify-center w-4 h-4">
+                                            <input type="checkbox" class="peer appearance-none w-4 h-4 border border-gray-300 rounded checked:bg-primary checked:border-primary cursor-pointer transition-colors">
+                                            <svg class="absolute w-3 h-3 text-white pointer-events-none opacity-0 peer-checked:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                        </div>
+                                        <span class="text-[15px] text-gray-800 font-medium group-hover:text-primary transition-colors">Washer</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 cursor-pointer group">
+                                        <div class="relative flex items-center justify-center w-4 h-4">
+                                            <input type="checkbox" class="peer appearance-none w-4 h-4 border border-gray-300 rounded checked:bg-primary checked:border-primary cursor-pointer transition-colors">
+                                            <svg class="absolute w-3 h-3 text-white pointer-events-none opacity-0 peer-checked:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                        </div>
+                                        <span class="text-[15px] text-gray-800 font-medium group-hover:text-primary transition-colors">Barbeque</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 cursor-pointer group">
+                                        <div class="relative flex items-center justify-center w-4 h-4">
+                                            <input type="checkbox" class="peer appearance-none w-4 h-4 border border-gray-300 rounded checked:bg-primary checked:border-primary cursor-pointer transition-colors">
+                                            <svg class="absolute w-3 h-3 text-white pointer-events-none opacity-0 peer-checked:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                        </div>
+                                        <span class="text-[15px] text-gray-800 font-medium group-hover:text-primary transition-colors">Lawn</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 cursor-pointer group">
+                                        <div class="relative flex items-center justify-center w-4 h-4">
+                                            <input type="checkbox" class="peer appearance-none w-4 h-4 border border-gray-300 rounded checked:bg-primary checked:border-primary cursor-pointer transition-colors">
+                                            <svg class="absolute w-3 h-3 text-white pointer-events-none opacity-0 peer-checked:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                        </div>
+                                        <span class="text-[15px] text-gray-800 font-medium group-hover:text-primary transition-colors">Sauna</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 cursor-pointer group">
+                                        <div class="relative flex items-center justify-center w-4 h-4">
+                                            <input type="checkbox" class="peer appearance-none w-4 h-4 border border-gray-300 rounded checked:bg-primary checked:border-primary cursor-pointer transition-colors">
+                                            <svg class="absolute w-3 h-3 text-white pointer-events-none opacity-0 peer-checked:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                        </div>
+                                        <span class="text-[15px] text-gray-800 font-medium group-hover:text-primary transition-colors">Wifi</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 cursor-pointer group">
+                                        <div class="relative flex items-center justify-center w-4 h-4">
+                                            <input type="checkbox" class="peer appearance-none w-4 h-4 border border-gray-300 rounded checked:bg-primary checked:border-primary cursor-pointer transition-colors">
+                                            <svg class="absolute w-3 h-3 text-white pointer-events-none opacity-0 peer-checked:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                        </div>
+                                        <span class="text-[15px] text-gray-800 font-medium group-hover:text-primary transition-colors">Dryer</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 cursor-pointer group">
+                                        <div class="relative flex items-center justify-center w-4 h-4">
+                                            <input type="checkbox" class="peer appearance-none w-4 h-4 border border-gray-300 rounded checked:bg-primary checked:border-primary cursor-pointer transition-colors">
+                                            <svg class="absolute w-3 h-3 text-white pointer-events-none opacity-0 peer-checked:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                        </div>
+                                        <span class="text-[15px] text-gray-800 font-medium group-hover:text-primary transition-colors">Microwave</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 cursor-pointer group">
+                                        <div class="relative flex items-center justify-center w-4 h-4">
+                                            <input type="checkbox" class="peer appearance-none w-4 h-4 border border-gray-300 rounded checked:bg-primary checked:border-primary cursor-pointer transition-colors">
+                                            <svg class="absolute w-3 h-3 text-white pointer-events-none opacity-0 peer-checked:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                        </div>
+                                        <span class="text-[15px] text-gray-800 font-medium group-hover:text-primary transition-colors">Swimming Pool</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 cursor-pointer group">
+                                        <div class="relative flex items-center justify-center w-4 h-4">
+                                            <input type="checkbox" class="peer appearance-none w-4 h-4 border border-gray-300 rounded checked:bg-primary checked:border-primary cursor-pointer transition-colors">
+                                            <svg class="absolute w-3 h-3 text-white pointer-events-none opacity-0 peer-checked:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                        </div>
+                                        <span class="text-[15px] text-gray-800 font-medium group-hover:text-primary transition-colors">Window Coverings</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 cursor-pointer group">
+                                        <div class="relative flex items-center justify-center w-4 h-4">
+                                            <input type="checkbox" class="peer appearance-none w-4 h-4 border border-gray-300 rounded checked:bg-primary checked:border-primary cursor-pointer transition-colors">
+                                            <svg class="absolute w-3 h-3 text-white pointer-events-none opacity-0 peer-checked:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                        </div>
+                                        <span class="text-[15px] text-gray-800 font-medium group-hover:text-primary transition-colors">Gym</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 cursor-pointer group">
+                                        <div class="relative flex items-center justify-center w-4 h-4">
+                                            <input type="checkbox" class="peer appearance-none w-4 h-4 border border-gray-300 rounded checked:bg-primary checked:border-primary cursor-pointer transition-colors">
+                                            <svg class="absolute w-3 h-3 text-white pointer-events-none opacity-0 peer-checked:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                        </div>
+                                        <span class="text-[15px] text-gray-800 font-medium group-hover:text-primary transition-colors">Outdoor Shower</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 cursor-pointer group">
+                                        <div class="relative flex items-center justify-center w-4 h-4">
+                                            <input type="checkbox" class="peer appearance-none w-4 h-4 border border-gray-300 rounded checked:bg-primary checked:border-primary cursor-pointer transition-colors">
+                                            <svg class="absolute w-3 h-3 text-white pointer-events-none opacity-0 peer-checked:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                        </div>
+                                        <span class="text-[15px] text-gray-800 font-medium group-hover:text-primary transition-colors">TV Cable</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 cursor-pointer group">
+                                        <div class="relative flex items-center justify-center w-4 h-4">
+                                            <input type="checkbox" class="peer appearance-none w-4 h-4 border border-gray-300 rounded checked:bg-primary checked:border-primary cursor-pointer transition-colors">
+                                            <svg class="absolute w-3 h-3 text-white pointer-events-none opacity-0 peer-checked:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                        </div>
+                                        <span class="text-[15px] text-gray-800 font-medium group-hover:text-primary transition-colors">Fireplace</span>
+                                    </label>
+                                </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="w-px h-10 bg-gray-200 hidden lg:block mt-[34px]"></div>
-
-                        <!-- Property Types -->
-                        <div class="flex-1 flex flex-col gap-2.5">
-                            <label class="text-[14px] font-semibold text-gray-900">Property</label>
-                            <div
-                                class="custom-select flex justify-between items-center bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-800 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px]">
-                                <span class="font-medium">Apartments</span>
-                                <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                        d="M19 9l-7 7-7-7"></path>
-                                </svg>
-                            </div>
-                        </div>
-
-                        <div class="w-px h-10 bg-gray-200 hidden lg:block mt-[34px]"></div>
-
-                        <!-- Price Range -->
-                        <div class="flex-1 flex flex-col gap-2.5">
-                            <label class="text-[14px] font-semibold text-gray-900">Price Range</label>
-                            <div
-                                class="custom-select flex justify-between items-center bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-800 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px]">
-                                <span class="font-medium">Any Price</span>
-                                <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75">
-                                    </path>
-                                </svg>
-                            </div>
-                        </div>
-
-                        <div class="w-px h-10 bg-gray-200 hidden lg:block mt-[34px]"></div>
-
-                        <!-- Search Button -->
-                        <button
-                            class="bg-primary hover:bg-yellow-500 text-black font-semibold text-[15px] px-8 py-3 rounded-lg flex items-center justify-center gap-2 self-stretch lg:self-end mt-2 lg:mt-auto transition-transform hover:-translate-y-px h-[48px]">
-                            Search Rent
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                            </svg>
-                        </button>
                     </div>
                 </div>
-            </div>
     </main>
 
     <!-- ============================================ -->
