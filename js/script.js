@@ -602,6 +602,30 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileBtn.addEventListener('click', toggleMenu);
         closeBtn.addEventListener('click', toggleMenu);
         menuOverlay.addEventListener('click', toggleMenu);
+
+        // Fix for <details> accordion on mobile/touch devices
+        const summaries = mobileMenu.querySelectorAll('details summary');
+        summaries.forEach(summary => {
+            summary.addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent default to handle manually
+                const details = summary.parentElement;
+                
+                // Close all other details (optional, makes it behave like an accordion)
+                const allDetails = mobileMenu.querySelectorAll('details');
+                allDetails.forEach(d => {
+                    if (d !== details && d.hasAttribute('open')) {
+                        d.removeAttribute('open');
+                    }
+                });
+
+                // Toggle current
+                if (details.hasAttribute('open')) {
+                    details.removeAttribute('open');
+                } else {
+                    details.setAttribute('open', '');
+                }
+            });
+        });
     }
 });
 
