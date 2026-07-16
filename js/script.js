@@ -670,3 +670,27 @@ window.toggleMobileSearch = function() {
         }
     }
 };
+
+// Advanced Panel Toggle
+window.toggleAdvancePanel = function(type) {
+    const panel = document.getElementById('advanced-panel-' + type);
+    const btn = document.getElementById('btn-advance-' + type);
+    
+    if (panel.classList.contains('hidden')) {
+        // Open it
+        panel.classList.remove('hidden');
+        panel.classList.add('flex');
+        
+        // Change button to active (yellow)
+        btn.classList.remove('bg-lightbg', 'hover:bg-gray-200', 'text-gray-800');
+        btn.classList.add('bg-primary', 'hover:bg-[#b5c724]', 'text-black');
+    } else {
+        // Close it
+        panel.classList.add('hidden');
+        panel.classList.remove('flex');
+        
+        // Revert button
+        btn.classList.add('bg-lightbg', 'hover:bg-gray-200', 'text-gray-800');
+        btn.classList.remove('bg-primary', 'hover:bg-[#b5c724]', 'text-black');
+    }
+};
