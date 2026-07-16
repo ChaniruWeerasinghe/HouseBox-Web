@@ -2530,7 +2530,7 @@
 
                 <!-- Left Navigation Arrow -->
                 <button
-                    class="w-14 h-14 bg-white rounded-full flex items-center justify-center flex-shrink-0 shadow-lg hover:shadow-xl transition-all z-20 group">
+                    class="hidden md:flex w-14 h-14 bg-white rounded-full items-center justify-center flex-shrink-0 shadow-lg hover:shadow-xl transition-all z-20 group">
                     <svg class="w-6 h-6 text-gray-900 group-hover:-translate-x-0.5 transition-transform" fill="none"
                         stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7">
@@ -2539,16 +2539,16 @@
                 </button>
 
                 <!-- Central Cards Container -->
-                <div class="flex-grow flex gap-6 h-[460px]">
+                <div class="flex-grow flex flex-col lg:flex-row gap-6 h-auto lg:h-[460px] w-full">
 
                     <!-- Left: House Image Card -->
-                    <div class="w-[40%] h-full relative overflow-hidden rounded-[24px] shadow-2xl">
+                    <div class="w-full lg:w-[40%] h-[300px] lg:h-full relative overflow-hidden rounded-[24px] shadow-2xl shrink-0">
                         <img id="feat-img" src="assets/images/home/hero-left-bg-1.webp" alt="Property View"
                             class="w-full h-full object-cover transition-opacity duration-300">
                     </div>
 
                     <!-- Right: Info Card -->
-                    <div class="w-[60%] h-full bg-white p-10 flex flex-col justify-between rounded-[24px] shadow-2xl transition-opacity duration-300"
+                    <div class="w-full lg:w-[60%] h-auto lg:h-full bg-white p-6 lg:p-10 flex flex-col justify-between gap-6 lg:gap-0 rounded-[24px] shadow-2xl transition-opacity duration-300"
                         id="feat-info-panel">
 
                         <div class="flex flex-col items-start gap-4">
@@ -2581,7 +2581,7 @@
                             </div>
 
                             <!-- Stats (Features) -->
-                            <div class="flex items-center gap-3 mt-6">
+                            <div class="flex flex-wrap items-center gap-3 mt-4 lg:mt-6">
                                 <div
                                     class="flex items-center gap-2 border border-gray-200 rounded-full px-5 py-2.5 text-gray-700 font-medium text-[15px]">
                                     <svg class="w-[18px] h-[18px] text-gray-700" fill="none" stroke="currentColor"
@@ -2655,7 +2655,7 @@
 
                 <!-- Right Navigation Arrow -->
                 <button
-                    class="w-14 h-14 bg-white rounded-full flex items-center justify-center flex-shrink-0 shadow-lg hover:shadow-xl transition-all z-20 group">
+                    class="hidden md:flex w-14 h-14 bg-white rounded-full items-center justify-center flex-shrink-0 shadow-lg hover:shadow-xl transition-all z-20 group">
                     <svg class="w-6 h-6 text-gray-900 group-hover:translate-x-0.5 transition-transform" fill="none"
                         stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
