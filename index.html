@@ -497,7 +497,7 @@
                 </ul>
 
                 <!-- Right: Actions -->
-                <div class="flex items-center justify-end relative z-10">
+                <div class="hidden lg:flex items-center justify-end relative z-10">
                     <button id="search-btn" class="p-2 text-gray-800 hover:text-primary transition-colors">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
@@ -513,6 +513,15 @@
                                 d="M5 19L19 5M19 5v10M19 5H9"></path>
                         </svg>
                     </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex lg:hidden items-center justify-end">
+                    <button id="mobile-menu-btn" class="p-2 text-gray-900 hover:text-primary transition-colors focus:outline-none">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>
@@ -537,9 +546,9 @@
         <!-- Left Diagonal Background -->
         <!-- Using skew to create the diagonal effect and a border for the white line -->
         <div
-            class="absolute top-0 -left-[20%] w-[75%] h-full bg-dark skew-x-[15deg] border-r-[8px] border-white z-10 overflow-hidden shadow-[10px_0_30px_rgba(0,0,0,0.1)]">
+            class="absolute top-0 -left-[10%] md:-left-[20%] w-[120%] md:w-[75%] h-full bg-dark skew-x-0 md:skew-x-[15deg] border-r-0 md:border-r-[8px] border-white z-10 overflow-hidden shadow-[10px_0_30px_rgba(0,0,0,0.1)]">
             <!-- Inner container to reverse skew for the background image -->
-            <div id="left-slider" class="absolute top-0 left-0 w-[130%] h-full skew-x-[-15deg] overflow-hidden">
+            <div id="left-slider" class="absolute top-0 left-0 w-full md:w-[130%] h-full skew-x-0 md:skew-x-[-15deg] overflow-hidden">
                 <div
                     class="left-slider-img active absolute inset-0 bg-[url('assets/images/home/hero-left-bg-1.webp')] bg-cover bg-center mix-blend-overlay">
                 </div>
@@ -557,22 +566,22 @@
         </div>
 
         <!-- Content Container -->
-        <div class="max-w-[1320px] mx-auto px-6 w-full h-full relative z-20 flex justify-between items-center">
+        <div class="max-w-[1320px] mx-auto px-6 w-full h-full relative z-20 flex flex-col md:flex-row justify-center md:justify-between items-center">
 
             <!-- Left Text Content -->
-            <div class="max-w-[550px] text-white -mt-16 flex flex-col items-start">
+            <div class="max-w-[550px] text-white mt-0 md:-mt-16 flex flex-col items-center md:items-start text-center md:text-left">
                 <div class="overflow-hidden mb-6 p-1 -m-1">
-                    <div class="hero-text-anim inline-block bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded text-[15px] font-medium"
+                    <div class="hero-text-anim inline-block bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded text-[13px] md:text-[15px] font-medium"
                         style="animation-delay: 0ms;">
                         Discover Your Ideal Property Today!
                     </div>
                 </div>
                 <div class="overflow-hidden mb-8 py-2 -my-2">
-                    <h1 class="hero-text-anim text-[56px] leading-[1.1] font-bold" style="animation-delay: 100ms;">
+                    <h1 class="hero-text-anim text-[42px] md:text-[56px] leading-[1.1] font-bold" style="animation-delay: 100ms;">
                         Elegant Homes For Elevated Lifestyles
                     </h1>
                 </div>
-                <div class="overflow-hidden p-1 -m-1">
+                <div class="overflow-hidden p-1 -m-1 self-center md:self-start">
                     <a href="#"
                         class="hero-text-anim inline-flex items-center justify-center gap-2 bg-primary hover:bg-yellow-500 text-black font-semibold text-base px-7 py-3.5 rounded transition-transform hover:-translate-y-px"
                         style="animation-delay: 200ms;">
@@ -586,7 +595,7 @@
             </div>
 
             <!-- Right Circular Thumbnails (Vertical Stepper) -->
-            <div class="h-[280px] overflow-hidden -mr-10 relative pointer-events-none mask-image-gradient">
+            <div class="hidden md:block h-[280px] overflow-hidden -mr-10 relative pointer-events-none mask-image-gradient">
                 <div id="thumb-container" class="flex flex-col gap-5">
                     <div
                         class="w-20 h-20 rounded-full border-[5px] border-white overflow-hidden bg-white shrink-0 pointer-events-auto transition-colors duration-500">
@@ -620,7 +629,7 @@
                     </div>
 
                     <div
-                        class="flex items-start bg-white p-6 rounded-b-xl rounded-tr-xl shadow-[0_15px_50px_rgba(0,0,0,0.08)] gap-6 w-full">
+                        class="flex flex-col lg:flex-row items-stretch lg:items-start bg-white p-6 rounded-b-xl rounded-tr-xl shadow-[0_15px_50px_rgba(0,0,0,0.08)] gap-4 lg:gap-6 w-full">
                         <!-- Status -->
                         <div class="flex-1 flex flex-col gap-2.5">
                             <label class="text-[14px] font-semibold text-gray-900">Status</label>
@@ -687,7 +696,7 @@
 
                         <!-- Search Button -->
                         <button
-                            class="bg-primary hover:bg-yellow-500 text-black font-semibold text-[15px] px-8 py-3 rounded-lg flex items-center justify-center gap-2 self-end mt-auto transition-transform hover:-translate-y-px h-[48px]">
+                            class="bg-primary hover:bg-yellow-500 text-black font-semibold text-[15px] px-8 py-3 rounded-lg flex items-center justify-center gap-2 self-stretch lg:self-end mt-2 lg:mt-auto transition-transform hover:-translate-y-px h-[48px]">
                             Search
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
@@ -708,7 +717,7 @@
                 <div class="grid grid-cols-2 gap-5">
                     <!-- Tall Image -->
                     <div
-                        class="rounded-[16px] overflow-hidden h-[620px] mt-8 bg-gray-200 openDoors-container reveal-clip">
+                        class="rounded-[16px] overflow-hidden h-[350px] md:h-[620px] mt-8 bg-gray-200 openDoors-container reveal-clip">
                         <img src="assets/images/home/about-tall.webp" alt="Modern Building"
                             class="w-full h-full object-cover">
                     </div>
@@ -716,12 +725,12 @@
                     <!-- Right Stack -->
                     <div class="flex flex-col gap-5">
                         <div
-                            class="rounded-[16px] overflow-hidden h-[300px] bg-gray-200 openDoors-container reveal-clip">
+                            class="rounded-[16px] overflow-hidden h-[165px] md:h-[300px] bg-gray-200 openDoors-container reveal-clip">
                             <img src="assets/images/home/about-top.webp" alt="House on water"
                                 class="w-full h-full object-cover">
                         </div>
                         <div
-                            class="rounded-[16px] overflow-hidden h-[300px] bg-gray-200 openDoors-container reveal-clip">
+                            class="rounded-[16px] overflow-hidden h-[165px] md:h-[300px] bg-gray-200 openDoors-container reveal-clip">
                             <img src="assets/images/home/about-bottom.webp" alt="House with lawn"
                                 class="w-full h-full object-cover">
                         </div>
@@ -730,7 +739,7 @@
 
                 <!-- Floating Customer Card -->
                 <div
-                    class="absolute top-[55%] left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-[16px] shadow-[0_20px_60px_rgba(0,0,0,0.08)] py-5 px-6 w-max z-30 flex flex-col items-center gap-3 border border-gray-50">
+                    class="absolute top-[55%] left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-[16px] shadow-[0_20px_60px_rgba(0,0,0,0.08)] py-3 px-4 md:py-5 md:px-6 w-max max-w-[90%] z-30 flex flex-col items-center gap-2 md:gap-3 border border-gray-50 scale-90 md:scale-100">
                     <h4 class="font-semibold text-gray-900 text-[17px]">Our Happy Customer</h4>
                     <div class="flex items-center">
                         <img src="assets/images/home/clientdp.webp" alt="Happy Customers" class="h-[42px] w-auto">
@@ -746,7 +755,7 @@
                 </div>
 
                 <!-- Heading -->
-                <h2 class="text-[52px] leading-[1.1] font-bold text-gray-900 tracking-tight title-bounce">
+                <h2 class="text-[36px] md:text-[52px] leading-[1.15] md:leading-[1.1] font-bold text-gray-900 tracking-tight title-bounce">
                     Embrace the Elegance<br>Our Exclusive Property
                 </h2>
 
@@ -760,7 +769,7 @@
                 <div class="w-full h-px bg-gray-100 my-1"></div>
 
                 <!-- Stats Grid -->
-                <div class="grid grid-cols-3 gap-12 w-full">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 w-full">
                     <div class="flex flex-col items-start gap-1.5">
                         <span class="text-[46px] font-bold text-gray-900 leading-none tracking-tight"><span
                                 class="stat-counter" data-target="10">0</span>K</span>
@@ -805,7 +814,7 @@
         <div class="max-w-[1400px] mx-auto w-full flex flex-col gap-10">
 
             <!-- Section Header -->
-            <div class="w-full flex items-end justify-between">
+            <div class="w-full flex flex-col md:flex-row items-start md:items-end justify-between gap-4">
                 <div class="flex flex-col items-start gap-4">
                     <!-- Pill -->
                     <span
@@ -813,7 +822,7 @@
                         Featured Properties
                     </span>
                     <!-- Title -->
-                    <h2 class="text-[44px] leading-tight font-bold text-gray-900 tracking-tight">
+                    <h2 class="text-[36px] md:text-[44px] leading-tight font-bold text-gray-900 tracking-tight">
                         Our Featured Properties
                     </h2>
                 </div>
@@ -829,8 +838,8 @@
             </div>
 
             <!-- Filter Tabs -->
-            <div class="w-full flex items-center justify-start mt-2">
-                <div class="flex items-center gap-4">
+            <div class="w-full flex items-center justify-start mt-2 overflow-x-auto scrollbar-hide pb-2">
+                <div class="flex items-center gap-3 md:gap-4 w-max">
                     <!-- Active Tab -->
                     <button
                         class="bg-[#0f4a47] text-white px-6 py-2.5 rounded-sm font-medium text-[15px] flex items-center gap-2 transition-colors">
@@ -893,14 +902,14 @@
             <div class="w-full flex flex-col gap-8 mt-6">
 
                 <!-- Property Row 1 -->
-                <div class="w-full grid grid-cols-12 gap-6 items-stretch h-[320px]">
+                <div class="w-full flex flex-col lg:grid lg:grid-cols-12 gap-6 items-stretch h-auto lg:h-[320px]">
 
                     <!-- Merged Card (Image + Info) -->
                     <div
-                        class="col-span-9 flex bg-white rounded-[16px] shadow-sm border border-gray-100 overflow-hidden group">
+                        class="lg:col-span-9 flex flex-col md:flex-row bg-white rounded-[16px] shadow-sm border border-gray-100 overflow-hidden group">
 
                         <!-- Left: Image Slider -->
-                        <div class="relative w-[55%] h-full bg-gray-200 overflow-hidden">
+                        <div class="relative w-full md:w-[55%] h-[240px] md:h-full bg-gray-200 overflow-hidden shrink-0">
                             <img src="assets/images/home/hero-main.webp" alt="Property Image"
                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
 
@@ -927,8 +936,8 @@
                         </div>
 
                         <!-- Right: Info Card -->
-                        <div class="w-[45%] h-full p-8 flex flex-col justify-between">
-                            <div class="flex flex-col items-start gap-4">
+                        <div class="w-full md:w-[45%] h-auto md:h-full p-6 md:p-8 flex flex-col justify-between">
+                            <div class="flex flex-col items-start gap-3 md:gap-4">
                                 <h3 class="text-[26px] font-bold text-gray-900 tracking-tight leading-tight">Luxury
                                     Suite Villa</h3>
                                 <div class="flex items-center gap-1.5 text-gray-600">
@@ -944,7 +953,7 @@
                                 </div>
 
                                 <!-- Stats -->
-                                <div class="flex items-center gap-3 mt-1 w-full justify-start pr-2">
+                                <div class="flex flex-wrap md:flex-nowrap items-center gap-2 md:gap-3 mt-1 w-full justify-start pr-2">
                                     <div
                                         class="flex items-center gap-2 border border-gray-200 rounded-full px-4 py-1.5 text-gray-600 text-[14px]">
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -997,7 +1006,7 @@
 
                     <!-- Right: Map -->
                     <div
-                        class="col-span-3 relative w-full h-full rounded-[16px] overflow-hidden border border-gray-100 shadow-sm bg-gray-100">
+                        class="lg:col-span-3 relative w-full h-[240px] lg:h-full rounded-[16px] overflow-hidden border border-gray-100 shadow-sm bg-gray-100">
                         <iframe
                             src="https://maps.google.com/maps?q=Los%20Angeles%2C%20CA&t=&z=11&ie=UTF8&iwloc=&output=embed"
                             width="100%" height="100%" style="border:0;" allowfullscreen=""
@@ -1347,14 +1356,14 @@
                 </div>
 
                 <!-- Property Row 5 -->
-                <div class="w-full grid grid-cols-12 gap-6 items-stretch h-[320px]">
+                <div class="w-full flex flex-col lg:grid lg:grid-cols-12 gap-6 items-stretch h-auto lg:h-[320px]">
 
                     <!-- Merged Card (Image + Info) -->
                     <div
-                        class="col-span-9 flex bg-white rounded-[16px] shadow-sm border border-gray-100 overflow-hidden group">
+                        class="lg:col-span-9 flex flex-col md:flex-row bg-white rounded-[16px] shadow-sm border border-gray-100 overflow-hidden group">
 
                         <!-- Left: Image Slider -->
-                        <div class="relative w-[55%] h-full bg-gray-200 overflow-hidden">
+                        <div class="relative w-full md:w-[55%] h-[240px] md:h-full bg-gray-200 overflow-hidden shrink-0">
                             <img src="assets/images/home/hero-main-4.webp" alt="Property Image"
                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
 
@@ -1460,14 +1469,14 @@
                 </div>
 
                 <!-- Property Row 6 -->
-                <div class="w-full grid grid-cols-12 gap-6 items-stretch h-[320px]">
+                <div class="w-full flex flex-col lg:grid lg:grid-cols-12 gap-6 items-stretch h-auto lg:h-[320px]">
 
                     <!-- Merged Card (Image + Info) -->
                     <div
-                        class="col-span-9 flex bg-white rounded-[16px] shadow-sm border border-gray-100 overflow-hidden group">
+                        class="lg:col-span-9 flex flex-col md:flex-row bg-white rounded-[16px] shadow-sm border border-gray-100 overflow-hidden group">
 
                         <!-- Left: Image Slider -->
-                        <div class="relative w-[55%] h-full bg-gray-200 overflow-hidden">
+                        <div class="relative w-full md:w-[55%] h-[240px] md:h-full bg-gray-200 overflow-hidden shrink-0">
                             <img src="assets/images/home/about-tall.webp" alt="Property Image"
                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
 
@@ -1494,8 +1503,8 @@
                         </div>
 
                         <!-- Right: Info Card -->
-                        <div class="w-[45%] h-full p-8 flex flex-col justify-between">
-                            <div class="flex flex-col items-start gap-4">
+                        <div class="w-full md:w-[45%] h-auto md:h-full p-6 md:p-8 flex flex-col justify-between">
+                            <div class="flex flex-col items-start gap-3 md:gap-4">
                                 <h3 class="text-[26px] font-bold text-gray-900 tracking-tight leading-tight">Beachfront
                                     Villa</h3>
                                 <div class="flex items-center gap-1.5 text-gray-600">
@@ -1511,7 +1520,7 @@
                                 </div>
 
                                 <!-- Stats -->
-                                <div class="flex items-center gap-3 mt-1 w-full justify-start pr-2">
+                                <div class="flex flex-wrap md:flex-nowrap items-center gap-2 md:gap-3 mt-1 w-full justify-start pr-2">
                                     <div
                                         class="flex items-center gap-2 border border-gray-200 rounded-full px-4 py-1.5 text-gray-600 text-[14px]">
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1564,7 +1573,7 @@
 
                     <!-- Right: Map -->
                     <div
-                        class="col-span-3 relative w-full h-full rounded-[16px] overflow-hidden border border-gray-100 shadow-sm bg-gray-100">
+                        class="lg:col-span-3 relative w-full h-[240px] lg:h-full rounded-[16px] overflow-hidden border border-gray-100 shadow-sm bg-gray-100">
                         <iframe
                             src="https://maps.google.com/maps?q=San%20Diego%2C%20CA&t=&z=11&ie=UTF8&iwloc=&output=embed"
                             width="100%" height="100%" style="border:0;" allowfullscreen=""
@@ -1931,7 +1940,7 @@
                     Property Location
                 </span>
                 <!-- Title -->
-                <h2 class="text-[44px] leading-tight font-bold text-gray-900 tracking-tight">
+                <h2 class="text-[36px] md:text-[44px] leading-tight font-bold text-gray-900 tracking-tight">
                     Explore Our Property Location
                 </h2>
             </div>
@@ -1939,7 +1948,7 @@
             <!-- Locations Grid -->
             <div class="w-full relative mt-4 flex flex-col gap-6">
                 <!-- Row 1 (2 : 2.8 : 3.6) -->
-                <div class="w-full grid gap-6" style="grid-template-columns: 2fr 2.8fr 3.6fr;">
+                <div class="w-full grid grid-cols-1 md:grid-cols-[2fr_2.8fr_3.6fr] gap-6">
 
                     <!-- Location Card 1 -->
                     <div class="location-reveal relative w-full h-[320px] rounded-[12px] overflow-hidden group cursor-pointer shadow-sm bg-gray-200"
@@ -2151,16 +2160,16 @@
                     Amenities & Layout
                 </span>
                 <!-- Title -->
-                <h2 class="text-[44px] leading-tight font-bold text-gray-900 tracking-tight">
+                <h2 class="text-[36px] md:text-[44px] leading-tight font-bold text-gray-900 tracking-tight">
                     Explore Property Amenities
                 </h2>
             </div>
 
             <!-- Content Grid: Accordion + Map -->
-            <div class="w-full grid grid-cols-12 gap-10 items-stretch">
+            <div class="w-full flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
 
                 <!-- Left: Accordion List -->
-                <div class="col-span-4 flex flex-col justify-center gap-4 w-full h-full">
+                <div class="lg:col-span-4 flex flex-col justify-center gap-4 w-full h-full">
 
                     <!-- Accordion Item 1 (Active by default) -->
                     <div
@@ -2242,7 +2251,7 @@
 
                 <!-- Right: Map Embed -->
                 <div
-                    class="col-span-8 relative w-full h-full min-h-[580px] rounded-[16px] overflow-hidden group shadow-md border border-gray-100 bg-gray-200">
+                    class="lg:col-span-8 relative w-full h-[300px] md:h-full md:min-h-[580px] rounded-[16px] overflow-hidden group shadow-md border border-gray-100 bg-gray-200">
                     <iframe src="https://maps.google.com/maps?q=Bay+Area,+CA&t=&z=10&ie=UTF8&iwloc=&output=embed"
                         width="100%" height="100%" style="border:0; position: absolute; inset: 0;" allowfullscreen=""
                         referrerpolicy="no-referrer-when-downgrade">
@@ -2278,7 +2287,7 @@
                     Our Best Featured Item
                 </span>
                 <!-- Title -->
-                <h2 class="text-[44px] leading-tight font-bold text-white tracking-tight">
+                <h2 class="text-[36px] md:text-[44px] leading-tight font-bold text-white tracking-tight">
                     Our Featured Items
                 </h2>
             </div>
@@ -2804,15 +2813,7 @@
                 <div class="flex flex-col gap-6">
                     <!-- Logo -->
                     <a href="index.html" class="flex items-center gap-2">
-                        <div class="w-11 h-11 rounded-full bg-[#ffc107] flex items-center justify-center shrink-0">
-                            <svg class="w-5 h-5 text-gray-900" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M4 22h16" />
-                                <path d="M6 22V12h4v10" />
-                                <path d="M10 22V6h5v16" />
-                                <path d="M15 22v-9h4v9" />
-                            </svg>
-                        </div>
+                        <img src="assets/images/home/logo.webp" alt="HouseBox" class="h-9 w-auto">
                         <span class="text-[20px] font-extrabold text-gray-900 tracking-tight">HOUSEBOX</span>
                     </a>
 
