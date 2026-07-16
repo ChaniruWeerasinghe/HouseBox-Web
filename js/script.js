@@ -694,3 +694,54 @@ window.toggleAdvancePanel = function(type) {
         btn.classList.remove('bg-primary', 'hover:bg-[#b5c724]', 'text-black');
     }
 };
+
+
+// Dual Range Slider Logic
+document.addEventListener("DOMContentLoaded", function() {
+    const sliders = document.querySelectorAll('.dual-slider');
+    
+    sliders.forEach(slider => {
+        const thumb1 = slider.querySelector('.thumb-1');
+        const thumb2 = slider.querySelector('.thumb-2');
+        const track = slider.querySelector('.slider-track');
+        
+        function updateTrack() {
+            let val1 = parseInt(thumb1.value);
+            let val2 = parseInt(thumb2.value);
+            
+            if (val1 > val2) {
+                let tmp = val1;
+                val1 = val2;
+                val2 = tmp;
+            }
+            
+            const min = parseInt(thumb1.min);
+            const max = parseInt(thumb1.max);
+            
+            const percent1 = ((val1 - min) / (max - min)) * 100;
+            const percent2 = ((val2 - min) / (max - min)) * 100;
+            
+            track.style.left = percent1 + '%';
+            track.style.width = (percent2 - percent1) + '%';
+        }
+        
+        thumb1.addEventListener('input', updateTrack);
+        thumb2.addEventListener('input', updateTrack);
+        
+        // Ensure thumbs cross over correctly without getting stuck
+        thumb1.addEventListener('change', function() {
+            if (parseInt(thumb1.value) > parseInt(thumb2.value)) {
+                thumb1.value = thumb2.value;
+                updateTrack();
+            }
+        });
+        thumb2.addEventListener('change', function() {
+            if (parseInt(thumb2.value) < parseInt(thumb1.value)) {
+                thumb2.value = thumb1.value;
+                updateTrack();
+            }
+        });
+        
+        updateTrack();
+    });
+});
