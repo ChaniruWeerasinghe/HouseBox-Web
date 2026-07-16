@@ -603,21 +603,39 @@ document.addEventListener('DOMContentLoaded', () => {
         closeBtn.addEventListener('click', toggleMenu);
         menuOverlay.addEventListener('click', toggleMenu);
 
-        // Fix for <details> accordion on mobile/touch devices
-        const summaries = mobileMenu.querySelectorAll('details summary');
-        summaries.forEach(summary => {
-            summary.addEventListener('click', (e) => {
-                const details = summary.parentElement;
-                
-                // Close all other details (optional, makes it behave like an accordion)
-                const allDetails = mobileMenu.querySelectorAll('details');
-                allDetails.forEach(d => {
-                    if (d !== details && d.hasAttribute('open')) {
-                        d.removeAttribute('open');
+        // Mobile Accordion Logic
+        const accordions = mobileMenu.querySelectorAll('.mobile-accordion');
+        accordions.forEach(acc => {
+            const btn = acc.querySelector('.mobile-accordion-btn');
+            const content = acc.querySelector('.mobile-accordion-content');
+            const icon = acc.querySelector('svg');
+
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const isOpen = !content.classList.contains('hidden');
+
+                // Close all others
+                accordions.forEach(otherAcc => {
+                    if (otherAcc !== acc) {
+                        const otherContent = otherAcc.querySelector('.mobile-accordion-content');
+                        const otherIcon = otherAcc.querySelector('svg');
+                        if (otherContent && !otherContent.classList.contains('hidden')) {
+                            otherContent.classList.add('hidden');
+                            otherContent.classList.remove('flex');
+                            if (otherIcon) otherIcon.classList.remove('rotate-180');
+                        }
                     }
                 });
-                
-                // Allow native toggle for the clicked element
+
+                if (isOpen) {
+                    content.classList.add('hidden');
+                    content.classList.remove('flex');
+                    if (icon) icon.classList.remove('rotate-180');
+                } else {
+                    content.classList.remove('hidden');
+                    content.classList.add('flex');
+                    if (icon) icon.classList.add('rotate-180');
+                }
             });
         });
     }
