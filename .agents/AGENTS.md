@@ -13,3 +13,6 @@ When cloning UI from screenshots provided by Chaniru:
 
 ## Reusable Components
 Before coding a new section (like a header, footer, or card), always check the project directory (especially the `components/` folder) to see if a reusable component already exists. Do not write duplicate code if a component can be reused or updated.
+
+## Manual File Editing and No Commands/Scripts
+Do NOT use terminal commands, bash scripts, or python scripts (like `run_command` with Python or PowerShell) for tasks like viewing files, searching content, or making text replacements in files. You MUST use the built-in manual file editing tools (e.g., `view_file`, `replace_file_content`, `multi_replace_file_content`) to do the work. You are not allowed to use other languages for easy work.
