@@ -527,10 +527,10 @@
         </div>
 
         <!-- Mobile Menu Overlay -->
-        <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/50 z-[60] hidden opacity-0 transition-opacity duration-300 cursor-pointer"></div>
+        <div id="mobile-menu-overlay" data-lenis-prevent class="fixed inset-0 bg-black/50 z-[60] hidden opacity-0 transition-opacity duration-300 cursor-pointer"></div>
 
         <!-- Mobile Menu Drawer (Left to Right) -->
-        <div id="mobile-menu" class="fixed top-0 left-0 w-[280px] sm:w-[320px] h-full bg-white z-[70] transform -translate-x-full transition-transform duration-300 flex flex-col shadow-2xl">
+        <div id="mobile-menu" data-lenis-prevent class="fixed top-0 left-0 w-[280px] sm:w-[320px] h-full bg-white z-[70] transform -translate-x-full transition-transform duration-300 flex flex-col shadow-2xl">
             <div class="flex items-center justify-between p-6 border-b border-gray-100">
                 <a href="index.html" class="flex items-center gap-2">
                     <img src="assets/images/home/logo.webp" alt="HouseBox" class="h-8 w-auto">
@@ -1250,14 +1250,14 @@
                 </div>
 
                 <!-- Property Row 2 -->
-                <div class="w-full grid grid-cols-12 gap-6 items-stretch h-[320px]">
+                <div class="w-full flex flex-col lg:grid lg:grid-cols-12 gap-6 items-stretch h-auto lg:h-[320px]">
 
                     <!-- Merged Card (Image + Info) -->
                     <div
-                        class="col-span-9 flex bg-white rounded-[16px] shadow-sm border border-gray-100 overflow-hidden group">
+                        class="lg:col-span-9 flex flex-col md:flex-row bg-white rounded-[16px] shadow-sm border border-gray-100 overflow-hidden group">
 
                         <!-- Left: Image Slider -->
-                        <div class="relative w-[55%] h-full bg-gray-200 overflow-hidden">
+                        <div class="relative w-full md:w-[55%] h-[240px] md:h-full bg-gray-200 overflow-hidden shrink-0">
                             <img src="assets/images/home/hero-main-1.webp" alt="Property Image"
                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
 
@@ -1284,8 +1284,8 @@
                         </div>
 
                         <!-- Right: Info Card -->
-                        <div class="w-[45%] h-full p-8 flex flex-col justify-between">
-                            <div class="flex flex-col items-start gap-4">
+                        <div class="w-full md:w-[45%] h-auto md:h-full p-6 md:p-8 flex flex-col justify-between">
+                            <div class="flex flex-col items-start gap-3 md:gap-4">
                                 <h3 class="text-[26px] font-bold text-gray-900 tracking-tight leading-tight">Apartment
                                     Diamond</h3>
                                 <div class="flex items-center gap-1.5 text-gray-600">
@@ -1301,7 +1301,7 @@
                                 </div>
 
                                 <!-- Stats -->
-                                <div class="flex items-center gap-3 mt-1 w-full justify-start pr-2">
+                                <div class="flex flex-wrap md:flex-nowrap items-center gap-2 md:gap-3 mt-1 w-full justify-start pr-2">
                                     <div
                                         class="flex items-center gap-2 border border-gray-200 rounded-full px-4 py-1.5 text-gray-600 text-[14px]">
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1354,7 +1354,7 @@
 
                     <!-- Right: Map -->
                     <div
-                        class="col-span-3 relative w-full h-full rounded-[16px] overflow-hidden border border-gray-100 shadow-sm bg-gray-100">
+                        class="lg:col-span-3 relative w-full h-[240px] lg:h-full rounded-[16px] overflow-hidden border border-gray-100 shadow-sm bg-gray-100">
                         <iframe src="https://maps.google.com/maps?q=Miami%2C%20FL&t=&z=11&ie=UTF8&iwloc=&output=embed"
                             width="100%" height="100%" style="border:0;" allowfullscreen=""
                             referrerpolicy="no-referrer-when-downgrade">
@@ -1363,14 +1363,14 @@
                 </div>
 
                 <!-- Property Row 3 -->
-                <div class="w-full grid grid-cols-12 gap-6 items-stretch h-[320px]">
+                <div class="w-full flex flex-col lg:grid lg:grid-cols-12 gap-6 items-stretch h-auto lg:h-[320px]">
 
                     <!-- Merged Card (Image + Info) -->
                     <div
-                        class="col-span-9 flex bg-white rounded-[16px] shadow-sm border border-gray-100 overflow-hidden group">
+                        class="lg:col-span-9 flex flex-col md:flex-row bg-white rounded-[16px] shadow-sm border border-gray-100 overflow-hidden group">
 
                         <!-- Left: Image Slider -->
-                        <div class="relative w-[55%] h-full bg-gray-200 overflow-hidden">
+                        <div class="relative w-full md:w-[55%] h-[240px] md:h-full bg-gray-200 overflow-hidden shrink-0">
                             <img src="assets/images/home/hero-main-2.webp" alt="Property Image"
                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
 
@@ -1397,8 +1397,8 @@
                         </div>
 
                         <!-- Right: Info Card -->
-                        <div class="w-[45%] h-full p-8 flex flex-col justify-between">
-                            <div class="flex flex-col items-start gap-4">
+                        <div class="w-full md:w-[45%] h-auto md:h-full p-6 md:p-8 flex flex-col justify-between">
+                            <div class="flex flex-col items-start gap-3 md:gap-4">
                                 <h3 class="text-[26px] font-bold text-gray-900 tracking-tight leading-tight">Apartment
                                     Angles</h3>
                                 <div class="flex items-center gap-1.5 text-gray-600">
@@ -1414,7 +1414,7 @@
                                 </div>
 
                                 <!-- Stats -->
-                                <div class="flex items-center gap-3 mt-1 w-full justify-start pr-2">
+                                <div class="flex flex-wrap md:flex-nowrap items-center gap-2 md:gap-3 mt-1 w-full justify-start pr-2">
                                     <div
                                         class="flex items-center gap-2 border border-gray-200 rounded-full px-4 py-1.5 text-gray-600 text-[14px]">
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1467,7 +1467,7 @@
 
                     <!-- Right: Map -->
                     <div
-                        class="col-span-3 relative w-full h-full rounded-[16px] overflow-hidden border border-gray-100 shadow-sm bg-gray-100">
+                        class="lg:col-span-3 relative w-full h-[240px] lg:h-full rounded-[16px] overflow-hidden border border-gray-100 shadow-sm bg-gray-100">
                         <iframe
                             src="https://maps.google.com/maps?q=New%20York%2C%20NY&t=&z=11&ie=UTF8&iwloc=&output=embed"
                             width="100%" height="100%" style="border:0;" allowfullscreen=""
@@ -1477,14 +1477,14 @@
                 </div>
 
                 <!-- Property Row 4 -->
-                <div class="w-full grid grid-cols-12 gap-6 items-stretch h-[320px]">
+                <div class="w-full flex flex-col lg:grid lg:grid-cols-12 gap-6 items-stretch h-auto lg:h-[320px]">
 
                     <!-- Merged Card (Image + Info) -->
                     <div
-                        class="col-span-9 flex bg-white rounded-[16px] shadow-sm border border-gray-100 overflow-hidden group">
+                        class="lg:col-span-9 flex flex-col md:flex-row bg-white rounded-[16px] shadow-sm border border-gray-100 overflow-hidden group">
 
                         <!-- Left: Image Slider -->
-                        <div class="relative w-[55%] h-full bg-gray-200 overflow-hidden">
+                        <div class="relative w-full md:w-[55%] h-[240px] md:h-full bg-gray-200 overflow-hidden shrink-0">
                             <img src="assets/images/home/hero-main-3.webp" alt="Property Image"
                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
 
@@ -1511,8 +1511,8 @@
                         </div>
 
                         <!-- Right: Info Card -->
-                        <div class="w-[45%] h-full p-8 flex flex-col justify-between">
-                            <div class="flex flex-col items-start gap-4">
+                        <div class="w-full md:w-[45%] h-auto md:h-full p-6 md:p-8 flex flex-col justify-between">
+                            <div class="flex flex-col items-start gap-3 md:gap-4">
                                 <h3 class="text-[26px] font-bold text-gray-900 tracking-tight leading-tight">Modern
                                     Glass House</h3>
                                 <div class="flex items-center gap-1.5 text-gray-600">
@@ -1528,7 +1528,7 @@
                                 </div>
 
                                 <!-- Stats -->
-                                <div class="flex items-center gap-3 mt-1 w-full justify-start pr-2">
+                                <div class="flex flex-wrap md:flex-nowrap items-center gap-2 md:gap-3 mt-1 w-full justify-start pr-2">
                                     <div
                                         class="flex items-center gap-2 border border-gray-200 rounded-full px-4 py-1.5 text-gray-600 text-[14px]">
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1581,7 +1581,7 @@
 
                     <!-- Right: Map -->
                     <div
-                        class="col-span-3 relative w-full h-full rounded-[16px] overflow-hidden border border-gray-100 shadow-sm bg-gray-100">
+                        class="lg:col-span-3 relative w-full h-[240px] lg:h-full rounded-[16px] overflow-hidden border border-gray-100 shadow-sm bg-gray-100">
                         <iframe src="https://maps.google.com/maps?q=Austin%2C%20TX&t=&z=11&ie=UTF8&iwloc=&output=embed"
                             width="100%" height="100%" style="border:0;" allowfullscreen=""
                             referrerpolicy="no-referrer-when-downgrade">
