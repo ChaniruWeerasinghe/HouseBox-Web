@@ -1434,26 +1434,35 @@
                     <div class="flex items-center gap-3">
                         <!-- View Toggles -->
                         <div class="flex items-center gap-2">
-                            <button class="w-11 h-11 bg-primary text-gray-900 rounded flex items-center justify-center transition-colors shadow-sm">
+                            <button id="view-grid-btn" onclick="setViewMode('grid')" class="w-11 h-11 bg-primary border-primary text-gray-900 rounded flex items-center justify-center transition-colors shadow-sm border">
                                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M4 4h6v6H4V4zm10 0h6v6h-6V4zM4 14h6v6H4v-6zm10 0h6v6h-6v-6z"></path></svg>
                             </button>
-                            <button class="w-11 h-11 bg-white border border-gray-200 text-gray-900 hover:border-gray-400 rounded flex items-center justify-center transition-colors shadow-sm">
+                            <button id="view-list-btn" onclick="setViewMode('list')" class="w-11 h-11 bg-white border border-gray-200 text-gray-900 hover:border-gray-400 rounded flex items-center justify-center transition-colors shadow-sm">
                                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M4 6h2v2H4V6zm0 5h2v2H4v-2zm0 5h2v2H4v-2zm4-10h12v2H8V6zm0 5h12v2H8v-2zm0 5h12v2H8v-2z"></path></svg>
                             </button>
                         </div>
                         <!-- Sort Dropdown -->
-                        <div class="relative bg-gray-100 rounded px-5 py-3 flex items-center gap-6 cursor-pointer hover:bg-gray-200 transition-colors ml-2">
-                            <span class="text-gray-800 font-medium text-[15px]">Sort by (Default)</span>
-                            <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                        <div class="relative ml-2 group/sort-dropdown z-30">
+                            <div class="bg-gray-100 group-hover/sort-dropdown:bg-gray-200 rounded px-5 py-3 flex items-center justify-between gap-4 cursor-pointer transition-colors h-11 min-w-[190px]">
+                                <span class="text-gray-900 font-medium text-[15px]">Sort by (Default)</span>
+                                <svg class="w-3.5 h-3.5 text-gray-500 transition-transform duration-300 group-hover/sort-dropdown:-rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                            </div>
+                            <div class="absolute top-full right-0 w-full min-w-[190px] bg-white border border-gray-100 rounded-lg shadow-lg py-1.5 opacity-0 pointer-events-none translate-y-1 group-hover/sort-dropdown:opacity-100 group-hover/sort-dropdown:pointer-events-auto group-hover/sort-dropdown:translate-y-0 transition-all duration-200 mt-1 before:content-[''] before:absolute before:-top-4 before:left-0 before:w-full before:h-4">
+                                <ul class="flex flex-col">
+                                    <li><a href="#" class="block px-4 py-2 text-gray-900 hover:text-primary hover:bg-gray-50 transition-colors font-bold text-[15px]">Sort by (Default)</a></li>
+                                    <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">Oldest</a></li>
+                                    <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">Newest</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Property Grid (2 Columns) -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 h-full pb-8">
+                <div id="property-container" class="grid grid-cols-1 md:grid-cols-2 gap-6 h-full pb-8 group/view view-grid">
                     <!-- Card -->
-                    <div class="bg-white rounded-[24px] shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] border border-gray-100 overflow-hidden group hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 flex flex-col hover:-translate-y-1 pb-2">
-                        <div class="relative h-[240px] overflow-hidden flex-shrink-0 group/img">
+                    <div class="bg-white rounded-[24px] shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] border border-gray-100 overflow-hidden group hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 flex flex-col group-[.view-list]/view:md:flex-row group-[.view-list]/view:md:h-[280px] hover:-translate-y-1 pb-2 group-[.view-list]/view:md:pb-0">
+                        <div class="relative h-[240px] group-[.view-list]/view:md:h-full group-[.view-list]/view:md:w-[45%] overflow-hidden flex-shrink-0 group/img">
                             <img src="assets/images/property-halfmap-grid/property2.webp" alt="Property Alternate" class="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-700 group-hover/img:scale-105">
                             <img src="assets/images/property-halfmap-grid/property1.webp" alt="Property" class="absolute inset-0 w-full h-full object-cover card-image-fade z-10 transition-transform duration-700 group-hover/img:scale-105">
                             
@@ -1466,7 +1475,7 @@
                                 <div class="w-2 h-2 rounded-full bg-white opacity-70 transition-all duration-300 shadow hover:opacity-100 cursor-pointer"></div>
                             </div>
                         </div>
-                        <div class="p-6 flex-grow flex flex-col">
+                        <div class="p-6 flex-grow flex flex-col group-[.view-list]/view:md:w-[55%] group-[.view-list]/view:md:justify-center">
                             <h3 class="text-[22px] font-bold text-[#063330] mb-1.5 leading-tight">Apartment Complex</h3>
                             <p class="text-[#5d737e] text-[15px] mb-6">Los Angeles City, CA, USA</p>
                             
@@ -1496,8 +1505,8 @@
                         </div>
                     </div>
                     <!-- Card -->
-                    <div class="bg-white rounded-[24px] shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] border border-gray-100 overflow-hidden group hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 flex flex-col hover:-translate-y-1 pb-2">
-                        <div class="relative h-[240px] overflow-hidden flex-shrink-0 group/img">
+                    <div class="bg-white rounded-[24px] shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] border border-gray-100 overflow-hidden group hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 flex flex-col group-[.view-list]/view:md:flex-row group-[.view-list]/view:md:h-[280px] hover:-translate-y-1 pb-2 group-[.view-list]/view:md:pb-0">
+                        <div class="relative h-[240px] group-[.view-list]/view:md:h-full group-[.view-list]/view:md:w-[45%] overflow-hidden flex-shrink-0 group/img">
                             <img src="assets/images/property-halfmap-grid/property4.webp" alt="Property Alternate" class="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-700 group-hover/img:scale-105">
                             <img src="assets/images/property-halfmap-grid/property3.webp" alt="Property" class="absolute inset-0 w-full h-full object-cover card-image-fade z-10 transition-transform duration-700 group-hover/img:scale-105">
                             
@@ -1510,7 +1519,7 @@
                                 <div class="w-2 h-2 rounded-full bg-white opacity-70 transition-all duration-300 shadow hover:opacity-100 cursor-pointer"></div>
                             </div>
                         </div>
-                        <div class="p-6 flex-grow flex flex-col">
+                        <div class="p-6 flex-grow flex flex-col group-[.view-list]/view:md:w-[55%] group-[.view-list]/view:md:justify-center">
                             <h3 class="text-[22px] font-bold text-[#063330] mb-1.5 leading-tight">Luxury Suite Villa</h3>
                             <p class="text-[#5d737e] text-[15px] mb-6">Los Angeles City, CA, USA</p>
                             
@@ -1540,8 +1549,8 @@
                         </div>
                     </div>
                     <!-- Card -->
-                    <div class="bg-white rounded-[24px] shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] border border-gray-100 overflow-hidden group hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 flex flex-col hover:-translate-y-1 pb-2">
-                        <div class="relative h-[240px] overflow-hidden flex-shrink-0 group/img">
+                    <div class="bg-white rounded-[24px] shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] border border-gray-100 overflow-hidden group hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 flex flex-col group-[.view-list]/view:md:flex-row group-[.view-list]/view:md:h-[280px] hover:-translate-y-1 pb-2 group-[.view-list]/view:md:pb-0">
+                        <div class="relative h-[240px] group-[.view-list]/view:md:h-full group-[.view-list]/view:md:w-[45%] overflow-hidden flex-shrink-0 group/img">
                             <img src="assets/images/property-halfmap-grid/property3.webp" alt="Property Alternate" class="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-700 group-hover/img:scale-105">
                             <img src="assets/images/property-halfmap-grid/property1.webp" alt="Property" class="absolute inset-0 w-full h-full object-cover card-image-fade z-10 transition-transform duration-700 group-hover/img:scale-105">
                             
@@ -1554,7 +1563,7 @@
                                 <div class="w-2 h-2 rounded-full bg-white opacity-70 transition-all duration-300 shadow hover:opacity-100 cursor-pointer"></div>
                             </div>
                         </div>
-                        <div class="p-6 flex-grow flex flex-col">
+                        <div class="p-6 flex-grow flex flex-col group-[.view-list]/view:md:w-[55%] group-[.view-list]/view:md:justify-center">
                             <h3 class="text-[22px] font-bold text-[#063330] mb-1.5 leading-tight">Diamond Apartment</h3>
                             <p class="text-[#5d737e] text-[15px] mb-6">Los Angeles City, CA, USA</p>
                             
@@ -1584,8 +1593,8 @@
                         </div>
                     </div>
                     <!-- Card -->
-                    <div class="bg-white rounded-[24px] shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] border border-gray-100 overflow-hidden group hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 flex flex-col hover:-translate-y-1 pb-2">
-                        <div class="relative h-[240px] overflow-hidden flex-shrink-0 group/img">
+                    <div class="bg-white rounded-[24px] shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] border border-gray-100 overflow-hidden group hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 flex flex-col group-[.view-list]/view:md:flex-row group-[.view-list]/view:md:h-[280px] hover:-translate-y-1 pb-2 group-[.view-list]/view:md:pb-0">
+                        <div class="relative h-[240px] group-[.view-list]/view:md:h-full group-[.view-list]/view:md:w-[45%] overflow-hidden flex-shrink-0 group/img">
                             <img src="assets/images/property-halfmap-grid/property4.webp" alt="Property Alternate" class="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-700 group-hover/img:scale-105">
                             <img src="assets/images/property-halfmap-grid/property2.webp" alt="Property" class="absolute inset-0 w-full h-full object-cover card-image-fade z-10 transition-transform duration-700 group-hover/img:scale-105">
                             
@@ -1598,7 +1607,7 @@
                                 <div class="w-2 h-2 rounded-full bg-white opacity-70 transition-all duration-300 shadow hover:opacity-100 cursor-pointer"></div>
                             </div>
                         </div>
-                        <div class="p-6 flex-grow flex flex-col">
+                        <div class="p-6 flex-grow flex flex-col group-[.view-list]/view:md:w-[55%] group-[.view-list]/view:md:justify-center">
                             <h3 class="text-[22px] font-bold text-[#063330] mb-1.5 leading-tight">Three Room Apartment</h3>
                             <p class="text-[#5d737e] text-[15px] mb-6">Los Angeles City, CA, USA</p>
                             
@@ -1628,8 +1637,8 @@
                         </div>
                     </div>
                     <!-- Card -->
-                    <div class="bg-white rounded-[24px] shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] border border-gray-100 overflow-hidden group hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 flex flex-col hover:-translate-y-1 pb-2">
-                        <div class="relative h-[240px] overflow-hidden flex-shrink-0 group/img">
+                    <div class="bg-white rounded-[24px] shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] border border-gray-100 overflow-hidden group hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 flex flex-col group-[.view-list]/view:md:flex-row group-[.view-list]/view:md:h-[280px] hover:-translate-y-1 pb-2 group-[.view-list]/view:md:pb-0">
+                        <div class="relative h-[240px] group-[.view-list]/view:md:h-full group-[.view-list]/view:md:w-[45%] overflow-hidden flex-shrink-0 group/img">
                             <img src="assets/images/property-halfmap-grid/property4.webp" alt="Property Alternate" class="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-700 group-hover/img:scale-105">
                             <img src="assets/images/property-halfmap-grid/property1.webp" alt="Property" class="absolute inset-0 w-full h-full object-cover card-image-fade z-10 transition-transform duration-700 group-hover/img:scale-105">
                             
@@ -1642,7 +1651,7 @@
                                 <div class="w-2 h-2 rounded-full bg-white opacity-70 transition-all duration-300 shadow hover:opacity-100 cursor-pointer"></div>
                             </div>
                         </div>
-                        <div class="p-6 flex-grow flex flex-col">
+                        <div class="p-6 flex-grow flex flex-col group-[.view-list]/view:md:w-[55%] group-[.view-list]/view:md:justify-center">
                             <h3 class="text-[22px] font-bold text-[#063330] mb-1.5 leading-tight">Suburb Home for Rent</h3>
                             <p class="text-[#5d737e] text-[15px] mb-6">Los Angeles City, CA, USA</p>
                             
@@ -1672,8 +1681,8 @@
                         </div>
                     </div>
                     <!-- Card -->
-                    <div class="bg-white rounded-[24px] shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] border border-gray-100 overflow-hidden group hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 flex flex-col hover:-translate-y-1 pb-2">
-                        <div class="relative h-[240px] overflow-hidden flex-shrink-0 group/img">
+                    <div class="bg-white rounded-[24px] shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] border border-gray-100 overflow-hidden group hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 flex flex-col group-[.view-list]/view:md:flex-row group-[.view-list]/view:md:h-[280px] hover:-translate-y-1 pb-2 group-[.view-list]/view:md:pb-0">
+                        <div class="relative h-[240px] group-[.view-list]/view:md:h-full group-[.view-list]/view:md:w-[45%] overflow-hidden flex-shrink-0 group/img">
                             <img src="assets/images/property-halfmap-grid/property3.webp" alt="Property Alternate" class="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-700 group-hover/img:scale-105">
                             <img src="assets/images/property-halfmap-grid/property2.webp" alt="Property" class="absolute inset-0 w-full h-full object-cover card-image-fade z-10 transition-transform duration-700 group-hover/img:scale-105">
                             
@@ -1686,7 +1695,7 @@
                                 <div class="w-2 h-2 rounded-full bg-white opacity-70 transition-all duration-300 shadow hover:opacity-100 cursor-pointer"></div>
                             </div>
                         </div>
-                        <div class="p-6 flex-grow flex flex-col">
+                        <div class="p-6 flex-grow flex flex-col group-[.view-list]/view:md:w-[55%] group-[.view-list]/view:md:justify-center">
                             <h3 class="text-[22px] font-bold text-[#063330] mb-1.5 leading-tight">Gorgeous Home for Sale</h3>
                             <p class="text-[#5d737e] text-[15px] mb-6">Los Angeles City, CA, USA</p>
                             

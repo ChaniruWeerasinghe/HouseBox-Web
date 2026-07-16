@@ -742,3 +742,34 @@ document.addEventListener("DOMContentLoaded", function() {
         updateTrack();
     });
 });
+
+// -----------------------------------------------------
+// Grid/List View Toggle Logic
+// -----------------------------------------------------
+window.setViewMode = function(mode) {
+    const container = document.getElementById('property-container');
+    const gridBtn = document.getElementById('view-grid-btn');
+    const listBtn = document.getElementById('view-list-btn');
+
+    if (!container || !gridBtn || !listBtn) return;
+
+    if (mode === 'list') {
+        container.classList.remove('view-grid');
+        container.classList.add('view-list');
+        
+        gridBtn.classList.remove('bg-primary', 'border-primary');
+        gridBtn.classList.add('bg-white', 'border-gray-200');
+        
+        listBtn.classList.remove('bg-white', 'border-gray-200');
+        listBtn.classList.add('bg-primary', 'border-primary');
+    } else {
+        container.classList.remove('view-list');
+        container.classList.add('view-grid');
+        
+        gridBtn.classList.remove('bg-white', 'border-gray-200');
+        gridBtn.classList.add('bg-primary', 'border-primary');
+        
+        listBtn.classList.remove('bg-primary', 'border-primary');
+        listBtn.classList.add('bg-white', 'border-gray-200');
+    }
+};
