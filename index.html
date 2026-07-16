@@ -525,10 +525,42 @@
                 </div>
             </div>
         </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/50 z-[60] hidden opacity-0 transition-opacity duration-300"></div>
+
+        <!-- Mobile Menu Drawer (Left to Right) -->
+        <div id="mobile-menu" class="fixed top-0 left-0 w-[280px] sm:w-[320px] h-full bg-white z-[70] transform -translate-x-full transition-transform duration-300 flex flex-col shadow-2xl">
+            <div class="flex items-center justify-between p-6 border-b border-gray-100">
+                <a href="index.html" class="flex items-center gap-2">
+                    <img src="assets/images/home/logo.webp" alt="HouseBox" class="h-8 w-auto">
+                    <span class="font-bold text-[22px] tracking-tight text-gray-900 leading-none">HOUSEBOX</span>
+                </a>
+                <button id="close-menu-btn" class="text-gray-500 hover:text-gray-900 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="flex flex-col p-6 gap-5 overflow-y-auto">
+                <a href="#" class="text-gray-900 font-semibold text-[17px] hover:text-primary transition-colors">Home</a>
+                <a href="#" class="text-gray-600 font-medium text-[17px] hover:text-primary transition-colors">About</a>
+                <a href="#" class="text-gray-600 font-medium text-[17px] hover:text-primary transition-colors">Property</a>
+                <a href="#" class="text-gray-600 font-medium text-[17px] hover:text-primary transition-colors">Agents</a>
+                <a href="#" class="text-gray-600 font-medium text-[17px] hover:text-primary transition-colors">Blogs</a>
+                <div class="w-full h-px bg-gray-100 my-2"></div>
+                <a href="#" class="bg-primary text-gray-900 font-semibold text-[16px] px-6 py-3.5 rounded text-center transition-colors flex items-center justify-center gap-2">
+                    View Listing
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 19L19 5M19 5v10M19 5H9"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
     </nav>
 
     <!-- Hero Section -->
-    <main class="relative w-screen h-screen min-h-[700px] flex items-center overflow-hidden">
+    <main class="relative w-full h-screen min-h-[700px] flex items-center overflow-hidden">
 
         <!-- Right Background Image Slider -->
         <div id="hero-slider" class="absolute top-0 right-0 w-full h-full z-0 overflow-hidden">

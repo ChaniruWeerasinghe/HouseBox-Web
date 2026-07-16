@@ -3,11 +3,14 @@
     display: none;
 }
 
-body {
+body, html {
     -ms-overflow-style: none;
     /* IE and Edge */
     scrollbar-width: none;
     /* Firefox */
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
 }
 
 /* Image white mist overlay-openDoors */

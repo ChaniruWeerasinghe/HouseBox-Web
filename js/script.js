@@ -552,3 +552,39 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(ctaText);
     }
 });
+
+// -----------------------------------------------------
+// Mobile Menu Logic
+// -----------------------------------------------------
+document.addEventListener('DOMContentLoaded', () => {
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const closeBtn = document.getElementById('close-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuOverlay = document.getElementById('mobile-menu-overlay');
+
+    if (mobileBtn && closeBtn && mobileMenu && menuOverlay) {
+        const toggleMenu = () => {
+            const isOpen = !mobileMenu.classList.contains('-translate-x-full');
+            
+            if (isOpen) {
+                // Close Menu
+                mobileMenu.classList.add('-translate-x-full');
+                menuOverlay.classList.remove('opacity-100');
+                setTimeout(() => {
+                    menuOverlay.classList.add('hidden');
+                }, 300);
+            } else {
+                // Open Menu
+                menuOverlay.classList.remove('hidden');
+                // Force reflow
+                void menuOverlay.offsetWidth;
+                menuOverlay.classList.add('opacity-100');
+                mobileMenu.classList.remove('-translate-x-full');
+            }
+        };
+
+        mobileBtn.addEventListener('click', toggleMenu);
+        closeBtn.addEventListener('click', toggleMenu);
+        menuOverlay.addEventListener('click', toggleMenu);
+    }
+});
