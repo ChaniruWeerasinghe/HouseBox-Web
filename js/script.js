@@ -773,3 +773,39 @@ window.setViewMode = function(mode) {
         listBtn.classList.add('bg-white', 'border-gray-200');
     }
 };
+
+// -----------------------------------------------------
+// Property Sorting Logic
+// -----------------------------------------------------
+window.sortProperties = function(type, event) {
+    if (event) event.preventDefault();
+    
+    const container = document.getElementById('property-container');
+    const label = document.getElementById('current-sort-label');
+    if (!container || !label) return;
+
+    // Get all property cards (immediate children that are divs)
+    const cards = Array.from(container.children).filter(child => child.tagName === 'DIV');
+    
+    // Sort visually by just reversing or shuffling (since we don't have real dates)
+    if (type === 'newest') {
+        label.textContent = 'Newest';
+        cards.reverse().forEach(card => container.appendChild(card));
+    } else if (type === 'oldest') {
+        label.textContent = 'Oldest';
+        cards.reverse().forEach(card => container.appendChild(card));
+    } else {
+        label.textContent = 'Sort by (Default)';
+        cards.reverse().forEach(card => container.appendChild(card));
+    }
+    
+    // Force dropdown to close visually by temporarily removing pointer-events
+    const dropdown = label.closest('.group\\/sort-dropdown');
+    if (dropdown) {
+        const menu = dropdown.querySelector('.absolute');
+        if (menu) {
+            menu.style.display = 'none';
+            setTimeout(() => { menu.style.display = ''; }, 100);
+        }
+    }
+};

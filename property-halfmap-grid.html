@@ -1444,14 +1444,14 @@
                         <!-- Sort Dropdown -->
                         <div class="relative ml-2 group/sort-dropdown z-30">
                             <div class="bg-gray-100 group-hover/sort-dropdown:bg-gray-200 rounded px-5 py-3 flex items-center justify-between gap-4 cursor-pointer transition-colors h-11 min-w-[190px]">
-                                <span class="text-gray-900 font-medium text-[15px]">Sort by (Default)</span>
+                                <span id="current-sort-label" class="text-gray-900 font-medium text-[15px]">Sort by (Default)</span>
                                 <svg class="w-3.5 h-3.5 text-gray-500 transition-transform duration-300 group-hover/sort-dropdown:-rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
                             </div>
-                            <div class="absolute top-full right-0 w-full min-w-[190px] bg-white border border-gray-100 rounded-lg shadow-lg py-1.5 opacity-0 pointer-events-none translate-y-1 group-hover/sort-dropdown:opacity-100 group-hover/sort-dropdown:pointer-events-auto group-hover/sort-dropdown:translate-y-0 transition-all duration-200 mt-1 before:content-[''] before:absolute before:-top-4 before:left-0 before:w-full before:h-4">
+                            <div class="absolute top-full right-0 w-full min-w-[190px] bg-white border border-gray-100 rounded-lg shadow-lg py-2 opacity-0 pointer-events-none translate-y-1 group-hover/sort-dropdown:opacity-100 group-hover/sort-dropdown:pointer-events-auto group-hover/sort-dropdown:translate-y-0 transition-all duration-200 mt-1 before:content-[''] before:absolute before:-top-4 before:left-0 before:w-full before:h-4">
                                 <ul class="flex flex-col">
-                                    <li><a href="#" class="block px-4 py-2 text-gray-900 hover:text-primary hover:bg-gray-50 transition-colors font-bold text-[15px]">Sort by (Default)</a></li>
-                                    <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">Oldest</a></li>
-                                    <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">Newest</a></li>
+                                    <li><a href="#" onclick="sortProperties('default', event)" class="block px-6 py-2.5 text-gray-900 hover:text-primary hover:bg-gray-50 transition-colors font-bold text-[15px]">Sort by (Default)</a></li>
+                                    <li><a href="#" onclick="sortProperties('oldest', event)" class="block px-6 py-2.5 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">Oldest</a></li>
+                                    <li><a href="#" onclick="sortProperties('newest', event)" class="block px-6 py-2.5 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">Newest</a></li>
                                 </ul>
                             </div>
                         </div>
