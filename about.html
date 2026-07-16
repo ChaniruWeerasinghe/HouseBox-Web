@@ -723,20 +723,25 @@
         <div class="max-w-[1320px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-16 lg:gap-20 items-center">
 
             <!-- Left: Image Collage -->
-            <div class="relative w-full h-[500px] md:h-[600px] flex items-end justify-start">
+            <div class="relative w-full h-[550px] md:h-[600px]">
                 
-                <!-- Main Large Image -->
-                <div class="absolute bottom-0 left-0 w-[85%] h-[80%] rounded-[24px] rounded-tl-[80px] md:rounded-tl-[120px] overflow-hidden shadow-sm z-10 openDoors-container reveal-clip">
-                    <img src="assets/images/home/about-bottom.webp" alt="Main House" class="w-full h-full object-cover">
+                <!-- Tall Left Image -->
+                <div class="absolute left-0 top-[5%] w-[48%] h-[90%] rounded-xl overflow-hidden shadow-sm z-10">
+                    <img src="assets/images/home/about-tall.webp" alt="Apartment Building" class="w-full h-full object-cover">
                 </div>
 
-                <!-- Small Top Image -->
-                <div class="absolute top-[5%] right-[5%] w-[60%] md:w-[55%] h-[200px] md:h-[280px] rounded-[16px] overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.15)] z-20 openDoors-container reveal-clip">
+                <!-- Top Right Image -->
+                <div class="absolute right-0 top-0 w-[48%] h-[48%] rounded-xl overflow-hidden shadow-sm z-10">
                     <img src="assets/images/home/about-top.webp" alt="House on water" class="w-full h-full object-cover">
+                </div>
+                
+                <!-- Bottom Right Image -->
+                <div class="absolute right-0 bottom-0 w-[48%] h-[48%] rounded-xl overflow-hidden shadow-sm z-10">
+                    <img src="assets/images/home/hero-main.webp" alt="Suburban House" class="w-full h-full object-cover">
                 </div>
 
                 <!-- Floating Customer Card -->
-                <div class="absolute top-[40%] md:top-[45%] right-0 md:right-[-20px] bg-white rounded-[16px] shadow-[0_15px_40px_rgba(0,0,0,0.1)] py-4 px-6 w-max z-30 flex flex-col items-center gap-3 border border-gray-50 scale-90 md:scale-100">
+                <div class="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl shadow-[0_15px_40px_rgba(0,0,0,0.1)] py-4 px-6 w-max z-30 flex flex-col items-center gap-3 border border-gray-50 scale-90 md:scale-100">
                     <h4 class="font-medium text-gray-900 text-[16px]">Our Happy Customer</h4>
                     <div class="flex items-center">
                         <img src="assets/images/home/avatar-1.webp" alt="Happy Customers" class="h-[42px] w-auto">
@@ -746,50 +751,66 @@
             </div>
 
             <!-- Right: Content -->
-            <div class="flex flex-col items-start gap-8 z-20">
+            <div class="flex flex-col items-start z-20">
                 <!-- Top pill -->
-                <div class="bg-[#eef5f4] text-[#2c6e64] px-4 py-1.5 rounded text-[15px] font-medium tracking-wide">
-                    About Premier Realtors (PVT) LTD
+                <div class="bg-[#eef5f4] text-[#2c6e64] px-4 py-1.5 rounded text-[14px] font-semibold tracking-wide mb-5">
+                    About Housebox
                 </div>
 
                 <!-- Heading -->
-                <h2 class="text-[30px] sm:text-[36px] md:text-[52px] leading-[1.2] md:leading-[1.1] font-bold text-gray-900 tracking-tight title-bounce">
+                <h2 class="text-[32px] sm:text-[38px] md:text-[44px] leading-[1.15] font-bold text-gray-900 tracking-tight mb-5">
                     Embrace the Elegance<br>Our Exclusive Property
                 </h2>
 
                 <!-- Description -->
-                <p class="text-gray-600 text-lg leading-[1.8] max-w-[620px]">
-                    At Premier Realtors (PVT) LTD, we're redefining the way people find, sell, and invest in properties. Our mission is to
-                    simplify real a estate by provide innovative solutions, expert guidance.
+                <p class="text-gray-600 text-[15.5px] leading-[1.7] max-w-[550px] mb-8">
+                    At HouseBox, we're redefining the way people find, sell, and invest in properties. Our mission is to simplify real a estate by provide innovative solutions, expert guidance.
                 </p>
 
-                <!-- Divider -->
-                <div class="w-full h-px bg-gray-100 my-1"></div>
+                <!-- Accordion Menu -->
+                <div class="w-full flex flex-col gap-3 mb-10 max-w-[550px]">
+                    <!-- Item 1 (Active) -->
+                    <div class="about-accordion-item border border-gray-200 rounded-lg p-5 cursor-pointer bg-white transition-all duration-300">
+                        <div class="flex items-center justify-between">
+                            <h4 class="font-bold text-[16px] text-gray-900">Market Expertise</h4>
+                            <div class="icon-wrapper w-7 h-7 rounded-full bg-[#cadd22] flex items-center justify-center shrink-0 transition-colors">
+                                <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"></path></svg>
+                            </div>
+                        </div>
+                        <div class="accordion-content mt-3 text-gray-600 text-[15px] leading-[1.6]">
+                            Backed by deep market insights, we offer guidance to make informed decisions.
+                        </div>
+                    </div>
 
-                <!-- Stats Grid -->
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-x-0 md:gap-x-12 gap-y-8 w-full items-center">
-                    <!-- Left Stat (Spans 2 rows on mobile) -->
-                    <div class="row-span-2 md:row-span-1 flex flex-col items-start justify-center gap-1.5 border-r border-gray-100 pr-6 md:border-none md:pr-0 h-full">
-                        <span class="text-[54px] md:text-[46px] font-bold text-gray-900 leading-none tracking-tight"><span class="stat-counter" data-target="10">0</span>K</span>
-                        <span class="text-gray-500 font-medium text-[15px]">Homes Sold</span>
+                    <!-- Item 2 -->
+                    <div class="about-accordion-item border border-gray-200 rounded-lg p-5 cursor-pointer bg-white transition-all duration-300">
+                        <div class="flex items-center justify-between">
+                            <h4 class="font-bold text-[16px] text-gray-900">Technology Expertise</h4>
+                            <div class="icon-wrapper w-7 h-7 rounded-full bg-black flex items-center justify-center shrink-0 transition-colors">
+                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                            </div>
+                        </div>
+                        <div class="accordion-content hidden mt-3 text-gray-600 text-[15px] leading-[1.6]">
+                            We leverage cutting-edge technology to provide you with a seamless and transparent real estate experience.
+                        </div>
                     </div>
-                    <!-- Right Stat Top -->
-                    <div class="flex flex-col items-start gap-1.5 pl-6 md:pl-0">
-                        <span class="text-[38px] md:text-[46px] font-bold text-gray-900 leading-none tracking-tight"><span class="stat-counter" data-target="9">0</span>K</span>
-                        <span class="text-gray-500 font-medium text-[15px]">Happy Client</span>
-                    </div>
-                    <!-- Right Stat Bottom -->
-                    <div class="flex flex-col items-start gap-1.5 pl-6 md:pl-0">
-                        <span class="text-[38px] md:text-[46px] font-bold text-gray-900 leading-none tracking-tight"><span class="stat-counter" data-target="98">0</span>%</span>
-                        <span class="text-gray-500 font-medium text-[15px]">Satisfaction Rate</span>
+
+                    <!-- Item 3 -->
+                    <div class="about-accordion-item border border-gray-200 rounded-lg p-5 cursor-pointer bg-white transition-all duration-300">
+                        <div class="flex items-center justify-between">
+                            <h4 class="font-bold text-[16px] text-gray-900">Commitment to Excellence</h4>
+                            <div class="icon-wrapper w-7 h-7 rounded-full bg-black flex items-center justify-center shrink-0 transition-colors">
+                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                            </div>
+                        </div>
+                        <div class="accordion-content hidden mt-3 text-gray-600 text-[15px] leading-[1.6]">
+                            Our dedication to quality and client satisfaction ensures you receive the highest standard of service.
+                        </div>
                     </div>
                 </div>
 
-                <!-- Divider -->
-                <div class="w-full h-px bg-gray-100 my-1"></div>
-
                 <!-- Button -->
-                <a href="#" class="inline-flex items-center justify-center gap-2 bg-[#cddb32] hover:bg-[#bacc22] text-black font-semibold text-[15px] px-8 py-3.5 rounded-md mt-2 transition-transform hover:-translate-y-px">
+                <a href="#" class="inline-flex items-center justify-center gap-2 bg-[#cadd22] hover:bg-[#bacc22] text-gray-900 font-bold text-[14px] px-6 py-3.5 rounded-md transition-transform hover:-translate-y-px shadow-sm">
                     See All Properties
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 19L19 5M19 5v10M19 5H9"></path>
