@@ -754,7 +754,7 @@ window.setViewMode = function(mode) {
     if (!container || !gridBtn || !listBtn) return;
 
     if (mode === 'list') {
-        container.classList.remove('view-grid');
+        container.classList.remove('view-grid', 'md:grid-cols-2');
         container.classList.add('view-list');
         
         gridBtn.classList.remove('bg-primary', 'border-primary');
@@ -764,7 +764,7 @@ window.setViewMode = function(mode) {
         listBtn.classList.add('bg-primary', 'border-primary');
     } else {
         container.classList.remove('view-list');
-        container.classList.add('view-grid');
+        container.classList.add('view-grid', 'md:grid-cols-2');
         
         gridBtn.classList.remove('bg-white', 'border-gray-200');
         gridBtn.classList.add('bg-primary', 'border-primary');
