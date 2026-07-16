@@ -704,19 +704,21 @@ document.addEventListener("DOMContentLoaded", function() {
         const thumb1 = slider.querySelector('.thumb-1');
         const thumb2 = slider.querySelector('.thumb-2');
         const track = slider.querySelector('.slider-track');
+        const label = slider.previousElementSibling;
+        const type = slider.getAttribute('data-type');
         
         function updateTrack() {
             let val1 = parseInt(thumb1.value);
             let val2 = parseInt(thumb2.value);
-            
-            if (val1 > val2) {
-                let tmp = val1;
-                val1 = val2;
-                val2 = tmp;
-            }
-            
             const min = parseInt(thumb1.min);
             const max = parseInt(thumb1.max);
+            
+            // Prevent thumbs from crossing
+            if (val1 > val2) {
+                [val1, val2] = [val2, val1];
+                thumb1.value = val1;
+                thumb2.value = val2;
+            }
             
             const percent1 = ((val1 - min) / (max - min)) * 100;
             const percent2 = ((val2 - min) / (max - min)) * 100;
@@ -724,35 +726,18 @@ document.addEventListener("DOMContentLoaded", function() {
             track.style.left = percent1 + '%';
             track.style.width = (percent2 - percent1) + '%';
             
-            // Update label
-            const type = slider.getAttribute('data-type');
-            const label = slider.parentElement.querySelector('label');
+            // Update label text
             if (label && type) {
                 if (type === 'price') {
-                    label.textContent = `Price Range: LKR ${val1.toLocaleString()} - LKR ${val2.toLocaleString()}`;
+                    label.textContent = `Price Range: LKR ${val1.toLocaleString('en-LK')} - LKR ${val2.toLocaleString('en-LK')}`;
                 } else if (type === 'size') {
-                    label.textContent = `Size Range: ${val1} SqFt - ${val2} SqFt`;
+                    label.textContent = `Size Range: ${val1.toLocaleString()} SqFt - ${val2.toLocaleString()} SqFt`;
                 }
             }
         }
         
-        
         thumb1.addEventListener('input', updateTrack);
         thumb2.addEventListener('input', updateTrack);
-        
-        // Ensure thumbs cross over correctly without getting stuck
-        thumb1.addEventListener('change', function() {
-            if (parseInt(thumb1.value) > parseInt(thumb2.value)) {
-                thumb1.value = thumb2.value;
-                updateTrack();
-            }
-        });
-        thumb2.addEventListener('change', function() {
-            if (parseInt(thumb2.value) < parseInt(thumb1.value)) {
-                thumb2.value = thumb1.value;
-                updateTrack();
-            }
-        });
         
         updateTrack();
     });
