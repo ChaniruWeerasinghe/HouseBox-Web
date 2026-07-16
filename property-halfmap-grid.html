@@ -42,7 +42,7 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#ffc107', /* Yellow from design */
+                        primary: '#cbdc2d', /* Lime green from design */
                         dark: '#114c54',    /* Deep teal */
                         lightbg: '#f3f4f6'
                     },
@@ -149,10 +149,21 @@
                     </a>
                 </div>
                 <div class="flex items-center gap-6">
-                    <div class="flex items-center gap-2 cursor-pointer hover:text-white transition-colors">
-                        <img src="https://flagcdn.com/w20/us.png" alt="USA" class="w-5 h-auto">
-                        ENG
-                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                    <div class="relative group">
+                        <div class="flex items-center gap-2 cursor-pointer hover:text-white transition-colors py-2">
+                            <img src="https://flagcdn.com/w20/us.png" alt="USA" class="w-5 h-auto">
+                            ENG
+                            <svg class="w-3 h-3 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
+                        <!-- Dropdown -->
+                        <div class="absolute top-full left-1/2 -translate-x-1/2 mt-0 w-[140px] bg-white rounded shadow-lg overflow-hidden flex flex-col opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top translate-y-2 group-hover:translate-y-0 z-[120]">
+                            <a href="#" class="px-4 py-3 text-[14px] text-gray-900 font-bold bg-gray-50 hover:bg-gray-100 transition-colors uppercase">ENG</a>
+                            <a href="#" class="px-4 py-3 text-[14px] text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors uppercase">Belgium</a>
+                            <a href="#" class="px-4 py-3 text-[14px] text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors uppercase">Brazil</a>
+                            <a href="#" class="px-4 py-3 text-[14px] text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors uppercase">Argentina</a>
+                            <a href="#" class="px-4 py-3 text-[14px] text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors uppercase">Bangladesh</a>
+                            <a href="#" class="px-4 py-3 text-[14px] text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors uppercase">Germany</a>
+                        </div>
                     </div>
                     <div class="w-px h-4 bg-white/20"></div>
                     <a href="#" class="font-bold text-white hover:text-primary transition-colors tracking-wide">SIGN IN</a>
@@ -672,7 +683,7 @@
             </div>
         </div>
     <!-- Hero Section -->
-    <main class="relative w-full h-[600px] md:h-[700px] flex items-center justify-center overflow-hidden">
+    <main class="relative w-full h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
         
         <!-- Background Image -->
         <div class="absolute inset-0 z-0 bg-[url('assets/images/home/hero-main.webp')] bg-cover bg-center"></div>
