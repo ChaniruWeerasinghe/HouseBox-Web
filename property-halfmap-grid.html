@@ -772,36 +772,65 @@
                             <!-- Status -->
                             <div class="flex-1 flex flex-col gap-2.5">
                                 <label class="text-[14px] font-semibold text-gray-900">Status</label>
-                                <div class="relative w-full">
-    <select class="appearance-none w-full bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-800 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px] font-medium outline-none focus:border-primary">
-        <option value="">All Status</option>
-    </select>
-    <svg class="absolute right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-500 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
-</div>
+                                <div class="relative w-full group/status-dropdown">
+                                    <div class="appearance-none w-full bg-lightbg group-hover/status-dropdown:bg-gray-200 px-4 py-3 rounded-lg text-gray-900 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px] font-medium flex items-center justify-between">
+                                        <span>All Status</span>
+                                        <svg class="w-3.5 h-3.5 text-gray-500 transition-transform duration-300 group-hover/status-dropdown:-rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                                    </div>
+                                    <div class="absolute top-full left-0 w-full bg-white border border-gray-100 rounded-lg shadow-lg py-1.5 opacity-0 pointer-events-none translate-y-1 group-hover/status-dropdown:opacity-100 group-hover/status-dropdown:pointer-events-auto group-hover/status-dropdown:translate-y-0 transition-all duration-200 z-50 mt-1">
+                                        <ul class="flex flex-col">
+                                            <li><a href="#" class="block px-4 py-2 text-gray-900 hover:text-primary hover:bg-gray-50 transition-colors font-bold text-[15px]">All Status</a></li>
+                                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">For Rent</a></li>
+                                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">For Sale</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                             <div class="w-px h-10 bg-gray-200 hidden lg:block mt-[34px]"></div>
                             
                             <!-- Labels -->
                             <div class="flex-1 flex flex-col gap-2.5">
                                 <label class="text-[14px] font-semibold text-gray-900">Labels</label>
-                                <div class="relative w-full">
-    <select class="appearance-none w-full bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-800 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px] font-medium outline-none focus:border-primary">
-        <option value="">All Labels</option>
-    </select>
-    <svg class="absolute right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-500 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
-</div>
+                                <div class="relative w-full group/labels-dropdown">
+                                    <div class="appearance-none w-full bg-lightbg group-hover/labels-dropdown:bg-gray-200 px-4 py-3 rounded-lg text-gray-900 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px] font-medium flex items-center justify-between">
+                                        <span>All Labels</span>
+                                        <svg class="w-3.5 h-3.5 text-gray-500 transition-transform duration-300 group-hover/labels-dropdown:-rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                                    </div>
+                                    <div class="absolute top-full left-0 w-full bg-white border border-gray-100 rounded-lg shadow-lg py-1.5 opacity-0 pointer-events-none translate-y-1 group-hover/labels-dropdown:opacity-100 group-hover/labels-dropdown:pointer-events-auto group-hover/labels-dropdown:translate-y-0 transition-all duration-200 z-50 mt-1">
+                                        <ul class="flex flex-col">
+                                            <li><a href="#" class="block px-4 py-2 text-gray-900 hover:text-primary hover:bg-gray-50 transition-colors font-bold text-[15px]">All Labels</a></li>
+                                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">New Offer</a></li>
+                                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">Hot Offer</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                             <div class="w-px h-10 bg-gray-200 hidden lg:block mt-[34px]"></div>
 
                             <!-- Types -->
                             <div class="flex-1 flex flex-col gap-2.5">
                                 <label class="text-[14px] font-semibold text-gray-900">Types</label>
-                                <div class="relative w-full">
-    <select class="appearance-none w-full bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-800 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px] font-medium outline-none focus:border-primary">
-        <option value="">All Types</option>
-    </select>
-    <svg class="absolute right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-500 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
-</div>
+                                <div class="relative w-full group/types-dropdown">
+                                    <div class="appearance-none w-full bg-lightbg group-hover/types-dropdown:bg-gray-200 px-4 py-3 rounded-lg text-gray-900 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px] font-medium flex items-center justify-between">
+                                        <span>All Types</span>
+                                        <svg class="w-3.5 h-3.5 text-gray-500 transition-transform duration-300 group-hover/types-dropdown:-rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                                    </div>
+                                    <div class="absolute top-full left-0 w-full bg-white border border-gray-100 rounded-lg shadow-lg py-1.5 opacity-0 pointer-events-none translate-y-1 group-hover/types-dropdown:opacity-100 group-hover/types-dropdown:pointer-events-auto group-hover/types-dropdown:translate-y-0 transition-all duration-200 z-50 mt-1">
+                                        <ul class="flex flex-col max-h-[250px] overflow-y-auto custom-scrollbar">
+                                            <li><a href="#" class="block px-4 py-2 text-gray-900 hover:text-primary hover:bg-gray-50 transition-colors font-bold text-[15px]">All Types</a></li>
+                                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">Apartment</a></li>
+                                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">Bar</a></li>
+                                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">Cafe</a></li>
+                                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">House</a></li>
+                                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">Farm</a></li>
+                                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">Luxury Homes</a></li>
+                                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">Office</a></li>
+                                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">Single Family</a></li>
+                                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">Store</a></li>
+                                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">Villa</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                             <div class="w-px h-10 bg-gray-200 hidden lg:block mt-[34px]"></div>
                             <!-- Customize -->
@@ -831,39 +860,89 @@
                             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
                                 <div class="flex flex-col gap-2.5">
                                     <label class="text-[14px] font-semibold text-gray-900">Bathrooms</label>
-                                    <div class="relative w-full">
-    <select class="appearance-none w-full bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-800 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px] font-medium outline-none focus:border-primary">
-        <option value="">Bathrooms</option>
-    </select>
-    <svg class="absolute right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-500 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
-</div>
+                                    <div class="relative w-full group/bath-dropdown">
+                                        <div class="appearance-none w-full bg-lightbg group-hover/bath-dropdown:bg-gray-200 px-4 py-3 rounded-lg text-gray-900 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px] font-medium flex items-center justify-between">
+                                            <span>Bathrooms</span>
+                                            <svg class="w-3.5 h-3.5 text-gray-500 transition-transform duration-300 group-hover/bath-dropdown:-rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                                        </div>
+                                        <div class="absolute top-full left-0 w-full bg-white border border-gray-100 rounded-lg shadow-lg py-1.5 opacity-0 pointer-events-none translate-y-1 group-hover/bath-dropdown:opacity-100 group-hover/bath-dropdown:pointer-events-auto group-hover/bath-dropdown:translate-y-0 transition-all duration-200 z-50 mt-1">
+                                            <ul class="flex flex-col max-h-[250px] overflow-y-auto custom-scrollbar">
+                                                <li><a href="#" class="block px-4 py-2 text-gray-900 hover:text-primary hover:bg-gray-50 transition-colors font-bold text-[15px]">Bathrooms</a></li>
+                                                <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">1</a></li>
+                                                <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">2</a></li>
+                                                <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">3</a></li>
+                                                <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">4</a></li>
+                                                <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">5</a></li>
+                                                <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">6</a></li>
+                                                <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">7</a></li>
+                                                <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">8</a></li>
+                                                <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">9</a></li>
+                                                <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">10</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="flex flex-col gap-2.5">
                                     <label class="text-[14px] font-semibold text-gray-900">Bedrooms</label>
-                                    <div class="relative w-full">
-    <select class="appearance-none w-full bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-800 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px] font-medium outline-none focus:border-primary">
-        <option value="">Bedrooms</option>
-    </select>
-    <svg class="absolute right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-500 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
-</div>
+                                    <div class="relative w-full group/bed-dropdown">
+                                        <div class="appearance-none w-full bg-lightbg group-hover/bed-dropdown:bg-gray-200 px-4 py-3 rounded-lg text-gray-900 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px] font-medium flex items-center justify-between">
+                                            <span>Bedrooms</span>
+                                            <svg class="w-3.5 h-3.5 text-gray-500 transition-transform duration-300 group-hover/bed-dropdown:-rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                                        </div>
+                                        <div class="absolute top-full left-0 w-full bg-white border border-gray-100 rounded-lg shadow-lg py-1.5 opacity-0 pointer-events-none translate-y-1 group-hover/bed-dropdown:opacity-100 group-hover/bed-dropdown:pointer-events-auto group-hover/bed-dropdown:translate-y-0 transition-all duration-200 z-50 mt-1">
+                                            <ul class="flex flex-col max-h-[250px] overflow-y-auto custom-scrollbar">
+                                                <li><a href="#" class="block px-4 py-2 text-gray-900 hover:text-primary hover:bg-gray-50 transition-colors font-bold text-[15px]">Bedrooms</a></li>
+                                                <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">1</a></li>
+                                                <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">2</a></li>
+                                                <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">3</a></li>
+                                                <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">4</a></li>
+                                                <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">5</a></li>
+                                                <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">6</a></li>
+                                                <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">7</a></li>
+                                                <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">8</a></li>
+                                                <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">9</a></li>
+                                                <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">10</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="flex flex-col gap-2.5">
                                     <label class="text-[14px] font-semibold text-gray-900">States</label>
-                                    <div class="relative w-full">
-    <select class="appearance-none w-full bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-800 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px] font-medium outline-none focus:border-primary">
-        <option value="">All States</option>
-    </select>
-    <svg class="absolute right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-500 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
-</div>
+                                    <div class="relative w-full group/states-dropdown">
+                                        <div class="appearance-none w-full bg-lightbg group-hover/states-dropdown:bg-gray-200 px-4 py-3 rounded-lg text-gray-900 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px] font-medium flex items-center justify-between">
+                                            <span>All States</span>
+                                            <svg class="w-3.5 h-3.5 text-gray-500 transition-transform duration-300 group-hover/states-dropdown:-rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                                        </div>
+                                        <div class="absolute top-full left-0 w-full bg-white border border-gray-100 rounded-lg shadow-lg py-1.5 opacity-0 pointer-events-none translate-y-1 group-hover/states-dropdown:opacity-100 group-hover/states-dropdown:pointer-events-auto group-hover/states-dropdown:translate-y-0 transition-all duration-200 z-50 mt-1">
+                                            <ul class="flex flex-col max-h-[250px] overflow-y-auto custom-scrollbar">
+                                                <li><a href="#" class="block px-4 py-2 text-gray-900 hover:text-primary hover:bg-gray-50 transition-colors font-bold text-[15px]">All States</a></li>
+                                                <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">New York</a></li>
+                                                <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">California</a></li>
+                                                <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">Texas</a></li>
+                                                <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">Sydney</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="flex flex-col gap-2.5">
                                     <label class="text-[14px] font-semibold text-gray-900">City</label>
-                                    <div class="relative w-full">
-    <select class="appearance-none w-full bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-800 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px] font-medium outline-none focus:border-primary">
-        <option value="">All Cities</option>
-    </select>
-    <svg class="absolute right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-500 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
-</div>
+                                    <div class="relative w-full group/city-dropdown">
+                                        <div class="appearance-none w-full bg-lightbg group-hover/city-dropdown:bg-gray-200 px-4 py-3 rounded-lg text-gray-900 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px] font-medium flex items-center justify-between">
+                                            <span>All Cities</span>
+                                            <svg class="w-3.5 h-3.5 text-gray-500 transition-transform duration-300 group-hover/city-dropdown:-rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                                        </div>
+                                        <div class="absolute top-full left-0 w-full bg-white border border-gray-100 rounded-lg shadow-lg py-1.5 opacity-0 pointer-events-none translate-y-1 group-hover/city-dropdown:opacity-100 group-hover/city-dropdown:pointer-events-auto group-hover/city-dropdown:translate-y-0 transition-all duration-200 z-50 mt-1">
+                                            <ul class="flex flex-col max-h-[250px] overflow-y-auto custom-scrollbar">
+                                                <li><a href="#" class="block px-4 py-2 text-gray-900 hover:text-primary hover:bg-gray-50 transition-colors font-bold text-[15px]">All Cities</a></li>
+                                                <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">Alice</a></li>
+                                                <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">Bridgaport</a></li>
+                                                <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">Dallas</a></li>
+                                                <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">Kingston</a></li>
+                                                <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">Los Angeles</a></li>
+                                                <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">New York</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             
@@ -873,21 +952,51 @@
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div class="flex flex-col gap-2.5">
                                         <label class="text-[14px] font-semibold text-gray-900">Garages</label>
-                                        <div class="relative w-full">
-    <select class="appearance-none w-full bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-800 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px] font-medium outline-none focus:border-primary">
-        <option value="">Any Garages</option>
-    </select>
-    <svg class="absolute right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-500 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
-</div>
+                                        <div class="relative w-full group/garages-dropdown">
+                                            <div class="appearance-none w-full bg-lightbg group-hover/garages-dropdown:bg-gray-200 px-4 py-3 rounded-lg text-gray-900 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px] font-medium flex items-center justify-between">
+                                                <span>Any Garages</span>
+                                                <svg class="w-3.5 h-3.5 text-gray-500 transition-transform duration-300 group-hover/garages-dropdown:-rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                                            </div>
+                                            <div class="absolute top-full left-0 w-full bg-white border border-gray-100 rounded-lg shadow-lg py-1.5 opacity-0 pointer-events-none translate-y-1 group-hover/garages-dropdown:opacity-100 group-hover/garages-dropdown:pointer-events-auto group-hover/garages-dropdown:translate-y-0 transition-all duration-200 z-50 mt-1">
+                                                <ul class="flex flex-col max-h-[250px] overflow-y-auto custom-scrollbar">
+                                                    <li><a href="#" class="block px-4 py-2 text-gray-900 hover:text-primary hover:bg-gray-50 transition-colors font-bold text-[15px]">Any Garages</a></li>
+                                                    <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">1</a></li>
+                                                    <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">2</a></li>
+                                                    <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">3</a></li>
+                                                    <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">4</a></li>
+                                                    <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">5</a></li>
+                                                    <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">6</a></li>
+                                                    <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">7</a></li>
+                                                    <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">8</a></li>
+                                                    <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">9</a></li>
+                                                    <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">10</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="flex flex-col gap-2.5">
                                         <label class="text-[14px] font-semibold text-gray-900">Rooms</label>
-                                        <div class="relative w-full">
-    <select class="appearance-none w-full bg-lightbg hover:bg-gray-200 px-4 py-3 rounded-lg text-gray-800 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px] font-medium outline-none focus:border-primary">
-        <option value="">Any Rooms</option>
-    </select>
-    <svg class="absolute right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-500 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
-</div>
+                                        <div class="relative w-full group/rooms-dropdown">
+                                            <div class="appearance-none w-full bg-lightbg group-hover/rooms-dropdown:bg-gray-200 px-4 py-3 rounded-lg text-gray-900 text-[15px] cursor-pointer transition-colors border border-transparent h-[48px] font-medium flex items-center justify-between">
+                                                <span>Any Rooms</span>
+                                                <svg class="w-3.5 h-3.5 text-gray-500 transition-transform duration-300 group-hover/rooms-dropdown:-rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                                            </div>
+                                            <div class="absolute top-full left-0 w-full bg-white border border-gray-100 rounded-lg shadow-lg py-1.5 opacity-0 pointer-events-none translate-y-1 group-hover/rooms-dropdown:opacity-100 group-hover/rooms-dropdown:pointer-events-auto group-hover/rooms-dropdown:translate-y-0 transition-all duration-200 z-50 mt-1">
+                                                <ul class="flex flex-col max-h-[250px] overflow-y-auto custom-scrollbar">
+                                                    <li><a href="#" class="block px-4 py-2 text-gray-900 hover:text-primary hover:bg-gray-50 transition-colors font-bold text-[15px]">Any Rooms</a></li>
+                                                    <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">1</a></li>
+                                                    <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">2</a></li>
+                                                    <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">3</a></li>
+                                                    <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">4</a></li>
+                                                    <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">5</a></li>
+                                                    <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">6</a></li>
+                                                    <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">7</a></li>
+                                                    <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">8</a></li>
+                                                    <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">9</a></li>
+                                                    <li><a href="#" class="block px-4 py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors font-medium text-[15px]">10</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- Empty space to match image layout -->
