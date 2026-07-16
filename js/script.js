@@ -723,7 +723,19 @@ document.addEventListener("DOMContentLoaded", function() {
             
             track.style.left = percent1 + '%';
             track.style.width = (percent2 - percent1) + '%';
+            
+            // Update label
+            const type = slider.getAttribute('data-type');
+            const label = slider.parentElement.querySelector('label');
+            if (label && type) {
+                if (type === 'price') {
+                    label.textContent = `Price Range: LKR ${val1.toLocaleString()} - LKR ${val2.toLocaleString()}`;
+                } else if (type === 'size') {
+                    label.textContent = `Size Range: ${val1} SqFt - ${val2} SqFt`;
+                }
+            }
         }
+        
         
         thumb1.addEventListener('input', updateTrack);
         thumb2.addEventListener('input', updateTrack);
