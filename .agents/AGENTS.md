@@ -16,3 +16,26 @@ Before coding a new section (like a header, footer, or card), always check the p
 
 ## Manual File Editing and No Commands/Scripts
 Do NOT use terminal commands, bash scripts, or python scripts (like `run_command` with Python or PowerShell) for tasks like viewing files, searching content, or making text replacements in files. You MUST use the built-in manual file editing tools (e.g., `view_file`, `replace_file_content`, `multi_replace_file_content`) to do the work. You are not allowed to use other languages for easy work.
+
+## True Transparent Wipe Animation (Left-to-Right Image Reveal)
+When Chaniru asks for an image to load or reveal from left-to-right (and explicitly requests no solid background block, or if the container has rounded corners that must be preserved during animation), use the "True Transparent Wipe" method using CSS `mask-image`.
+DO NOT use `clip-path` as it breaks `border-radius` during transitions on Webkit browsers.
+DO NOT use a pseudo-element (`::after`) with a solid background color if a transparent wipe is required.
+
+**Implementation (in CSS):**
+```css
+.clip-left-to-right {
+    -webkit-mask-image: linear-gradient(to right, black 50%, transparent 50%);
+    mask-image: linear-gradient(to right, black 50%, transparent 50%);
+    -webkit-mask-size: 200% 100%;
+    mask-size: 200% 100%;
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+    transition: -webkit-mask-position 1.2s cubic-bezier(0.2, 1, 0.3, 1), mask-position 1.2s cubic-bezier(0.2, 1, 0.3, 1);
+}
+.clip-left-to-right.is-revealed {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+}
+```
+*Note: Make sure to add `.clip-left-to-right` to the `IntersectionObserver` trigger list in `js/script.js` so that the `.is-revealed` class gets applied when the element scrolls into view.*

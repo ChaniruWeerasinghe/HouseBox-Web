@@ -21,7 +21,35 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(raf);
     
     // 1. Navbar Logic (now hardcoded in index.html)
+    const mainNav = document.getElementById('main-nav');
+    const navContainer = document.getElementById('nav-container');
+    const navInner = document.getElementById('nav-inner');
 
+    if (mainNav && navContainer && navInner) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                // Fixed full width
+                mainNav.classList.remove('top-6');
+                mainNav.classList.add('top-0');
+                
+                navContainer.classList.remove('max-w-[1320px]', 'px-6');
+                navContainer.classList.add('max-w-full', 'px-0');
+                
+                navInner.classList.remove('rounded');
+                navInner.classList.add('rounded-none');
+            } else {
+                // Original state
+                mainNav.classList.remove('top-0');
+                mainNav.classList.add('top-6');
+                
+                navContainer.classList.remove('max-w-full', 'px-0');
+                navContainer.classList.add('max-w-[1320px]', 'px-6');
+                
+                navInner.classList.remove('rounded-none');
+                navInner.classList.add('rounded');
+            }
+        });
+    }
     // 2. Search Tabs Logic
     const tabs = document.querySelectorAll('.tab-btn');
     const formPanes = document.querySelectorAll('.search-form-pane');
@@ -97,6 +125,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Move the first thumb to the end of the list
                     const firstThumb = thumbContainer.firstElementChild;
                     thumbContainer.appendChild(firstThumb);
+
+                    // Ensure only the new first child has the white border
+                    Array.from(thumbContainer.children).forEach((thumb, index) => {
+                        if (index === 0) {
+                            thumb.classList.remove('border-dark');
+                            thumb.classList.add('border-white');
+                        } else {
+                            thumb.classList.remove('border-white');
+                            thumb.classList.add('border-dark');
+                        }
+                    });
                     
                     // Reset transform immediately
                     thumbContainer.style.transform = `translateY(0)`;
@@ -177,7 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 6. Intersection Observer for Image Reveals, Title Bounces, Location Cards, and Fade Animations
-    const revealElements = document.querySelectorAll('.reveal-clip, .title-bounce, .location-reveal, .fade-up-reveal, .fade-right-reveal, .fade-left-reveal');
+    const revealElements = document.querySelectorAll('.reveal-clip, .title-bounce, .location-reveal, .fade-up-reveal, .fade-right-reveal, .fade-left-reveal, .clip-left-to-right');
     
     // Pre-process title-bounce elements for letter-by-letter animation
     document.querySelectorAll('.title-bounce').forEach(title => {
@@ -205,7 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     setTimeout(() => {
-                        if (entry.target.classList.contains('reveal-clip') || entry.target.classList.contains('location-reveal') || entry.target.classList.contains('fade-up-reveal') || entry.target.classList.contains('fade-right-reveal') || entry.target.classList.contains('fade-left-reveal')) {
+                        if (entry.target.classList.contains('reveal-clip') || entry.target.classList.contains('location-reveal') || entry.target.classList.contains('fade-up-reveal') || entry.target.classList.contains('fade-right-reveal') || entry.target.classList.contains('fade-left-reveal') || entry.target.classList.contains('clip-left-to-right')) {
                             entry.target.classList.add('is-revealed');
                         }
                         if (entry.target.classList.contains('title-bounce')) {

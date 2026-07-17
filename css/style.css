@@ -160,6 +160,21 @@ body, html {
     transform: translateX(0);
 }
 
+/* Clip Left to Right Reveal (True Transparent Wipe) */
+.clip-left-to-right {
+    -webkit-mask-image: linear-gradient(to right, black 50%, transparent 50%);
+    mask-image: linear-gradient(to right, black 50%, transparent 50%);
+    -webkit-mask-size: 200% 100%;
+    mask-size: 200% 100%;
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+    transition: -webkit-mask-position 1.2s cubic-bezier(0.2, 1, 0.3, 1), mask-position 1.2s cubic-bezier(0.2, 1, 0.3, 1);
+}
+.clip-left-to-right.is-revealed {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+}
+
 /* Custom Range Slider for Dual Thumbs */
 .custom-range::-webkit-slider-thumb {
     pointer-events: auto;
