@@ -127,6 +127,18 @@
 <style>@keyframes fadeOutIn {0%, 45% { opacity: 1; } 55%, 100% { opacity: 0; }} .card-image-fade { animation: fadeOutIn 4s infinite alternate; }</style></head>
 
 <body class="bg-lightbg text-gray-800 font-sans antialiased overflow-x-hidden">
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 z-[9999] bg-[#070b09] flex items-center justify-center transition-opacity duration-700 ease-out">
+        <div class="relative flex items-center justify-center w-24 h-24">
+            <!-- Thin spinning circle -->
+            <svg class="absolute inset-0 w-full h-full animate-spin" viewBox="0 0 100 100" style="animation-duration: 1.2s;">
+                <circle cx="50" cy="50" r="46" fill="none" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5"></circle>
+                <circle cx="50" cy="50" r="46" fill="none" stroke="rgba(255, 255, 255, 0.9)" stroke-width="1.5" stroke-dasharray="70 220" stroke-linecap="round"></circle>
+            </svg>
+            <!-- Logo Icon -->
+            <img src="assets/images/home/logo.webp" alt="HouseBox" class="w-10 h-auto relative z-10 brightness-0 invert opacity-90">
+        </div>
+    </div>
 
     <!-- Navbar Hardcoded for Tailwind CDN Parsing -->
     <nav id="main-nav" class="fixed top-6 left-0 w-full z-[100] flex justify-center pointer-events-none transition-all duration-300">
@@ -1616,17 +1628,17 @@
                     style="background-image: url('assets/images/home/cta-bg2.png'); background-position: center; background-size: cover; background-repeat: no-repeat; background-blend-mode: luminosity;">
                     
                     <!-- Left: Text -->
-                    <div id="cta-text-container" class="relative z-10 flex flex-col gap-4 max-w-[480px] opacity-100 transition-all duration-[800ms] ease-out">
-                        <h2 class="text-white font-bold leading-tight" style="font-size: 38px;">
+                    <div id="cta-text-container" class="relative z-10 flex flex-col gap-4 max-w-[480px]">
+                        <h2 class="text-white font-bold leading-tight title-bounce" style="font-size: 38px;">
                             Step Into Your Dream<br>Home with Premier Realtors
                         </h2>
-                        <p class="text-white/80 text-[15px] leading-relaxed pr-8">
+                        <p class="text-white/80 text-[15px] leading-relaxed pr-8 fade-up-reveal" style="transition-delay: 0.2s">
                             At Premier Realtors (PVT) LTD, we believe your next home is more than just a place – it's where your future begins.
                         </p>
                     </div>
 
                     <!-- Right: CTA Button -->
-                    <div class="relative z-10 shrink-0">
+                    <div class="relative z-10 shrink-0 fade-up-reveal" style="transition-delay: 0.4s">
                         <a href="#" id="cta-dream-home-btn"
                             class="inline-flex items-center gap-3 bg-[#cadd22] text-[#063330] font-extrabold px-8 py-4 rounded-[8px] text-[16px] hover:bg-[#d4e62a] transition-colors duration-200 shadow-lg">
                             Find Your Dream Home
@@ -1840,7 +1852,7 @@
 
     <!-- Scripts for animations and smooth scrolling -->
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/script.js?v=5"></script>
 </body>
 
 </html>

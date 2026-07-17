@@ -1,3 +1,16 @@
+// Preloader Logic
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        const preloader = document.getElementById('preloader');
+        if (preloader) {
+            preloader.style.opacity = '0';
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 700);
+        }
+    }, 1200);
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     
     // 0. Initialize Lenis Smooth Scrolling

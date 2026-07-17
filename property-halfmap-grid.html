@@ -127,6 +127,18 @@
 <style>@keyframes fadeOutIn {0%, 45% { opacity: 1; } 55%, 100% { opacity: 0; }} .card-image-fade { animation: fadeOutIn 4s infinite alternate; }</style></head>
 
 <body class="bg-lightbg text-gray-800 font-sans antialiased overflow-x-hidden">
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 z-[9999] bg-[#070b09] flex items-center justify-center transition-opacity duration-700 ease-out">
+        <div class="relative flex items-center justify-center w-24 h-24">
+            <!-- Thin spinning circle -->
+            <svg class="absolute inset-0 w-full h-full animate-spin" viewBox="0 0 100 100" style="animation-duration: 1.2s;">
+                <circle cx="50" cy="50" r="46" fill="none" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5"></circle>
+                <circle cx="50" cy="50" r="46" fill="none" stroke="rgba(255, 255, 255, 0.9)" stroke-width="1.5" stroke-dasharray="70 220" stroke-linecap="round"></circle>
+            </svg>
+            <!-- Logo Icon -->
+            <img src="assets/images/home/logo.webp" alt="HouseBox" class="w-10 h-auto relative z-10 brightness-0 invert opacity-90">
+        </div>
+    </div>
 
     <!-- Navbar Hardcoded for Tailwind CDN Parsing -->
     <nav id="main-nav" class="fixed top-6 left-0 w-full z-[100] flex justify-center pointer-events-none transition-all duration-300">
@@ -1944,7 +1956,7 @@
 
     <!-- Scripts for animations and smooth scrolling -->
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/script.js?v=5"></script>
 </body>
 
 </html>
