@@ -149,6 +149,19 @@ body, html {
     transform: translateX(0);
 }
 
+/* Up and Down Floating Animation */
+@keyframes floatUpAndDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+.animate-float {
+    animation: floatUpAndDown 4s ease-in-out infinite;
+}
+
 /* Fade Left Reveal */
 .fade-left-reveal {
     opacity: 0;
