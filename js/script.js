@@ -8,7 +8,7 @@ window.addEventListener('load', () => {
                 preloader.style.display = 'none';
             }, 700);
         }
-    }, 1200);
+    }, 400);
 });
 
 document.addEventListener('DOMContentLoaded', () => {
